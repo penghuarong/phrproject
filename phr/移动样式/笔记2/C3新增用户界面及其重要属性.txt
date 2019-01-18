@@ -1,0 +1,46 @@
+C3新增用户界面及其重要属性
+
+outline 设置元素的外轮廓线 
+复合属性
+作用:为了突出某一个元素而添加的外轮廓线
+outline-width 外轮廓线的宽度
+outline-color 外轮廓线的颜色
+outline-style 外轮廓线的样式 
+ none 无线
+ solid 实线
+ dotted 点线
+ double 双线
+ dashed 虚线
+ groove 3D凹槽轮廓
+ ridge 3D凸槽轮廓
+ inset 3D凹边轮廓
+ outset 3D凸边轮廓
+ hidden 隐藏边框
+
+
+不占位显示！！！
+outline-offset 设置外轮廓线的偏移量 支持负值
+注:正值向外偏移 负值向内偏移
+
+outline与border的区别
+ border占位，outline不占位
+ border支持某一个方向，outline   不支持
+ border不会偏移，outline支持out
+ line-offset偏移量
+
+outline设置元素的外轮廓线，他不占位置，该元素只能加在input元素上？错(可以加在任意元素上)	
+
+resize 用户是否可以通过拖拽来改变元素的尺寸
+注意:resize必须配合overflow值非visible才能使用
+ none 不可以改变元素大小 默认值
+ both 用户可以改变元素的 宽度和  高度
+ vertical 用户可以改变元素高度
+ horizontal 用户可以改变元素宽 度
+
+新老弹性盒
+新 display:flex;
+    row
+    column
+旧 display:box;
+    horizontal
+    vertical

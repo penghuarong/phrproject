@@ -1,0 +1,203 @@
+75
+关于文本域的说法正确的是？B
+A:文本域不是空标签,有开始和结束标签
+B:文本域可以设置字符宽度和行数
+C:文本域没有name属性
+D:文本域可以设置初始值
+
+SASS中使用()可以传递参数? D
+A:占位符
+B:变量
+C:继承
+D:混合宏
+
+以下哪些样式可以让元素水平方向倾斜30度，且向左移动30px？ AC
+A:transform:skew(30deg,0) translateX(-30px);
+B:transform:skew(30deg,0);transform:translateX(-30px);
+C:transform:skew(30deg,0) transla
+te(-30px,0);
+D:transform:skew(0,30deg);transfo
+rm:translateY(-30px);
+
+body{width:100px},在SASS中写法正确的是？BCD
+A:body{width:50+50;}
+B:body{width:50px+50px;}
+C:body{width:50+50px;}
+D:body{width:50px*2}
+
+对div，h1和p这三类标签的共同点说法正确的是？ ACD
+A:都可以嵌套图像标签
+B:都不能自动换行
+C:都是块级元素
+D:都可以嵌套span标签
+
+周考1 72
+以下代码中，@font-face{font-family：BorderWeb;src:url(BORDERWO.eot);},"BORDERWO.eot"指的是？ B
+A:图片地址
+B:字体在服务器的下载地址
+C:字体的名字
+D:字体的格式
+
+通过（）语句可以禁止用户选中文本？ A
+A:user-select:none;
+B:user-select:no;
+C:user-select:normal;
+D:user-select:yes;
+
+所有网站内容在一屏高度显示，页面中不出现滚动条的页面形式叫做？D
+A：双屏显示
+B：双飞布局
+C：移动应用
+D：单屏网页
+
+下列可以制作动画的css属性有？AC
+A:transition
+B:translate
+C:animation
+D:transform
+
+常用的字体格式包括哪些？ABCD
+A:svg
+B:woff
+C:eot
+D:ttf
+
+以下哪些属性不可以设置form的提交地址？BCD
+A:action
+B:method
+C:url
+D:type
+
+transition-timing-function包含哪些过渡曲线？ABCD
+A:ease-out
+B:ease-in
+C:ease
+D:linear
+
+transition:background-color .5s 
+ease-in的动画执行时间是500毫秒。
+对√
+
+使用Animate.css动画首先要添加的是（）基本类样式？A
+A:animated
+B:bounceOutLeft
+C:animation
+D:animationend
+
+取消变形用哪个样式？C
+A:transform:init;
+B:transform:normal;
+C:transform:none;
+D:transform:0;
+
+想要项目两端对齐，每个项目之间的距离相等通过()来实现？A
+A:justify-content:space-between
+B:justify-content:center
+C:justify-content:space-around
+D:justify-content:flex-end
+
+justify-content属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线对齐，弹性项目平均分布在该行上，且两边留有一半的间隔空间。应该将
+justify-content设为？A
+A:space-around
+B:flex-end
+C:space-between
+D:center
+
+flex:auto的计算值为？B
+A:0 0 auto
+B:1 1 auto
+C:0 1 auto
+D:1 0 auto
+
+在一个<ul>里包含6个<li>元素，<ul>
+作为弹性盒布局的容器，而<li>则是项目。最终在页面中这6个li以两行三列的方式显示，那么ul需要添加以下哪几个样式()? ABC
+A:flex-direction:row;
+B:display:flex;
+C:flex-wrap:wrap;
+D:flex:1;
+
+周考2 86
+可以让一个元素向左下移动50px，
+并且逆时针旋转10deg，写法是：
+transform:translate(-50px,50p
+x) rotate(-10deg)
+
+box-shadow:a b c d e;参数e代表颜色
+第一种:X Y blur color inset
+第二种:inset X Y blur color
+
+移动端布局里双飞翼布局和流式布局更具有优势
+
+box-sizing属性的值有:
+content-box border-box;
+
+网页布局可以通过div来布局，也可以通过表格来布局，不可以通过表格架来布局。
+
+定义服务器端字体中，有两个属性是必须的，分别是font-family和
+src:url();
+
+日考12
+哪些选择器是css3选择器？AB
+A::not()
+B::nth-child()
+C::hover
+D::active
+
+css3中新增了哪些有关背景的属性？BCD
+A:background-image
+B:background-size
+C:background-clip
+D:background-origin
+
+通过以下哪种方式解决Retina屏的1px边框的问题？A
+A:border-width:thin;
+B:border-width:0;
+C:border-width:1px;
+D:border-height:thin;
+
+关于transition过渡动画用法有误的是？AB
+A:transition:overflow-hidden
+5s;
+B:transition:font-size;
+C:transition:font-size 1s;
+D:transition:1s;
+
+如何限制上传文件的类型为.jpg格式的图片？ A
+A:<input type="file" accept="
+image/jpeg">
+B:<input type="image">
+C:<input type="jpeg" accept="
+image/jpeg">
+D:<input type="image" accept="
+image/jpeg">
+
+以下哪些可以实现一个从上到下运动的动画？ B
+A:@keyframes move{%0{transform:translateY(50px)} 100%{transform:translateY(0)}}
+B:@keyframes move{%0{transform:translateY(-50px)} 100%{transform:translateY(0)}}
+C:@keyframes move{%0{transform:translateY(0)} 100%{transform:translateY(-50px)}}
+D:@keyframes move{%0{transform:translateX(0)} 100%{transform:translateX(50px)}}
+
+在bootstrap中，按钮可以使用（）类？ A
+A:btn
+B:button
+C:nav
+D:anniu
+
+accept属性可以限制上传文件的类型，上传多个文件用空格隔开。  CUO
+注:上传多个文件时用逗号隔开
+
+月考1
+scss是原生的css语言。 CUO
+
+以下哪种方式可以水平居中块级元素？AB
+A:margin:0 auto;
+B:margin-left:50%;transform:translateX(-50%);
+C:position:absolute;
+D:float:left;
+
+下列可以添加过度动画的css属性有？
+ABCD
+A:transform
+B:color;
+C:width;
+D:left;

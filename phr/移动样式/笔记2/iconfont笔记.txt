@@ -1,0 +1,101 @@
+服务器端字体 / 字体图标库
+	声明服务器端字体 @font-face
+	语法:@font-face{
+			font-family:"iconmoon";
+			src:url()
+		}
+		font-family 给服务器端字体定义一个名字
+		src 上传服务器端字体到某一个地方
+		url 上传文件的路径
+
+		注意:声明一个服务器端字体有两个属性是必须的
+			分别是 font-family 和 src
+			其他都是可选的
+
+服务器端字体文件格式
+	.ttf   (.TureType)   mac
+	.woff  (.woff)  web端
+	.eot   (.embedded-opentype)   IE
+	.svg   (.svg)   谷歌和苹果
+
+注:通过css插入一个字体图片，遇 &#x 需转译为 \
+
+@font-face{
+	font-family:"icomoon";
+	src: url('fonts/hakuyoxingshu7000.ttf');
+//以上两个属性必须设置
+	
+}
+
+div
+{
+font-family:icomoon;
+font-weight: bold;
+
+}
+实现自定义字体
+src指定字体文件包含在服务器上的某个地方
+url用于设置服务器端字体文件路径
+
+
+一、TureTpe(.ttf)格式：
+
+.ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，因此他不为网站优化,支持这种字体的浏览器有【IE9+,Firefox3.5+,Chrome4+,Safari3+,Opera10+,iOS Mobile Safari4.2+】；
+
+二、Web Open Font Format(.woff)格式：
+
+.woff字体是Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，同时也支持元数据包的分离,支持这种字体的浏览器有【IE9+,Firefox3.5+,Chrome6+,Safari3.6+,Opera11.1+】；
+
+三、Embedded Open Type(.eot)格式：
+
+.eot字体是IE专用字体，可以从TrueType创建此格式字体,支持这种字体的浏览器有【IE4+】；
+
+四、SVG(.svg)格式：
+
+.svg字体是基于SVG字体渲染的一种格式,支持这种字体的浏览器有【Chrome4+,Safari3.1+,Opera10.0+,iOS Mobile Safari3.2+】。
+
+
+语法：
+@font-face ：{属性: 取值;}
+取值：
+font-family：
+设置文本的字体名称。
+font-style：
+设置文本样式。
+font-variant： small-caps    normal
+设置文本是否大小写。
+
+src：
+设置自定义字体的相对路径或者绝对路径，注意，此属性只能在@font-face规则里使用。
+
+icon图标：
+可以导入
+删除
+选择
+编辑
+
+
+//字体库
+https://icomoon.io
+@font-face  他主要是把自己定义的Web字体嵌入到你的网页中。
+@font-face的语法规则：
+Font-family：:此值指的就是你自定义的字体名称，最好是使用下载的默认字体
+Src：此值指的是你自定义的字体的存放路径，可以是相对路径也可以是绝路径；
+
+
+字体格式：
+一、TureTpe(.ttf)格式：
+.ttf字体是Windows和Mac的最常见的字体，是一种RAW格式，主流浏览器支持如：ie9  firefox3.5  chrome4  Safari3.1
+
+二、OpenType(.otf)格式：
+.otf字体被认为是一种原始的字体格式，其内置在TureType的基础上，
+Safari3.1   firefox3.5  chrome4
+
+三、Web Open Font Format(.woff)格式：
+.woff字体是Web字体中最佳格式，他是一个开放的TrueType/OpenType的压缩版本，IE9+,Firefox3.5+,Chrome6+,Safari3.6
+
+四Embedded Open Type(.eot)格式：
+.eot字体是IE专用字体，可以从TrueType创建此格式字体,支持这种字体的浏览器有【IE4+】；
+
+五、SVG(.svg)格式：
+.svg字体是基于SVG字体渲染的一种格式,支持这种字体的浏览器有Chrome4+,Safari3.1"

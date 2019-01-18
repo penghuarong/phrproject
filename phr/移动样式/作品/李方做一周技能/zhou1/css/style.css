@@ -1,0 +1,138 @@
+/*
+* @Author: Marte
+* @Date:   2018-01-29 08:47:54
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-29 16:47:00
+*/
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 14px; }
+
+html, body, .box {
+  width: 100%;
+  height: 100%;
+  font-size: 100px; }
+
+header {
+  width: 100%;
+  height: .5rem; }
+  header ul li {
+    float: left;
+    width: 24%; }
+    header ul li img {
+      width: 0.24rem;
+      height: auto;
+      margin: .13rem .15rem; }
+    header ul li:nth-child(2) h2 {
+      font-size: .2rem;
+      color: #ec3891;
+      text-align: right;
+      line-height: .5rem; }
+    header ul li:nth-child(3) select {
+      width: .6rem;
+      height: .3rem;
+      margin-top: .09rem;
+      border: 0;
+      font-size: .16rem;
+      padding-left: .1rem; }
+
+section {
+  width: 100%;
+  height: auto;
+  padding: 0 .2rem; }
+  section input:nth-child(1) {
+    background: #b2b3b7;
+    width: 100%;
+    height: .3rem;
+    margin-top: .1rem;
+    border-radius: .05rem;
+    border: .01rem solid #d7d7d9;
+    box-shadow: .5rem;
+    outline: none;
+    padding-left: .25rem;
+    background: #f3f4f6 url(../images/sou_03.jpg) no-repeat left center; }
+  section img {
+    width: 100%;
+    margin-top: .1rem; }
+  section input:nth-of-type(2) {
+    width: 80%;
+    height: .3rem;
+    margin-left: 9%;
+    margin-top: .1rem;
+    border-radius: .5rem 0 0 .5rem;
+    border: .01rem solid #d7d7d9;
+    box-shadow: .5rem;
+    outline: none;
+    background: #f3f4f6 url(../images/sou_03.jpg) no-repeat 0.05rem center;
+    padding-left: .3rem; }
+  section input:nth-of-type(3) {
+    height: .3rem;
+    width: 5%;
+    margin-left: -.05rem;
+    color: #dc3494;
+    border-radius: 0 .5rem .5rem 0;
+    outline: none;
+    background: #f3f4f6;
+    border: 0; }
+  section h3 {
+    font-size: .2rem;
+    text-align: center;
+    margin-top: .1rem;
+    background: url(../images/cai_05.jpg) no-repeat 37% center, url(../images/cai_05.jpg) no-repeat 64% center; }
+  section .small {
+    margin-top: .1rem;
+    width: 100%;
+    height: 1.60rem; }
+    section .small img {
+      float: left;
+      width: 48%;
+      margin-left: 1%; }
+  section .next {
+    width: 100%;
+    height: 2.84rem; }
+    section .next p {
+      font-size: .3rem;
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: bold; }
+    section .next img {
+      width: 48%;
+      float: left;
+      margin-left: 1%; }
+  section .next1 {
+    width: 100%; }
+    section .next1 p {
+      font-size: .3rem;
+      text-align: center;
+      margin-top: .3rem;
+      font-weight: bold; }
+    section .next1 img {
+      width: 100%; }
+  section .next3 {
+    width: 100%;
+    height: 3.8rem; }
+    section .next3 p {
+      font-size: .3rem;
+      text-align: center;
+      margin-top: .15rem;
+      font-weight: bold; }
+    section .next3 img {
+      width: 100%; }
+    section .next3 h4 {
+      font-size: .16rem;
+      font-weight: normal;
+      margin-left: 1%; }
+
+footer {
+  width: 100%;
+  height: .5rem; }
+  footer p {
+    font-size: .3rem; }
+    footer p span:nth-of-type(2) {
+      float: right;
+      line-height: .5rem; }
+
+/*# sourceMappingURL=style.css.map */

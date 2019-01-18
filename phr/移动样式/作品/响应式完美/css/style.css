@@ -1,0 +1,180 @@
+@import url(../fonts/iconfont.css);
+/*
+* @Author: Marte
+* @Date:   2018-02-24 12:22:40
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-02-28 17:25:02
+*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  font-size: 100px;
+  min-width: 320px; }
+
+body {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none; }
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+@font-face {
+  font-family: "iconfont";
+  src: url(../iconfont/iconfont.svg);
+  src: url(../iconfont/iconfont.woff);
+  src: url(../iconfont/iconfont.ttf);
+  src: url(../iconfont/iconfont.eot); }
+.wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+header {
+  flex-shrink: 0; }
+
+.pc {
+  width: 100%;
+  height: 1rem;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .5rem; }
+  .pc a {
+    display: flex;
+    align-items: center;
+    color: #fff; }
+  .pc ol {
+    display: flex;
+    align-items: center; }
+    .pc ol li {
+      color: #fff;
+      margin-right: .4rem;
+      position: relative;
+      line-height: 1rem; }
+      .pc ol li:not(:first-child):hover:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border: .1rem solid transparent;
+        border-bottom-color: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -.1rem; }
+
+.yi {
+  display: none; }
+  .yi ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 .1rem;
+    align-items: center;
+    width: 100%;
+    height: 0.45rem;
+    background: black; }
+    .yi ul li {
+      color: #fff; }
+
+section {
+  flex: 1;
+  overflow: hidden;
+  overflow-y: scroll; }
+  section .box1 {
+    width: 100%;
+    height: 100%; }
+    section .box1 .iscroll .nav {
+      padding: .1rem 0; }
+      section .box1 .iscroll .nav ul {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        margin: 0 auto; }
+        section .box1 .iscroll .nav ul li {
+          text-align: center;
+          padding-right: .1rem; }
+          section .box1 .iscroll .nav ul li a {
+            color: black; }
+          section .box1 .iscroll .nav ul li i.iconfont {
+            display: block;
+            font-size: .3rem; }
+    section .box1 .iscroll .list {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      section .box1 .iscroll .list .pic {
+        width: 25%;
+        height: auto;
+        text-align: center; }
+        section .box1 .iscroll .list .pic img {
+          width: 80%;
+          height: auto; }
+        section .box1 .iscroll .list .pic p {
+          width: 80%;
+          height: auto;
+          text-align: left;
+          margin: 0 auto;
+          font-size: .14rem;
+          color: #9b9b9b;
+          line-height: .3rem; }
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .pc {
+    display: none; }
+
+  .yi {
+    display: block; }
+
+  section .box1 .iscroll .nav {
+    width: 100%;
+    height: auto; }
+    section .box1 .iscroll .nav ul {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      height: auto; }
+      section .box1 .iscroll .nav ul li {
+        width: 25%;
+        height: auto;
+        border-bottom: .01rem solid #ccc;
+        padding: .1rem 0; }
+        section .box1 .iscroll .nav ul li a {
+          width: 100%;
+          border-right: .01rem solid #ccc;
+          display: inline-block;
+          color: black; }
+        section .box1 .iscroll .nav ul li .no {
+          border: 0; }
+  section .box1 .iscroll .list {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap; }
+    section .box1 .iscroll .list .pic {
+      width: 100%;
+      height: auto; }
+      section .box1 .iscroll .list .pic img {
+        width: 100%;
+        height: auto; } }
+
+/*# sourceMappingURL=style.css.map */

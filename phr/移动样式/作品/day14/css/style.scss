@@ -1,0 +1,162 @@
+@charset "UTF-8";
+@import "../iconfont/iconfont.css";
+/*
+* @Author: Marte
+* @Date:   2018-02-26 08:35:30
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-02-26 10:31:33
+*/
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+width:100%;
+height:100%;
+min-width:320px;
+  font-size: 100px; }
+
+body {
+font-family:"微软雅黑";
+width:100%;
+height:100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none; }
+
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+@mixin num($w,$h){
+    width:$w;
+    height:$h;
+}
+@mixin cir($w){
+    width:$w;
+    height:$w;
+    border-radius:50%;
+    display:inline-block;
+}
+%text{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+@mixin text($n){
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    word-break:break-all;
+    -webkit-line-clamp:$n;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+@font-face{
+    font-family:"iconfont";
+    src:url(../iconfont/iconfont.svg);
+    src:url(../iconfont/iconfont.woff);
+    src:url(../iconfont/iconfont.ttf);
+    src:url(../iconfont/iconfont.eot);
+}
+.wrap{
+    @include num(10rem,auto);
+    margin:0 auto;
+}
+.iscroll{
+    h2{
+    text-align:center;
+    font-size:.2rem;
+    line-height:.8rem;
+    }
+    .content{
+    @include num(100%,auto);
+    display:flex;
+    justify-content:space-between;
+    margin-top:.3rem;
+    .box1{
+    @include num(3.38rem,3.75rem);
+    margin-right:.1rem;
+    position:relative;
+    border:.01rem solid #ccc;
+    h1{
+    @include num(100%,1rem);
+    background:#000;
+    color:#fff;
+    text-align:center;
+    line-height:.33rem;
+    }
+    ul{
+    li{
+    text-align:center;
+    @include num(100%,.44rem);
+    border-bottom:.01rem solid #ccc;
+    line-height:.44rem;
+    &:nth-child(even){
+    background:#f9f9f9;
+    }
+    }
+    }
+    h2{
+    button{
+    background:#000;
+    color:#fff;
+    @include num(.95rem,.45rem);
+    outline:none;
+    border:0;
+    border-radius:.05rem;
+    }
+    }
+    &:nth-child(3){
+    margin:0;
+    }
+    &:hover h1{
+    background:#f05f40;
+    }
+    &:hover h2 button{
+    background:#f05f40;
+    }
+    &:hover:after{
+    content:"";
+    width:.5rem;
+    height:.05rem;
+    background:#f05f40;
+    display:block;
+    position:absolute;
+    top:-.3rem;
+    left:50%;
+    margin-left:-.15rem;
+    }
+    }
+    }
+}
+
+
+@media screen and (min-width:320px) and (max-width:1000px){
+.wrap{
+    @include num(100%,auto);
+}
+.iscroll{
+    h2{
+    @include num(100%,aoto);
+
+    }
+    .content{
+    display:flex;
+    flex-direction:column;
+    @include num(100%,auto);
+    .box1{
+    @include num(100%,auto);
+    &:hover:after{
+    display:none;
+    }
+    }
+    }
+}
+
+}

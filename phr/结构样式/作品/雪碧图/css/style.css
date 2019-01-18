@@ -1,0 +1,43 @@
+/*
+* @Author: Marte
+* @Date:   2018-01-05 23:07:42
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-08 07:27:19
+*/
+*{
+    list-style: none;
+
+}
+.xue{
+  width: 100%;
+  height: 1200px;
+  background:#eee;
+}
+.bi{
+  width: 1000px;
+  height: 1200px;
+  background:skyblue;
+  margin:0 auto;
+}
+.fixed{
+  height: 100%;
+  width: 5px;
+  background:#333;
+  position: fixed;
+  right:0;
+  top:0;
+}
+.fixed ul{
+position:absolute;
+right:0;
+margin-top: 280px;
+margin-right: 5px;
+}
+.fixed ul li{
+  width: 32px;
+  height: 32px;
+  background:#333;
+  border-radius: 2px 0 0 2px;
+  border-bottom:1px solid white;
+
+}

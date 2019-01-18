@@ -1,0 +1,251 @@
+css    sass
+1.预处理器
+	sass就是早期的css预处理
+		注：永远不要修改生成之后的css文件
+
+2.sass的存储格式
+	.scss 与 之前的css文件编写完全一致
+		eg:  selector{
+			声明
+		}
+	.sass 没有大括号开始，末尾不需要分号结束
+
+3.变量
+	sass中的一个重要特性就是变量
+	变量:经常改变的量
+		把经常改变的或者经常使用的值存储在一个变量中，益于我们反复调用，利于我们后期的修改和维护
+
+	声明变量的三部曲
+		1 $符声明
+		2 给变量赋予名字
+		3 给变量赋予值
+
+	变量有 普通变量 与 默认变量
+		默认变量是在声明的 普通变量 之后添加 !default即可
+		如果没有声明普通变量，就用默认变量，如果声明了普通变量就用普通变量
+		注:普通 > 默认
+		
+
+	变量分类为 全局变量 与 局部变量
+		注:先声明后调用
+			全局变量是随时随地可以使用且被找到的变量
+			局部变量是只有在当前区域块内可以找到
+
+
+	如果变量接收是一个纯数字，那么我们就直接使用
+		属性 : 变量;
+	如果变量接收的是一个属性或者字符串，我们需要通过#{}插值的方式来使用
+		eg:$bg:background;
+		header{
+			#{$bg}:orange;
+		}
+	
+
+插值:
+	#{}
+	好处:减少了代码的长度
+
+
+
+混合宏   *****
+	声明  @mixin
+	调用  @include
+	我们把重复的代码块封装在一个混合宏中,利于我们反复调用
+	优点:可以通过传参的方式来实现不同的页面需求
+	缺点:造成大段冗余代码块
+
+继承
+	声明  首先得有一个基类(选择器)
+	调用  @extend
+	特点  声明不调用，依旧生成css文件
+	优点  减少了代码的重复量(群组选择器的方式出现)
+
+占位符
+	声明  %
+	调用  @extend
+	特点  声明不调用，不会编译在css文件中
+	优点  减少了代码的重复量(群组选择器的方式出现)
+
+eg:  %name1{
+		width:100%;
+		height:20px;
+	 }
+	 %name2{
+		width:50%;
+		height:30px;
+	 }
+
+总结:  Sass让css变得更加高效、可维护 
+
+
+
+*****
+嵌套
+	选择器嵌套
+		eg:
+
+	属性嵌套
+		注:属性嵌套用于复合属性
+			把相同的前缀提取出来，通过 冒号大括号 拼接 属性 
+		eg:border-left-width:2px;
+		   border-right-width:5px;
+		   border:{
+		   	  left-width:2px;
+		   	  right-width:5px;
+		   }
+		注2: 遇 冒号: 转 - 
+
+	伪类嵌套
+		& 表示当前父元素/当前元素
+
+
+sass中的注释
+	多行注释/块注释   /* */ 
+		特点:生成之后的css文件以注释掉的结果出现
+	单行注释  //
+		特点:注释掉的内容在生成的css文件中不可见
+
+
+sass中的运算
+	加
+		注：如果两数相加都是纯数字，结果一定是纯数字
+			如果有一个数字带单位，结果一定带单位
+
+	减
+		注: 两数相减 空格 隔开
+		与上同理
+	乘
+		注: 带单位的不能乘以带单位的
+
+	除
+		注: 带单位的除以带单位的结果是 纯数字number(不带单位)
+		注: 被除数 除以 除数 等于 商
+			如果被除数没有单位，除数一定不能有单位
+		注: 两数相除写在 小括号 中
+
+
+颜色的运算
+
+
+
+第二单元 meta标签
+
+1.Meta 之http-equiv
+ 1.相当于http的文件头作用，它可以向浏览器传回一些有用的信息
+   属性语法格式是：＜meta http-equiv="参数" content="参数变量值"＞
+
+ 2.优先使用IE和谷歌
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   X-UA-Compatible:专注于IE8的模拟器渲染方式
+   IE=edge告诉IE使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame 
+
+
+
+2. meta name属性主要用于描述网页  与之对应的属性值为content
+   name=“format-detection”(检测格式)  它是用来检测html里的一些格式的
+   
+   meta name="format-detection" content="telephone=no";
+    telephone=no就禁止了把数字转化为拨号链接！
+    telephone=yes就开启了把数字转化为拨号链接，要开启转化功能，这个meta就不用写了,在默认是情况下就是开启！
+
+   meta name="format-detection" content="email=no"
+    告诉设备不识别邮箱，点击之后不自动发送
+    email=no禁止作为邮箱地址！
+    email=yes就开启了把文字默认为邮箱地址，这个meta就不用写了,在默认是情况下就是开启！
+
+   meta name="format-detection" content="address=no";
+    address=no禁止跳转至地图！
+    address=yes就开启了点击地址直接跳转至地图的功能,在默认是情况下就是开启！
+
+   也可以连写：meta name="format-detection" content="telephone=no,email=no,address=no"
+
+3.name=viewport 用于设置获取设备的可视窗口
+  1.<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    width=device-width用于获取设备的宽度  
+    initial-scale 自动缩放为原来的1倍
+    max-scale最大为原来的1倍缩放
+    min-scale 最小为原来的1倍
+    user-scalable=no 禁止用户对整个页面进行缩放
+  
+
+
+
+
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		viewport 获取浏览器的视口宽度
+		device-width 设备宽度
+		initial-scale 初始化缩放比例
+		minimum-scale 最小缩放比例
+		maximum-scale 最大缩放比例
+		user-scalable=no 禁止用户缩放
+			默认值 yes 开始状态
+
+	<meta name="format-detection" content="telephone=no,address=no,email=no">
+		format-detection 自动识别格式
+		telephone=no 禁止自动拨号
+		address=no 禁止发送地址/禁止自动跳转地图 
+		email=no 禁止发送邮箱/邮件
+			默认值yes 开启状态
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		优先考虑IE浏览器和谷歌浏览器
+		以IE浏览器的最高模式进行渲染(最新版本)
+
+
+
+css篇
+	移动端中使用无衬线字体 eg: 微软雅黑
+body {
+    font-family:"Helvetica Neue",Helvetica,STHeiTi, sans-serif;/*使用无衬线字体*/}
+
+a, img {
+	-webkit-touch-callout: none;
+	/*禁止长按链接与图片弹出菜单*/
+}
+
+html, body {
+	-webkit-user-select: none;
+	/*禁止选中文本*/
+	user-select: none;
+}
+button,input,optgroup,select,textarea {
+	-webkit-appearance:none;
+	/*去掉webkit默认的表单样式*/
+}
+
+a,button,input,optgroup,select,textarea {
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	/*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/}
+
+input::-webkit-input-placeholder {
+    color:#ccc; /*修改webkit中input的placeholder样式*/}
+
+input:focus::-webkit-input-placeholder {
+    color:#f00; /*修改webkit中focus状态下input的planceholder样式*/}
+body {
+	-webkit-text-size-adjust:100%!important;
+	/*禁止IOS调整字体大小*/
+}
+
+input::-webkit-input-speech-button {
+	display: none;/*隐藏Android的语音输入按钮*/}
+浏览器的内核
+-webkit-//谷歌 360 苹果
+-moz-//火狐
+-ms-//IE
+-o-//opera
+
+
+移动端使用的单位是rem，
+rem是一个相对单位，相对于根元素html
+em是一个相对单位，相对于父元素
+px是一个绝对单位
+谷歌浏览器默认字体大小是16px
+此时，1rem = 16px
+为了好换算，我们通过改变html默认的字体大小
+比如，html { font-size：10px} 这时，浏览器的默认字体大小就是10px，因此，  1rem = 10px   这时，给出header {width：3rem}就是30px
+
+
+第三单元
+	transform 设置或检索动画的变形
+		scale 缩放/比例

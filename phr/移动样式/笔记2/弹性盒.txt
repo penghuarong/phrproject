@@ -1,0 +1,110 @@
+弹性盒-flex布局
+
+弹性盒是css3的一种新的布局模式
+CSS3弹性换盒，是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。
+引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间
+
+
+ display:flex  设置子元素为弹性盒来显示/父元素
+子元素在同一行之内显示
+即使有溢出内容，也不会换行  
+float、display:block不再生效
+
+ justify-content:center 控制子元素主轴对齐方式【居中】
+ align-items:center  控制子元素侧轴对齐方式【居中】
+
+ display:box 是老弹性盒；display:flex是新弹性盒
+
+ display:inline-flex 新弹性盒，专注于行内元素
+
+
+父元素：display:flex;（对于父元素没有任何影响）
+对齐方式：主轴justify-content:center 居中对齐
+                    flex-start  顶端对齐
+                     flex-end  底端对齐
+                  space-between 两端对齐【没有空隙】
+                    space-around 两端对齐【两边距离是中间的一半 1/2】
+侧轴：align-items:center 侧轴居中
+                 flex-start顶端对齐 
+                 flex-end 底端对齐
+                 baseline  基线对齐
+
+定义flex子元素在侧轴上的对齐方式：加给子元素
+      align-self:auto;默认值
+               flex-start;顶端对齐
+               flex-end;底端对齐
+               center;居中对齐
+               baseline;基线对齐
+stretch;
+
+排列方式:flex-direction:column 垂直排列 [子元素的方向就会发生改变]
+                       column-reverse  垂直翻转排列
+                      row  水平排列【默认值】
+                      row-reverse 水平翻转排列 
+
+ flex:1;表示子元素分配父元素的剩余空间【子元素】
+
+弹性盒不能和多栏布局混淆使用
+
+cursor：用于设置鼠标状态 pointer小手状态
+                         wait 加载状态
+                         move移动状态
+
+
+
+
+
+
+
+
+
+多行弹性盒
+弹性盒的优先级高于width
+flex-wrap:wrap;控制子元素溢出内容是否换行显示【加给父元素】 wrap表示换行   nowrap表示不换行【默认值】
+ wrap-reverse【翻转换行】
+
+ flex-flow:复合属性 
+是flex-direction和flex-wrap的复合属性，表示控制子元素的排列方式以及是否换行
+
+
+
+
+加给父元素的属性：
+Display:flex   display:inline-flex   display:box
+对齐方式:
+主轴Justify-content:center、
+                   flex-start、
+                   flex-end 、
+                   space-between、
+                   space-around
+侧轴：align-items:center、
+                 flex-start、
+                 flex-end、
+                 baseline
+排列方式：flex-direction:column、
+                       column-reverse、
+                       row、
+                       row-reverse
+是否换行：flex-wrap:wrap、
+                   nowrap、
+                   wrap-reverse
+复合属性：flex-flow:flex-wrap、
+                   flex-direction
+
+加给子元素的属性：
+ flex:1;
+ flex-grow:; 
+设置或检索弹性盒的扩展比率(根据弹性盒子元素所设置的扩展因子作为比率来分配剩余空间)默认值0，不参与分配
+
+ flex-shrink:; 
+设置或检索弹性盒的收缩比率(根据弹性盒子元素所设置的收缩因子作为比率来收缩空间)默认值1
+
+ flex-basis:; 
+设置或检索弹性盒伸缩的基准值（如果所有子元素的基准值之和大于剩余空间，则会根据每项设置的基准值，按比例伸缩剩余空间）
+
+order:控制元素的显示次序，order值越大，排列越靠后
+
+
+单行省略号不能和弹性盒同时使用
+
+

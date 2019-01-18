@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@import "../fonts/iconfont.css";
+a,img{
+  -webkit-touch-callout:none
+}
+button,input,optgroup,select,textarea{
+  -webkit-appearance:none;
+}
+a,button,input,optgroup,sele
+ct,textarea{
+  -webkit-tap-highlight-colo
+  r:rgba(0,0,0,0);
+}
+input::-webkit-input-placeho
+lder{
+  color:#ccc;
+}
+body{
+  -webkit-text-size-adjust:
+  100%!important;
+}
+html,body{
+  user-select:none;
+  -webkit-user-select:none;
+}

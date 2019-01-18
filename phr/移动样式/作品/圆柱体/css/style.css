@@ -1,0 +1,85 @@
+@import url(../iconfont/iconfont.css);
+/*
+* @Author: Marte
+* @Date:   2018-03-01 10:25:13
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-03-01 11:26:14
+*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+  font-size: 100px; }
+
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none; }
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+@font-face {
+  font-family: "iconfont";
+  src: url(../iconfont/iconfont.svg);
+  src: url(../iconfont/iconfont.woff);
+  src: url(../iconfont/iconfont.ttf);
+  src: url(../iconfont/iconfont.eot); }
+@keyframes move {
+  from {
+    transform: rotatex(10deg) rotatey(0deg); }
+  to {
+    transform: rotatex(10deg) rotatey(720deg); } }
+ul {
+  width: 3.6rem;
+  height: 3.6rem;
+  background: yellow;
+  background: url(../images/no1_03.png) no-repeat;
+  background-size: contain;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-style: perserve-3d;
+  transform: rotatex(10deg) rotatey(10deg);
+  -webkit-animation: move 5s linear infinite; }
+  ul li {
+    width: 3.6rem;
+    height: 3.6rem;
+    position: absolute;
+    transform-origin: center center -4rem; }
+  ul li:nth-child(1) {
+    background: url(../images/no1_03.png) no-repeat;
+    background-size: contain;
+    transform: translatez(4rem) rotatey(0deg); }
+  ul li:nth-child(2) {
+    background: url(../images/nv_03.png) no-repeat;
+    background-size: contain;
+    transform: translatez(4rem) rotatey(60deg); }
+  ul li:nth-child(3) {
+    background: url(../images/no1_03.png) no-repeat;
+    background-size: contain;
+    transform: translatez(4rem) rotatey(120deg); }
+  ul li:nth-child(4) {
+    background: url(../images/no1_03.png) no-repeat;
+    background-size: contain;
+    transform: translatez(4rem) rotatey(180deg); }
+  ul li:nth-child(5) {
+    background: url(../images/no1_03.png) no-repeat;
+    background-size: contain;
+    transform: translatez(4rem) rotatey(240deg); }
+  ul li:nth-child(6) {
+    background: url(../images/no1_03.png) no-repeat;
+    background-size: contain;
+    transform: translatez(4rem) rotatey(360deg); }
+
+/*# sourceMappingURL=style.css.map */

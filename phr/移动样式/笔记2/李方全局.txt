@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@import "../fonts/iconfont.css";
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+  font-size: 100px; }
+
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none; }
+
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+@mixin num($w,$h){
+	width:$w;
+	height:$h;
+}
+@mixin cir($w){
+	width:$w;
+	height:$w;
+	border-radius:50%;
+	display:inline-block;
+}
+%text{
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+@mixin text($n){
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	word-break:break-all;
+	-webkit-line-clamp:$n;
+	overflow:hidden;
+	text-overflow:ellipsis;
+} 
+@font-face{
+    font-family:"iconfont";
+    src:url(../iconfont/iconfont.svg);
+    src:url(../iconfont/iconfont.woff);
+    src:url(../iconfont/iconfont.ttf);
+    src:url(../iconfont/iconfont.eot);
+}
+
+

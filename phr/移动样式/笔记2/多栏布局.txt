@@ -1,0 +1,35 @@
+多栏布局 双飞翼布局 css3新增用户的属性
+
+columns 多栏布局
+columns 是一个复合属性
+是column-width与column-count的复合属性
+
+column-count 设置或检索对象的列数
+  auto 默认值
+  number 指定列数
+
+column-width 设置或检索对象的栏宽（每一列的宽度）
+
+
+column-gap 设置或检索对象的栏间距（列与列之间的间距）
+  normal 默认值
+  number 指定宽度
+
+column-rule 设置或检索对象的列与列之间的边框（分割线） 复合属性
+  column-rule-width 列与列之间边  框的宽度
+  column-rule-color 列与列之间边  框的颜色
+  column-rule-style 列与列之间边  框的样式/风格/线性
+   none 无
+   solid 实线
+   dotted 点线
+   double 双线
+   dashed 虚线
+   groove 3D凹槽轮廓
+   ridge 3D凸槽轮廓
+   inset 3D凹边轮廓
+   outset 3D凸边轮廓
+column-span 设置或检索对象元素是否横跨所有列
+  none 默认值 不横跨
+  all 横跨所有列数
+
+双飞翼布局（三栏布局）

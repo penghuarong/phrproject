@@ -1,0 +1,82 @@
+html4中的布局有哪些？
+	浮动布局
+	定位布局
+	普通布局/常规布局
+
+
+html5中的布局有哪些？	
+	弹性盒布局
+	响应式布局
+	双飞翼布局
+	流式布局
+
+弹性盒布局  
+	display:-webkit-flex;
+	display:flex;
+	任何盒子都可以设置为flex布局
+	注:盒子成为flex布局之后，float与clear与vertical-align属性将会失效
+
+弹性盒的属性(12个)
+	父容器/父元素(6个)
+	flex-direction 设置弹性盒项目(子元素)的主轴方向/排列方向
+		row 默认值  水平排列
+		column 垂直排列
+		row-reverse 水平翻转  倒序显示
+		column-reverse 垂直翻转
+		
+	justify-content 设置主轴的对齐方式
+		flex-start 主轴的起点对齐/开始点 默认值
+		flex-end 主轴的终点对齐/结束点
+		space-between 主轴的两端对齐
+		center 主轴的居中对齐
+		space-around 项目距离项目之间的距离是项目距离浏览器距离的二倍/项目距离浏览器的距离是项目与项目之间的距离的二分之一
+
+	align-items 设置侧轴的对齐方式
+		stretch 默认值 拉伸/撑满
+		flex-start 侧轴的起点对齐/开始点
+		flex-end 侧轴的终点/结束点对齐
+		center 侧轴的居中对齐
+		baseline 基线对齐
+
+	flex-wrap 设置子元素的width宽度大于父元素的width宽度时是否换行显示
+		nowrap 默认值 不换行显示
+		wrap 换行显示
+
+	flex-flow 是flex-direction 与 flex-wrap 属性的简写形式
+		默认值 row nowrap;
+
+	align-content 多跟轴线的对齐方式
+		flex-start 轴线的起点对齐
+		flex-end  轴线的终点/结束点对齐
+		center  轴线的居中对齐
+		stretch 默认值 拉伸/撑满
+		space-between 两端对齐
+		space-around  项目与项目的距离是项目距离浏览器的二倍
+		注:如果元素只有一根轴线，则该属性不起作用(失效)
+
+
+加在项目(子元素)上的属性(6个)
+	flex-grow 分配剩余空间
+		默认值 0
+
+	flex-shrink 设置项目的收缩值(分配剩余空间)
+		默认值 1
+	flex-basis 设置项目的伸缩基准值(分配剩余空间)
+		默认值 auto
+
+	flex 是flex-grow 与 flex-shrink 与 flex-basis 的简写
+		默认值 0 1 auto
+		flex-grow 是必须的，后两个值是可选择，不写默认为1 auto
+	flex:1;
+
+	order(命令) 设置项目的显示顺序
+		默认值 0
+		注:值越小越优先显示，支持负值
+
+	align-self 设置项目单独的对齐方式
+		flex-start 起点对齐
+		flex-end 终点对齐
+		center 居中对齐
+		stretch 拉伸/撑满
+		auto 自动
+		baseline 基线对齐

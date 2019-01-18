@@ -1,0 +1,102 @@
+/*
+* @Author: Marte
+* @Date:   2018-01-05 20:30:49
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-05 23:42:51
+*/
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.page{
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999999;
+}
+.page .mark{
+    position:absolute;
+    width:401px;
+    height:407px;
+    background: #fff;
+    left:0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.mark a{
+     position: absolute;
+     height:24px;
+     width: 24px;
+     border-radius: 12px;
+     background-color:#f00;
+     line-height: 24px;
+     text-align: center;
+     color:#fff;
+     font-size:16px;
+     font-family: "微软雅黑";
+     left:388px;
+     top: -10px;
+ }
+#page:target{
+    display: none;
+}
+.mark img{
+    float: left;
+ }
+ .logo{
+    margin-top:67px;
+    margin-left: 85px;
+ }
+ .mark h2{
+    text-align:center;
+    padding-top: 190px;
+    font-size:25px;
+}
+.xb{
+    width:242px;
+    height:24px;
+    color:#ccc;
+    margin:0 auto;
+    margin-top:17px;
+}
+.xbt{
+    background: url(../images/bigstars.gif);
+    width:75px;
+    height:15px;
+    float: left;
+    margin-top:3px;
+    background-position: 0 -28px;
+}
+.xb p{
+    text-align:center;
+    font-size:13px;
+    line-height:24px;
+}
+.mark #pp{
+    width:353px;
+    height:44px;
+    margin-left:25px;
+    font-size: 16px;
+    padding-top: 10px;
+    text-align:center;
+    color:#ccc;
+}
+.mark input{
+    width:222px;
+    height:50px;
+    margin-top:20px;
+    margin-left:88px;
+    border-radius:20px;
+    background:#01ccc9;
+    border:2px solid #01ccc9;
+    color:#fff;
+    text-align:center;
+    font-size:18px;
+}

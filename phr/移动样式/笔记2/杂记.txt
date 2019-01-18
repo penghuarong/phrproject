@@ -1,0 +1,45 @@
+在移动端里，只有a标签和button标签可以用来制作按钮。
+
+渐变属于css3新增的背景属性 值
+渐变是background-image新增的背景属性 值
+background-image不是C3新增属性
+
+多行文本省略号制作
+display: -webkit-box;
+-webkit-box-orient:vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+text-overflow: ellipsis;
+
+单行文本省略号制作
+white-space:no-wrap;
+overflow:hidden;
+text-overflow:ellipsis;
+
+查看源代码快捷键 ctrl+u
+
+sass中，for循环两种语句
+@for &var from start through end
+@for &var from start to end
+&var表示变量
+start 开始值
+end 结束值
+from to 不包含end值
+from through 包含end值
+
+关于阴影 可有六个属性值
+X Y blur 阴影扩散半径 颜色 inset
+
+在ios中，input元素无法实现圆角显示，该兼容问题怎么解决？
+-webkit-appearance:none;
+
+
+设置主轴排列方向的属性
+设置主轴方向的属性
+改变弹性盒下项目的排列方向的属性
+flex-direction
+
+怎么解决一个像素问题
+border-width:thin;
+
+flex-shrink用于剩余空间为负时的收缩比例

@@ -1,0 +1,75 @@
+
+第二单元 meta标签
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		viewport 获取浏览器的视口宽度
+		device-width 设备宽度
+		initial-scale 初始化缩放比例
+		minimum-scale 最小缩放比例
+		maximum-scale 最大缩放比例
+		user-scalable=no 禁止用户缩放
+			默认值 yes 开始状态
+
+	<meta name="format-detection" content="telephone=no,address=no,email=no">
+		format-detection 自动识别格式
+		telephone=no 禁止自动拨号
+		address=no 禁止发送地址/禁止自动跳转地图 
+		email=no 禁止发送邮箱/邮件
+			默认值yes 开启状态
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		优先考虑IE浏览器和谷歌浏览器
+		以IE浏览器的最高模式进行渲染(最新版本)
+
+
+
+css篇
+	移动端中使用无衬线字体 eg: 微软雅黑
+body {
+    font-family:"Helvetica Neue",Helvetica,STHeiTi, sans-serif;/*使用无衬线字体*/}
+
+a, img {
+	-webkit-touch-callout: none;
+	/*禁止长按链接与图片弹出菜单*/
+}
+
+html, body {
+	-webkit-user-select: none;
+	/*禁止选中文本*/
+	user-select: none;
+}
+button,input,optgroup,select,textarea {
+	-webkit-appearance:none;
+	/*去掉webkit默认的表单样式*/
+}
+
+a,button,input,optgroup,select,textarea {
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	/*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/}解决闪屏问题
+
+input::-webkit-input-placeholder {
+    color:#ccc; /*修改webkit中input的placeholder样式*/}
+
+input:focus::-webkit-input-placeholder {
+    color:#f00; /*修改webkit中focus状态下input的placeholder样式*/}
+body {
+	-webkit-text-size-adjust:100%!important;
+	/*禁止IOS调整字体大小*/
+}
+
+input::-webkit-input-speech-button {
+	display: none;/*隐藏Android的语音输入按钮*/}
+浏览器的内核
+-webkit-//谷歌 360 苹果
+-moz-//火狐
+-ms-//IE
+-o-//opera
+
+
+制作页面的单位
+px 绝对单位
+em 相对单位 相对于父元素
+rem 相对单位 相对于根元素 html
+谷歌默认字体大小是16px
+1rem=16px
+1rem=100px 100/16=6.25*100%=625%
+

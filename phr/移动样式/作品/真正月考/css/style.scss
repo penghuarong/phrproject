@@ -1,0 +1,456 @@
+@charset "UTF-8";
+@import "../fonts/iconfont.css";
+/*
+* @Author: Marte
+* @Date:   2018-03-29 08:45:28
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-03-29 11:13:22
+*/
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+width:100%;
+height:100%;
+min-width:320px;
+  font-size: 100px; }
+
+body {
+width:100%;
+height:100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none; }
+
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+@mixin num($w,$h){
+    width:$w;
+    height:$h;
+}
+@mixin cir($w){
+    width:$w;
+    height:$w;
+    border-radius:50%;
+    display:inline-block;
+}
+%text{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+@mixin text($n){
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    word-break:break-all;
+    -webkit-line-clamp:$n;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+@font-face{
+    font-family:"iconfont";
+    src:url(../iconfont/iconfont.svg);
+    src:url(../iconfont/iconfont.woff);
+    src:url(../iconfont/iconfont.ttf);
+    src:url(../iconfont/iconfont.eot);
+}
+.wrap{
+    @include num(100%,100%);
+    display:flex;
+    flex-direction:column;
+}
+header{
+    @include num(100%,.45rem);
+    background:#fff;
+    display:flex;
+    align-items:center;
+    padding:0 .1rem;
+    form{
+    flex:1;
+    position:relative;
+    margin-right:.1rem;
+    i.iconfont{
+    position:absolute;
+    left:.05rem;
+    top:.08rem;
+    color:#b2b7bb;
+    }
+    input{
+    @include num(100%,.35rem);
+    padding-left:.2rem;
+    border-radius:.2rem;
+    outline:none;
+    border:0;
+    background:#e3e4e8;
+    &::-webkit-input-placeholder{
+    color:#b2b7bb;
+    }
+    }
+    }
+    img{
+    @include num(.35rem,auto);
+    }
+}
+section{
+    flex:1;
+    background:#eff0f5;
+    overflow:hidden;
+    overflow-y:scroll;
+    .lis{
+    @include num(100%,auto);
+    padding:0 .1rem;
+    background:#fff;
+    ul{
+    @include num(100%,auto);
+    display:flex;
+    justify-content:space-between;
+    li{
+    height:.35rem;
+    line-height:.35rem;
+    a{
+    font-size:.16rem;
+    color:#717171;
+    display:inline-block;
+    height:.35rem;
+    &:hover{
+    color:#000;
+    font-weight:bold;
+    border-bottom:.02rem solid #50b650;
+    }
+    }
+    }
+    }
+    }
+    .banner{
+    @include num(100%,auto);
+    position:relative;
+    background:#fff;
+    padding:.05rem 0;
+    img{
+    @include num(100%,auto);
+    display:block;
+    }
+    ol{
+    position:absolute;
+    left:50%;
+    bottom:.1rem;
+    margin-left:-.25rem;
+    @include num(.5rem,.05rem);
+    //background:pink;
+    display:flex;
+    justify-content:space-between;
+    li{
+    @include num(.2rem,.05rem);
+    background:#d2d5f8;
+    &:hover{
+    background:#fff;
+    }
+    }
+    }
+    }
+    .nav{
+    @include num(100%,auto);
+    background:#fff;
+    padding:.1rem;
+    ul{
+    @include num(100%,auto);
+    display:flex;
+    justify-content:space-between;
+    li{
+    @include num(20%,auto);
+    text-align:center;
+    img{
+    @include num(.5rem,auto);
+    display:block;
+    margin:0 auto;
+    }
+    }
+    }
+    }
+    .cow{
+    display:flex;
+    justify-content:space-between;
+    @include num(100%,auto);
+    background:#fff;
+    .cow_l{
+    padding-left:.1rem;
+    p{
+    display:flex;
+    align-items:center;
+    line-height:.3rem;
+    span{
+    display:inline-block;
+    @include num(.4rem,.2rem);
+    border:.01rem solid #ec7741;
+    color:#ec7741;
+    border-radius:.05rem;
+    line-height:.2rem;
+    text-align:center;
+    margin-right:.1rem;
+    }
+    a{
+    color:#000;
+    @include text(1){};
+    }
+    }
+    h6{
+    @include text(1){};
+    font-weight:normal;
+    color:#a3a3a3;
+    }
+    }
+    .cow_r{
+    img{
+    @include num(.7rem,auto);
+    }
+    }
+    }
+    .play{
+    @include num(100%,auto);
+    padding:0 .1rem;
+    background:#fff;
+    margin-top:.1rem;
+    .top1{
+    @include num(100%,auto);
+    display:flex;
+    justify-content:space-between;
+    h3{
+    display:flex;
+    font-weight:normal;
+    align-items:center;
+    p{
+    font-size:.2rem;
+    margin-right:.1rem;
+    }
+    span{
+    font-size:.12rem;
+    }
+    }
+    a{
+    color:#d7d8dd;
+    font-size:.12rem;
+    display:flex;
+    align-items:center;
+    i.iconfont{
+    color:#d7d8dd;
+    font-size:.1rem;
+    }
+    }
+    }
+    .top2{
+    @include num(100%,auto);
+    display:flex;
+    align-items:center;
+    background:#fff;
+    padding:.1rem 0;
+    h2{
+    font-size:.16rem;
+    font-weight:normal;
+    margin-right:.05rem;
+    }
+    p{
+    font-size:.12rem;
+    }
+    }
+    .foot{
+    @include num(100%,auto);
+    display:flex;
+    align-items:center;
+    background:#f9f9f9;
+    img{
+    @include num(1rem,auto);
+    }
+    .foot_r{
+    padding-left:.1rem;
+    p{
+    line-height:.3rem;
+    }
+    .second{
+    color:#b7b7b7;
+    }
+    }
+    }
+    .hotel{
+    @include num(100%,auto);
+    padding:.1rem;
+    ul{
+    @include num(100%,auto);
+    display:flex;
+    justify-content:space-between;
+    li{
+    @include num(25%,auto);
+    text-align:center;
+    img{
+    @include num(.3rem,auto);
+    display:block;
+    margin:0 auto;
+    }
+    span{
+    font-size:.12rem;
+    line-height:.25rem;
+    }
+    }
+    }
+    }
+    }
+    .star{
+    @include num(100%,auto);
+    .japan{
+    display:flex;
+    justify-content:space-between;
+    padding:.05rem .1rem;
+    background:#fff;
+    h2{
+    font-size:.16rem;
+    @include text(1){};
+    }
+    span{
+    display:inline-block;
+    @include num(.4rem,.2rem);
+    border:.01rem solid #7ecf97;
+    color:#7ecf97;
+    border-radius:.05rem;
+    text-align:center;
+    line-height:.2rem;
+    font-size:.12rem;
+    }
+    }
+    .open{
+    @include num(100%,auto);
+    display:flex;
+    padding:.05rem .1rem;
+    background:#fff;
+    align-items:center;
+    span{
+    @include num(.6rem,.25rem);
+    background:linear-gradient(to right,#72c5e7,#4f8ffb);
+    text-align:center;
+    line-height:.25rem;
+    color:#fff;
+    border-radius:.05rem;
+    margin-right:.1rem;
+    }
+    p{
+    color:#717171;
+    }
+    }
+    .seceney{
+    @include num(100%,auto);
+    img{
+    @include num(100%,auto);
+    display:block;
+    }
+    }
+    .number{
+    display:flex;
+    background:#fff;
+    justify-content:space-between;
+    padding:.05rem .1rem;
+    align-items:center;
+    p{
+    display:flex;
+    align-items:center;
+    img{
+    @include num(.3rem,auto);
+
+    }
+    }
+    }
+    }
+    .girl{
+    @include num(100%,auto);
+    background:#fff;
+    display:flex;
+    padding:0 .1rem;
+    align-items:center;
+    img{
+    @include num(1.2rem,auto);
+    margin-right:.1rem;
+    }
+    .girl_r{
+    span{
+    color:#a7a7a7;
+    font-size:.12rem;
+    }
+    p{
+    color:#414141;
+    @include text(3){};
+    }
+    }
+    }
+    .person{
+    @include num(100%,auto);
+    display:flex;
+    justify-content:space-between;
+    padding:.05rem .1rem;
+    background:#fff;
+    p{
+    display:flex;
+    align-items:center;
+    color:#4f4f4f;
+    img{
+    @include num(.15rem,auto);
+    margin-left:.05rem;
+    }
+    }
+    }
+}
+
+footer{
+    @include num(100%,.45rem);
+    background:#f6f6f6;
+    ul{
+    @include num(100%,auto);
+    display:flex;
+    justify-content:space-between;
+    li{
+    @include num(20%,auto);
+    text-align:center;
+    &:hover i.iconfont,&:hover span{
+    color:#5db962;
+    }
+    i.iconfont{
+    font-size:.2rem;
+    display:block;
+    color:#363642;
+    }
+    span{
+    color:#363642;
+    font-size:.12rem;
+    }
+    }
+    }
+}
+.fixed{
+    position:fixed;
+    bottom:1.1rem;
+    right:.1rem;
+    &:hover{
+    transition:1s;
+    transform:translate(-20rem);
+    }
+    img{
+    @include num(.5rem,auto);
+    }
+}
+.fixed1{
+    position:fixed;
+    bottom:.5rem;
+    right:.1rem;
+    &:hover{
+    transition:1s;
+    transform:translate(-20rem);
+    }
+    img{
+    @include num(.5rem,auto);
+    }
+}

@@ -1,0 +1,22 @@
+(1)@mixin ppp($st,$num1,$num2){
+border-bottom:1px $st #ccc;
+padding-top:$num1;
+padding-bottom:$num2;
+}
+.imgtext-h li{
+@include ppp(solid,10px,10px)
+}
+.imgtext-h-product li{
+@include ppp(dashed,15px,15px)
+}
+(2).demo{
+margin-left:auto;
+margin-right:auto;
+}
+(3).fakeshadow{
+border:{
+style:solid;
+left:{width:4px;color:#888}
+right:{width:2px;color:#ccc}
+}
+}

@@ -1,0 +1,172 @@
+/*
+* @Author: Marte
+* @Date:   2018-01-04 08:44:22
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-04 13:56:57
+*/
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 1071px;
+    height: 543px;
+   /*  background: yellow; */
+    margin:0 auto;
+}
+.nav{
+    height: 60px;
+    background:#e0905d;
+}
+
+.nav a{
+    display: block;
+    width: 128px;
+    height: 48px;
+    float:left;
+    margin-top: 13px;
+    line-height: 48px;
+    text-align: center;
+    color:white;
+    font-weight: bold;
+}
+.nav .qq{
+    margin-left: 20px;
+    background:white;
+    color:#e0905d;
+}
+.nav a:hover{
+    background:white;
+    color:#e0905d;
+}
+.head{
+    height:48px;
+    background:white;
+    margin-top: 10px;
+    position: relative;
+}
+.head .head1{
+    position: absolute;
+    background:red;
+    color:white;
+    left:35px;
+    top:15px;
+}
+.head .head2{
+    position: absolute;
+    background:#f1f1f1;
+    color:#8c8c8e;
+    top:15px;
+    left:80px;
+}
+.head .head3{
+    position: absolute;
+    background:#f1f1f1;
+    color:#8c8c8e;
+    top:15px;
+    left:155px;
+}
+.head .head4{
+    position: absolute;
+    background:#f1f1f1;
+    color:#8c8c8e;
+    top:15px;
+    left:230px;
+}
+
+.head input{
+    width: 401px;
+    height: 41px;
+    margin-left: 20px;
+   background:url(../images/sousuo_03.jpg) no-repeat 380px center white;
+   border-color: #cccccc;
+
+}
+.head .ww{
+    display: inline-block;
+    color:gray;
+    margin-left: 17px;
+}
+.head .ee,.head .rr{
+    display: inline-block;
+
+}
+.head .ee{
+margin-left: 160px;
+color:gray;
+}
+.head .rr{
+    color:red;
+    margin-left: 10px;
+}
+
+.shen{
+height:414px;
+    background:linear-gradient(to bottom,white,#f7f7f7);
+    margin-top: 3px;
+    border-top:7px solid #dedede;
+}
+.peng{
+    width: 281px;
+    height: 382px;
+    background:white;
+    float: left;
+    margin-left: 25px;
+    margin-top: 28px;
+}
+.hua{
+    width: 281px;
+    height: 382px;
+    background:white;
+    margin-left: 25px;
+      float: left;
+      margin-top: 28px;
+}
+.hua h4{
+    height: 40px;
+    line-height:40px;
+    margin-left: 15px;
+}
+.hua ol li{
+    height: 35px;
+    line-height:35px;
+    margin-left: 10px;
+}
+.rong{
+    width: 281px;
+    height: 382px;
+   background:white;
+    margin-left: 25px;
+      float: left;
+      margin-top: 28px;
+}
+.rong h4{
+    height: 40px;
+    line-height:40px;
+    margin-left: 15px;
+}
+.rong ol li{
+    height: 35px;
+    line-height:35px;
+    margin-left: 10px;
+}
+.hao{
+    width: 125px;
+    height: 382px;
+    background:white;
+    margin-left: 20px;
+      float: right;
+      margin-top: 28px;
+}
+.hao h4{
+    height: 40px;
+    line-height:40px;
+    margin-left: 15px;
+}
+.hao ol li{
+    height: 35px;
+    line-height:35px;
+    margin-left: 10px;
+}

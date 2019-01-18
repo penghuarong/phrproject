@@ -1,0 +1,339 @@
+@import "../iconfont/iconfont.css";
+
+/*
+* @Author: Marte
+* @Date:   2018-01-22 21:20:53
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-29 14:57:26
+*/
+*{
+padding:0;
+margin:0;
+text-decoration:none;
+list-style:none;
+font-size:14px;
+}
+html{
+    font-size:100px;
+}
+@font-face{
+  font-family:"qw";
+  src:url(../iconfont/iconfont.svg),url(../iconfont.woff),url(../iconfont.ttf),url(../iconfont.eot);
+}
+p.iconfont{
+  font-size:.4rem;
+  color:orange;
+  width:.7rem;
+  height:.7rem;
+  background:purple;
+  border-radius:50%;
+  text-align:center;
+  line-height:.7rem;
+  &:hover{
+  color:red;
+  }
+}
+p:nth-of-type(2).iconfont{
+  display:block;
+  width:1rem;
+  height:1rem;
+  background:pink;
+  &:before{
+  content:"\e648"
+  }
+
+}
+.box1{
+    width:2rem;
+    height:2rem;
+   background:red;
+    margin:1rem auto;
+    transition-property:all;
+    transition-duration:5s;position:relative;
+    &:hover{
+    width:5rem;
+    height:5rem;
+    background:pink;
+    border-radius:50%;
+    transform:rotate(360deg);
+
+    }
+   .mark{
+     width:5rem;
+    height:5rem;
+    border-radius:50%;
+    background:rgba(0,0,0,0.5);
+    position:absolute;
+    left:0;
+    top:0;
+    transition:translate(0,-100%);
+    transition:1s linear;
+    }
+    &:hover .mark{
+    display:block;
+    transition:translate(0,0);
+
+    }
+    /*&:hover{
+
+    transform:translate(2rem,2rem)
+    }*/
+}
+
+.box1 img{
+    margin-top:1rem;
+    margin-left:1rem;
+
+}
+
+.nav ul{
+    width:100%;
+    height:.4rem;
+    background:yellow;
+    margin-top:.5rem;
+    border-bottom:.03rem solid green;
+line-height:.4rem;
+position:relative;
+
+li{
+    float:left;
+    width:20%;
+    text-align:center;
+    &:nth-child(1):hover~span{
+    left:0;
+    }
+    &:nth-child(2):hover~span{left:20%;}
+    &:nth-child(3):hover~span{left:40%}
+    &:nth-child(4):hover~span{left:60%}
+    &:nth-child(5):hover~span{left:80%}
+}
+span{
+    display:block;
+    width:20%;
+    height:.03rem;
+    background:orange;
+    position:absolute;
+    bottom:-.03rem;
+    transition-duration:3s;
+}
+}
+.wrap{
+    width:0.39rem;
+    height:0.42rem;
+    border:0.03rem solid red;
+    overflow:hidden;
+    margin:1rem 1rem;
+    position:relative;
+}
+.wrap .mm {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transform: translate(0, -100%);
+  transition: 5s linear;
+}
+.wrap:hover .mm{
+    transform:translate(0,0);
+}
+
+
+.new{
+   width:6.4rem;
+   height:8.53rem;
+   border:.02rem solid red;
+   margin:0 auto;
+   overflow:hidden;
+   position:relative;
+   img{
+   transition:5s;
+   }
+   &:hover img{
+   transform:scale(2);
+   }
+   .zhe{
+   width:100%;
+   height:100%;
+   background:rgba(0,0,0,0.4);
+   position:absolute;
+   left:0;
+   top:-100%;
+   transition:5s;
+   }
+   &:hover .zhe{
+   top:0;
+   }
+}
+
+
+.wifi{
+    width:.63rem;
+    height:.3rem;
+    background:red;
+    position:relative;
+    border-radius:.15rem;
+    overflow:hidden;
+    span,input{
+    position:absolute;
+    top:0;
+    left:0;
+    }
+    input{
+    z-index:99;
+    width:.63rem;
+    height:.3rem;
+    opacity:0;
+    &:checked + span{
+    background-position:-27px;
+    }
+    }
+    span{
+    display:block;
+    width:.63rem;
+    height:.3rem;
+    background:url(../images/WiFi.jpg)
+    }
+
+}
+
+
+.man{
+   width:4.8rem;
+   height:3.6rem;
+   border:.1rem solid black;
+   overflow:hidden;
+   margin:0 auto;
+   position:relative;
+   img{
+   transition:3s;
+   }
+   .zhao{
+   width:100%;
+   height:100%;
+   background:rgba(0,0,0,0.5);
+   position:absolute;
+   left:-100%;
+   top:0;
+   //transition:1s;
+   p{
+   width:2rem;
+   height:.3rem;
+   line-height:.3rem;
+   margin:.15rem 0 0 .15rem;
+   color:pink;
+   font-weight:600;
+   background:white;
+   padding-left:.15rem;
+   margin-left:-2.15rem;
+   transition:.5s;
+   &:nth-child(2){
+   transition-delay:.15s;
+   }
+   &:nth-child(3){
+   transition-delay:.3s;
+   }
+   }
+   }
+   &:hover{
+   img{
+   transform:scale(2);
+   }
+   .zhao{
+   left:0;
+   }
+   p{
+   margin-left:.15rem;
+   }
+   }
+}
+
+
+.girl{
+    width:3rem;
+    height:3rem;
+    //background:red;
+    margin:.5rem auto;
+    position:relative;
+    perspective:1000px;
+    img{
+    transition:1s;
+    }
+    .black{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    position:absolute;
+    left:0;
+    top:0;
+    transition:1s;
+    transform:rotate3d(0,1,0,90deg);
+    }
+    &:hover{
+    img{
+    transform:rotate3d(0,1,0,-90deg);
+    }
+    .black{
+    transform:rotate3d(0,1,0,0deg);
+    }
+    }
+}
+
+
+.big{
+    width:11.20rem;
+    height:3.06rem;
+    //background:yellow;
+    margin:.5rem auto;
+
+    div{
+    width:2.3rem;
+    height:2.7rem;
+    background:red;
+    overflow:hidden;
+    margin-right:.15rem;
+    position:relative;
+    float:left;
+
+    &:hover .b{
+    left:0;
+    }
+    &:hover .c{
+    left:0;
+    }
+    &:hover .d{
+    left:0;
+    }
+    &:hover .e{
+    left:0;
+    }
+    }
+
+    .b{
+    position:absolute;
+    top:0;
+    left:-100%;
+    transition:1s;
+    }
+
+     .c{
+     position:absolute;
+     top:0;
+     left:-100%;
+     transition:1s;
+     }
+
+     .d{
+     position:absolute;
+     top:0;
+     left:-100%;
+     transition:1s;
+     }
+     .e{
+     position:absolute;
+     top:0;
+     left:-100%;
+     transition:1s;
+     }
+}

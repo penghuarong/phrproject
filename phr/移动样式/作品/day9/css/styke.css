@@ -1,0 +1,136 @@
+@import url(../iconfont/iconfont.css);
+/*
+* @Author: Marte
+* @Date:   2018-02-02 08:36:31
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-02-02 09:22:07
+*/
+@import url(../iconfont/iconfont.css);
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 100px; }
+
+body {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none; }
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+@font-face {
+  font-family: "iconfont";
+  src: url(../iconfont/iconfont.svg);
+  src: url(../iconfont/iconfont.woff);
+  src: url(../iconfont/iconfont.ttf);
+  src: url(../iconfont/iconfont.eot); }
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+header {
+  width: 100%;
+  height: 0.45rem;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  header span {
+    font-size: .18rem; }
+    header span em.iconfont {
+      font-size: .18rem;
+      color: #f65828; }
+  header time.iconfont {
+    color: #969696;
+    font-size: .14rem; }
+
+section {
+  flex: 1;
+  background: #f6f6f6; }
+  section .banner {
+    display: flex;
+    justify-content: space-between; }
+    section .banner .left {
+      width: 50%;
+      height: auto;
+      background: #e7f3ff;
+      text-align: center;
+      padding: .22rem 0; }
+      section .banner .left h2 {
+        font-size: .16rem; }
+      section .banner .left p {
+        font-size: .14rem;
+        color: #a6a6a8;
+        line-height: .3rem; }
+      section .banner .left img {
+        width: 50%;
+        height: auto;
+        margin-top: .1rem; }
+    section .banner .right {
+      width: 50%;
+      height: auto; }
+      section .banner .right .top {
+        width: auto;
+        height: 50%;
+        background: #fff0f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 .1rem; }
+        section .banner .right .top img {
+          width: 50%;
+          height: auto; }
+        section .banner .right .top h2 {
+          font-size: .16rem; }
+        section .banner .right .top p {
+          font-size: .14rem;
+          color: #a6a6a8;
+          line-height: .3rem; }
+      section .banner .right .bot {
+        width: auto;
+        height: 50%;
+        background: #e8fcfd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 .1rem; }
+        section .banner .right .bot img {
+          width: 50%;
+          height: auto; }
+        section .banner .right .bot h2 {
+          font-size: .16rem; }
+        section .banner .right .bot p {
+          font-size: .14rem;
+          color: #a6a6a8;
+          line-height: .3rem; }
+  section nav {
+    margin-top: .1rem;
+    background: #fff; }
+    section nav ul {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: center; }
+      section nav ul li {
+        width: 33.3%;
+        height: .45rem;
+        line-height: .45rem;
+        border-top: .01rem solid #f4f4f4;
+        border-right: .01rem solid #f4f4f4; }
+
+/*# sourceMappingURL=styke.css.map */

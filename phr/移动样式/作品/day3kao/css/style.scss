@@ -1,0 +1,159 @@
+/*
+* @Author: Marte
+* @Date:   2018-01-26 08:37:10
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-26 09:34:24
+*/
+*{
+    padding:0;
+    margin:0;
+    text-decoration:none;
+    list-style:none;
+    font-size:14px;
+}
+html{
+    font-size:100px;
+}
+.box{
+    border:.01rem solid #e1e1e1;
+    margin:0 auto;
+    width:3.15rem;
+    height:4.01rem;
+}
+header{
+    height:.5rem;
+    width:100%;
+    background:#32bd60;
+    line-height:.5rem;
+    ul li{
+    float:left;
+    margin:0 .15rem;
+    color:white;
+    }
+    ul li:nth-child(1){
+    background:url(../images/dingwei_03.jpg) no-repeat left center;
+    padding-left:.12rem;
+    }
+    ul li:nth-child(2){
+    font-size:.2rem;
+    margin-left:.5rem;
+    }
+    ul li:nth-child(3){
+    width:.2rem;
+    height:.2rem;
+    margin-left:.4rem;
+    margin-top:.15rem;
+background:url(../images/sou_03.jpg) no-repeat center center;
+    }
+    ul li:nth-child(4){
+    width:.2rem;
+    height:.2rem;
+    margin:0 0;
+    margin-top:.15rem;
+background:url(../images/more_03.jpg) no-repeat center center;
+    }
+}
+.head{
+    height:.45rem;
+    width:100%;
+    line-height:.45rem;
+    border-bottom:.02rem solid #e8e8e8;
+    h2{
+    background:url(../images/biao_07.jpg) no-repeat left center;
+    padding-left:.3rem;
+    display:inline-block;
+    }
+    span{
+    float:right;
+    color:#59c479;
+    padding-right:.1rem;
+    }
+}
+.banner{
+    width:2.91rem;
+    height:1.21rem;
+    background:red;
+    overflow:hidden;
+    margin:.1rem auto;
+    position:relative;
+    span{
+    display:block;
+    width:.4rem;
+    height:.3rem;
+    background:#ff7d70;
+    color:white;
+    position:absolute;
+    top:0;
+    left:.1rem;
+    text-align:center;
+    line-height:.3rem;
+    }
+    p{
+    height:.3rem;
+    width:100%;
+    background:rgba(0,0,0,0.5);
+    position:absolute;
+    bottom:0;
+    }
+    time{
+    float:right;
+    color:white;
+    font-size:.16rem;
+    line-height:.3rem;
+    margin-right:.1rem;
+    }
+}
+.word{
+    width:100%;
+    height:.56rem;
+    border-bottom:.01rem solid #dddddd;
+    p{
+    line-height:.27rem;
+    margin-left:.1rem;
+    }
+}
+.footer{
+width:3.15rem;
+    height:.68rem;
+    .left{
+    width:.82rem;
+    height:.68rem;
+    float:left;
+    border-right:.02rem solid #ebebeb;
+    }
+    p{
+    text-align:center;
+    line-height:.3rem;
+    }
+    .right{
+    width:2.12rem;
+    float:left;
+    height:.68rem;
+    }
+    p span{
+    text-decoration:line-through;
+    line-height:.3rem;
+    }
+    p:nth-of-type(2){
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+     line-height:.3rem;
+    }
+}
+ol{
+    width:.7rem;
+    height:.1rem;
+
+    margin:.2rem auto;
+    li{
+width:.1rem;
+height:.1rem;
+background:#cccccc;
+border-radius:50%;
+float:left;
+margin-left:.07rem;
+    }:hover{
+    background:#f89e1b;
+    }
+}

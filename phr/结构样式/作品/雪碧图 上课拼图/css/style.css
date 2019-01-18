@@ -1,0 +1,49 @@
+/*
+* @Author: Marte
+* @Date:   2018-01-05 10:53:55
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-05 13:40:58
+*/
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.box{
+    width: 600px;
+    height: 450px;
+    background: red;
+    margin: 100px auto;
+}
+.box div{
+    width: 200px;
+    height: 150px;
+    background:url(../images/sprites.jpg);
+    float: left;
+}
+.box .a1{
+    background-position:-400px 0;
+}
+
+.box .a2{
+    background-position:-400px -150px;
+}
+.box .a3{
+    background-position:-0 -300px;
+}
+
+.box .a4{
+    background-position:-200px -300px;
+}
+.box .a5{
+    background-position:-200px -150px;
+}
+.box .a6{
+    background-position:0 -150px;
+}
+.box .a7{
+    background-position:-200px 0;
+}
+.box .a8{
+    background-position:-400px -300px;
+}

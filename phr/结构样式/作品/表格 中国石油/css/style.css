@@ -1,0 +1,25 @@
+/*
+* @Author: Marte
+* @Date:   2018-01-02 20:22:19
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-02 20:49:27
+*/
+th{
+color:red;
+height: 32px;
+background: orange;
+}
+table{
+     border:collapse:collapse ;
+}
+table tr td{
+    width: 127px;
+    height: 32px;
+}
+// table tr:nth-child(even){
+//     background:yellow;
+
+// }
+ .ji{
+     background:yellow;
+}

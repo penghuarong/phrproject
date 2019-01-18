@@ -1,0 +1,122 @@
+@charset "UTF-8";
+@import url(../iconfont/iconfont.css);
+/*
+* @Author: Marte
+* @Date:   2018-02-26 08:35:30
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-02-26 10:31:33
+*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  font-size: 100px; }
+
+body {
+  font-family: "微软雅黑";
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none; }
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+@font-face {
+  font-family: "iconfont";
+  src: url(../iconfont/iconfont.svg);
+  src: url(../iconfont/iconfont.woff);
+  src: url(../iconfont/iconfont.ttf);
+  src: url(../iconfont/iconfont.eot); }
+.wrap {
+  width: 10rem;
+  height: auto;
+  margin: 0 auto; }
+
+.iscroll h2 {
+  text-align: center;
+  font-size: .2rem;
+  line-height: .8rem; }
+.iscroll .content {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: .3rem; }
+  .iscroll .content .box1 {
+    width: 3.38rem;
+    height: 3.75rem;
+    margin-right: .1rem;
+    position: relative;
+    border: .01rem solid #ccc; }
+    .iscroll .content .box1 h1 {
+      width: 100%;
+      height: 1rem;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      line-height: .33rem; }
+    .iscroll .content .box1 ul li {
+      text-align: center;
+      width: 100%;
+      height: 0.44rem;
+      border-bottom: .01rem solid #ccc;
+      line-height: .44rem; }
+      .iscroll .content .box1 ul li:nth-child(even) {
+        background: #f9f9f9; }
+    .iscroll .content .box1 h2 button {
+      background: #000;
+      color: #fff;
+      width: 0.95rem;
+      height: 0.45rem;
+      outline: none;
+      border: 0;
+      border-radius: .05rem; }
+    .iscroll .content .box1:nth-child(3) {
+      margin: 0; }
+    .iscroll .content .box1:hover h1 {
+      background: #f05f40; }
+    .iscroll .content .box1:hover h2 button {
+      background: #f05f40; }
+    .iscroll .content .box1:hover:after {
+      content: "";
+      width: .5rem;
+      height: .05rem;
+      background: #f05f40;
+      display: block;
+      position: absolute;
+      top: -.3rem;
+      left: 50%;
+      margin-left: -.15rem; }
+
+@media screen and (min-width: 320px) and (max-width: 1000px) {
+  .wrap {
+    width: 100%;
+    height: auto; }
+
+  .iscroll h2 {
+    width: 100%;
+    height: aoto; }
+  .iscroll .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto; }
+    .iscroll .content .box1 {
+      width: 100%;
+      height: auto; }
+      .iscroll .content .box1:hover:after {
+        display: none; } }
+
+/*# sourceMappingURL=style.css.map */

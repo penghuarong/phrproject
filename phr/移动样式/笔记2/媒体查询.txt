@@ -1,0 +1,64 @@
+媒体查询做响应式
+语法:
+@media 媒体类型(query) and 媒体特性{
+       执行代码段;
+}
+
+媒体类型(媒介)  
+screen 移动设备/电脑屏幕/浏览器
+TV 电视机
+print 打印机
+handheld 手持设备
+all 所有设备 默认值
+
+媒体特性
+width 浏览器的宽度/页面可见区域宽度(视口宽度)
+height 浏览器的高度
+min-width 最小宽度
+min-height
+max-width
+max-height
+device-width 设备的宽度
+device-height
+min-device-width 最小设备宽度
+min-device-height
+max-device-width
+max-device-height
+scan 表示电视机类的扫描工序
+color 输出电子元件的彩色个数
+orientation 判断横竖屏(定义
+height是否大于或等于width 值
+portrait代表是，landscape代表否)
+
+媒体查询中的关键字
+and 拼接媒体类型与媒体特性的关键字/拼接多个媒体特性的关键字
+not 表示否定,不的意思,表示除了某个设备之外的所有设备
+only 仅仅唯一，表示只匹配某一个设备
+
+链接方式
+
+  link
+<link rel="stylesheet" href=
+"">
+<link rel="stylesheet" href="" media>
+<link rel="stylesheet" href="" media="screen">
+<link rel="stylesheet" href="" media="screen and (min-width:320px) and ()">
+
+  @import
+@import ""
+@import "............ screen"
+@import "............ screen and (min-width:320px)"
+
+总结 
+	当我们重置浏览器的过程中，页面会跟随浏览器的宽度和高度重新渲染页面
+
+
+@media screen and () {}
+@media screen and () and () {}
+@media (min-width:320px) {}
+@media (min-width:320px) and (max-width:768px) {}
+注意:
+	以上四种写法都正确
+	媒体类型的默认值是all  可以省略不写  这时候and也可以省略(媒体查询中all和and可以省略不写)
+可省略的and是媒体类型与媒体特性之间的and，不是媒体特性与媒体特性之间的and！
+多个媒体响应式之间用逗号隔开。

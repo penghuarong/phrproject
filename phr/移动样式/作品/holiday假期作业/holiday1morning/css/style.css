@@ -1,0 +1,227 @@
+@import url(../iconfont/iconfont.css);
+/*
+* @Author: Marte
+* @Date:   2018-02-05 19:13:59
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-02-05 20:59:21
+*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 100px; }
+
+body {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none;
+  background: #f2f2f2; }
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+@font-face {
+  font-family: "iconfont";
+  src: url(../iconfont/iconfont.svg);
+  src: url(../iconfont/iconfont.woff);
+  src: url(../iconfont/iconfont.ttf);
+  src: url(../iconfont/iconfont.eot); }
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+header {
+  width: 100%;
+  height: 0.45rem;
+  background: #f6f6f6;
+  display: flex;
+  flex-shrink: 0;
+  padding: 0 .1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: .01rem solid #e6c29e; }
+  header dl {
+    width: 0.35rem;
+    height: 0.45rem;
+    margin-left: .1rem; }
+    header dl dt {
+      text-align: center;
+      width: 0.25rem;
+      height: 0.25rem;
+      border-radius: 50%;
+      background: #0a9eda;
+      line-height: .25rem;
+      margin-left: .05rem;
+      margin-top: .02rem; }
+    header dl dd {
+      text-align: center;
+      color: #0a9eda; }
+  header input {
+    position: relative;
+    flex: 1;
+    height: .3rem;
+    border-radius: .05rem;
+    border: 0;
+    border: .01rem solid #747474;
+    outline: none;
+    padding-left: .2rem; }
+    header input::-webkit-input-placeholder {
+      color: #747474; }
+  header i {
+    position: absolute;
+    left: .15rem;
+    top: .12rem;
+    color: #747474; }
+
+section {
+  flex: 1; }
+  section nav {
+    background: white;
+    margin: 0 .1rem;
+    border-radius: .05rem;
+    margin-top: .1rem; }
+    section nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center; }
+      section nav ul li {
+        width: 25%;
+        height: auto;
+        padding: .1rem 0;
+        border-bottom: .01rem solid #f3f3f3;
+        border-right: .01rem solid #f3f3f3; }
+        section nav ul li img {
+          width: 0.25rem;
+          height: 0.25rem;
+          display: block;
+          margin: 0 auto; }
+        section nav ul li span {
+          font-size: .12rem; }
+  section .content {
+    background: white;
+    width: 100%;
+    height: auto;
+    padding: .1rem 0;
+    margin: .1rem 0; }
+    section .content .con_top {
+      width: 100%;
+      height: auto;
+      padding: 0 .1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      section .content .con_top img {
+        width: 0.6rem;
+        height: auto; }
+      section .content .con_top span {
+        width: 1rem;
+        height: 0.2rem;
+        border-radius: .05rem;
+        font-size: .12rem;
+        background: linear-gradient(to right, #fe506b, #f96dc3);
+        text-align: center;
+        color: white; }
+    section .content .con_bottom {
+      display: flex;
+      padding: 0 .1rem; }
+      section .content .con_bottom .left {
+        background: #f9f9f9;
+        margin-right: .05rem;
+        width: 50%;
+        height: auto;
+        position: relative; }
+        section .content .con_bottom .left img {
+          width: 100%;
+          height: auto; }
+        section .content .con_bottom .left em {
+          width: 0.45rem;
+          height: 0.15rem;
+          display: inline-block;
+          background: url(../images/kuai_03.jpg) no-repeat;
+          background-size: 100%;
+          font-style: normal;
+          font-size: .12rem;
+          color: white;
+          padding-left: .06rem;
+          line-height: .15rem;
+          position: absolute;
+          left: 0;
+          top: 0; }
+        section .content .con_bottom .left h2 {
+          font-weight: normal;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          word-break: break-all;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+        section .content .con_bottom .left p {
+          color: #e35060; }
+          section .content .con_bottom .left p time {
+            width: 0.4rem;
+            height: 0.2rem;
+            border-radius: .2rem;
+            display: inline-block;
+            background: #f93c58;
+            color: white;
+            font-size: .12rem;
+            text-align: center;
+            line-height: .2rem;
+            margin-left: .1rem; }
+      section .content .con_bottom .right {
+        width: 50%;
+        height: auto; }
+        section .content .con_bottom .right .r_t {
+          background: #f9f9f9;
+          width: 100%;
+          height: 49%;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 2%; }
+          section .content .con_bottom .right .r_t .aa {
+            padding: .1rem .1rem; }
+            section .content .con_bottom .right .r_t .aa span {
+              font-size: .16rem;
+              color: #f24266;
+              font-weight: bold; }
+            section .content .con_bottom .right .r_t .aa h3 {
+              font-weight: normal;
+              font-size: .14rem; }
+          section .content .con_bottom .right .r_t img {
+            width: 0.5rem;
+            height: auto;
+            align-self: flex-end; }
+        section .content .con_bottom .right .r_b {
+          width: 100%;
+          height: 49%;
+          display: flex;
+          justify-content: space-between; }
+          section .content .con_bottom .right .r_b .r_b_l {
+            width: 50%;
+            height: auto;
+            background: #f9f9f9;
+            text-align: center;
+            padding: .1rem 0;
+            margin-right: .02rem; }
+            section .content .con_bottom .right .r_b .r_b_l img {
+              width: 0.5rem;
+              height: auto;
+              margin-top: .1rem; }
+          section .content .con_bottom .right .r_b .r_b_r {
+            width: 50%;
+            height: auto; }
+
+/*# sourceMappingURL=style.css.map */

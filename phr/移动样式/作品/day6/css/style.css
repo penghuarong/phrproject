@@ -1,0 +1,87 @@
+@import url(../iconfont/iconfont.css);
+/*
+* @Author: Marte
+* @Date:   2018-01-30 08:42:32
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-30 10:31:16
+*/
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  font-size: 14px; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 100px; }
+
+header {
+  background: url(../images/da.jpg);
+  background-size: 100%; }
+  header p select {
+    border: 0;
+    outline: none;
+    float: left;
+    margin-top: .06rem;
+    margin-left: .1rem; }
+  header p span.iconfont {
+    width: .15rem;
+    height: .15rem;
+    float: right;
+    color: white;
+    line-height: .3rem;
+    padding-right: .1rem; }
+  header input {
+    width: 80%;
+    height: .4rem;
+    border-radius: .2rem;
+    margin-left: 5%;
+    margin-top: .3rem;
+    border: 0;
+    outline: none;
+    text-align: center;
+    background: white url(../images/sou_03.jpg) no-repeat 35% center;
+    color: #9f9f9f; }
+  header dl {
+    margin-top: .1rem;
+    width: 2.2rem; }
+    header dl dt {
+      margin: 0 auto;
+      margin-left: .4rem; }
+    header dl dd {
+      text-align: center;
+      font-size: .25rem;
+      line-height: .3rem;
+      color: white; }
+
+section {
+  background: #f3f4f6; }
+  section .top {
+    background: white;
+    margin-bottom: .15rem; }
+    section .top dl {
+      margin-left: .1rem;
+      margin-top: .1rem; }
+      section .top dl dt {
+        float: left; }
+      section .top dl dd {
+        float: right;
+        margin-left: .1rem;
+        width: calc(100% - 22%);
+        line-height: .59rem;
+        font-size: .25rem; }
+  section .next1 img {
+    width: 50%;
+    float: left; }
+  section .next2 {
+    width: 100%;
+    background: white; }
+    section .next2 p {
+      width: 100%;
+      height: .3rem;
+      background: rgba(0, 0, 0, 0.5);
+      color: white; }
+
+/*# sourceMappingURL=style.css.map */

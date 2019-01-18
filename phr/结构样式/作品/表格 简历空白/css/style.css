@@ -1,0 +1,26 @@
+/*
+* @Author: Marte
+* @Date:   2018-01-02 20:53:21
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-02 22:13:27
+*/
+.box{
+width: 500px;
+height: 500px;
+background:#ccc;
+margin: 0 auto;
+}
+table tr td{
+width: 86px;
+height: 29px;
+text-align: center;
+}
+.last{
+    width: 156px;
+}
+.a{
+width: 112px;
+}
+.b{
+    width: 198px;
+}

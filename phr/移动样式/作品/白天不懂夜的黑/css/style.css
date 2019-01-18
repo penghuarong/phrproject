@@ -1,0 +1,186 @@
+@import url(../fonts/iconfont.css);
+/*
+* @Author: Marte
+* @Date:   2018-02-28 14:30:15
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-02-28 16:26:42
+*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 100px; }
+
+body {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none; }
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+/*@mixin cir($w){
+    width:$w;
+    height:$w;
+    border-radius:50%;
+    display:inline-block;
+}
+%text{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+@mixin text($n){
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    word-break:break-all;
+    -webkit-line-clamp:$n;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+@font-face{
+    font-family:"iconfont";
+    src:url(../iconfont/iconfont.svg);
+    src:url(../iconfont/iconfont.woff);
+    src:url(../iconfont/iconfont.ttf);
+    src:url(../iconfont/iconfont.eot);
+}*/
+.wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  max-width: 6rem;
+  margin: 0 auto;
+  position: relative; }
+  .wrap .word {
+    width: 60%;
+    position: absolute;
+    z-index: 99;
+    left: 20%;
+    top: 5%; }
+  .wrap .day {
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg1.jpg) no-repeat;
+    background-position: center top;
+    background-size: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-animation: dayandnight 10s linear inifited;
+    -webkit-animation: dayandnight 10s linear infinite -5s; }
+    .wrap .day .content {
+      width: 90%;
+      position: relative; }
+      .wrap .day .content .fang1 {
+        width: 100%; }
+      .wrap .day .content .sun {
+        width: 15%;
+        z-index: 99;
+        position: absolute;
+        top: -40%;
+        left: 42.5%;
+        -webkit-transform-origin: center 700%;
+        -webkit-animation: sunrotate 5s linear infinite; }
+      .wrap .day .content .cloud {
+        position: absolute;
+        top: -40%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5); }
+        .wrap .day .content .cloud .cloud1 {
+          position: absolute;
+          top: 40%;
+          width: 10%;
+          left: 10%; }
+        .wrap .day .content .cloud .cloud2 {
+          position: absolute;
+          top: 10%;
+          width: 20%;
+          left: 40%; }
+        .wrap .day .content .cloud .cloud3 {
+          position: absolute;
+          top: 30%;
+          width: 15%;
+          left: 80%; }
+
+.night {
+  width: 100%;
+  height: 100%;
+  background: url(../images/bg1.2.jpg) no-repeat;
+  background-position: center top;
+  background-size: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: dayandnight 10s linear infinite; }
+  .night .content {
+    width: 90%;
+    position: relative; }
+    .night .content .fang1 {
+      width: 100%; }
+    .night .content .moon {
+      width: 15%;
+      z-index: 99;
+      position: absolute;
+      top: -40%;
+      left: 42.5%;
+      -webkit-transform-origin: center 700%;
+      -webkit-animation: sunrotate 5s linear infinite; }
+    .night .content .cloud {
+      position: absolute;
+      top: -40%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+      .night .content .cloud .cloud1 {
+        position: absolute;
+        top: 40%;
+        width: 10%;
+        left: 10%; }
+      .night .content .cloud .cloud2 {
+        position: absolute;
+        top: 20%;
+        width: 20%;
+        left: 40%; }
+      .night .content .cloud .cloud3 {
+        position: absolute;
+        top: 30%;
+        width: 15%;
+        left: 80%; }
+
+@-webkit-keyframes sunrotate {
+  from {
+    -webkit-transform: rotate(-60deg); }
+  to {
+    -webkit-transform: rotate(60deg); } }
+@-webkit-keyframes dayandnight {
+  0% {
+    opacity: 0; }
+  40% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*# sourceMappingURL=style.css.map */

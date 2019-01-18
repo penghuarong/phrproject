@@ -1,0 +1,248 @@
+/*
+* @Author: Marte
+* @Date:   2018-01-13 09:24:19
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-14 18:49:21
+*/
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing:border-box;
+    font-size:12px;
+}
+html,body{
+    background:#f7f8f8;
+}
+.fixed{
+    width: 50px;
+    height: 100%;
+    background:#ececec;
+    position:fixed;
+    left:0;
+    top:0;
+    /* z-index: 999;*/
+    }
+.fixed dl:nth-child(1){
+margin-top: 50px;
+}
+.fixed dl{
+    height: 70px;
+}
+.fixed dl dt{
+    width: 38px;
+    height: 38px;
+    background:white url(../images/icon.png);
+    margin-left: 7px;
+
+}
+.fixed dl:nth-child(2) dt{
+background-position: -42px 0;
+}
+.fixed dl:nth-child(3) dt{
+background-position: -86px 0;
+}
+.fixed dl:nth-child(4) dt{
+background-position: -129px 0;
+}
+.fixed dl:nth-child(5) dt{
+background-position: -173px 0;
+}
+.fixed dl:nth-child(6) dt{
+background-position: -214px 0;
+}
+.fixed dl dd{
+    text-align: center;
+    margin-top: 4px;
+}
+.header{
+width: 100%;
+height:70px;
+background:#f7f8f8;
+border-bottom:1px solid #666;
+}
+.header img{
+    padding:10px 37px 17px 85px;
+    float:left;
+}
+.header dl{
+    float: left;
+    margin-top: 17px;
+}
+.header ul{
+    float: left;
+    margin-left: 28px;
+    margin-top: 17px;
+}
+.header ul li{
+    float: left;
+
+}
+.header ul li:first-child{
+    width: 36px;
+    height: 36px;
+    background:url(../images/sprites.png);
+    background-position:0 -223px;
+}
+.header ol{
+    float: left;
+    margin-left: 40px;
+    margin-top: 13px;
+    height: 20px;
+    line-height:20px;
+}
+.header p{
+    width: 44px;
+    height: 48px;
+
+    float: left;
+    margin-left: 80px;
+    margin-top: 13px;
+    border:3px solid #29a3f1;
+    font-size:14px;
+    font-weight: bold;
+    text-align:center;
+}
+.header .table{
+
+width: 186px;
+height:55px;
+/* background:yellow; */
+float: left;
+margin-left: 20px;
+}
+.header .table span{
+    width:15px;
+    height:15px;
+    background:url(../images/sprites.png);
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+.header .table select{
+    margin-top: 5px;
+    width: 181px;
+    height: 24px;
+    border-color:#a7a7a7;
+}
+.sou{
+    width: 941px;
+    height: 50px;
+   /*  background:yellow; */
+    margin:0 auto;
+    margin-top: 24px;
+}
+.tu{
+    width: 158px;
+    height: 43px;
+    margin-left: 20px;
+    background:url(../images/logo_wide.png) no-repeat;
+    background-position:0 -49px;
+    position: relative;
+    float: left;
+}
+.tu:after{
+    content:"";
+    width:0;
+    height: 0;
+    border:5px solid transparent;
+    border-top-color:gray;
+    position: absolute;
+    top:20px;
+    left:138px;
+}
+.sou form{
+    width: 652px;
+    height: 42px;
+    float: left;
+    border:1px solid #29a3f1;
+}
+.sou select{
+    width: 66px;
+    height: 38px;
+    border:0;
+    outline:none;
+}
+.sou form input[type="text"]{
+    width: 468px;
+    height: 38px;
+    margin-left: -3px;
+    border:0;
+    outline:none;
+    background:white url(../images/hong4_03.jpg) no-repeat 440px center;
+
+}
+.sou form input[type="submit"]{
+    width: 116px;
+    height: 40px;
+    margin-left: -5px;
+    border:0;
+    outline:none;
+    background:#29a3f1;
+    color:white;
+    font-size:14px;
+}
+.sou span{
+    display: inline-block;
+    line-height:50px;
+    margin-left: 10px;
+    background:url(../images/dian_03.jpg) no-repeat left center;
+    padding-left: 7px;
+    margin-left: 7px;
+    color:#888989;
+}
+.xi{
+    width: 657px;
+    height: 17px;
+  /*   background:pink; */
+    margin:0 auto;
+}
+.xi ul li{
+    float: left;
+    margin-left: 13px;
+
+}
+.xi ul li:first-child{
+    background:url(../images/zhuan_03.jpg) no-repeat left center;
+    padding-left: 20px;
+}
+.xi ul li:last-child{
+    background:url(../images/jiao_03.jpg) no-repeat right center;
+    padding-right: 30px;
+}
+.xi ul li a{
+    color:#888989;
+}
+/* .xi ul{
+margin-left: 20px;
+} */
+.nav{
+    width: 1182px;
+    height: 46px;
+    background:white;
+    margin:0 auto;
+    border-top:3px solid #29a3f1;
+    margin-top: 10px;
+}
+.nav ul li a{
+    float: left;
+    line-height:40px;
+    background:url(../images/yule_03.jpg) no-repeat 6px center;
+}
+.nav ul li:last-child a{
+    background:url(../images/yule_03.jpg) no-repeat 6px center,url(../images/jiaojiao_03.jpg) no-repeat 100px center;
+}
+.nav ul li a{
+    color:#282828;
+    font-size:16px;
+     padding:0 30px;
+    border-right:1px dashed #e4e4e4;
+
+}
+.nav ul li:hover{
+    background:#d4edfc;
+}
+.nav ul li a:hover{
+    color:#29a3f1;
+}

@@ -1,0 +1,211 @@
+@import url(../iconfont/iconfont.css);
+/*
+* @Author: Marte
+* @Date:   2018-02-13 17:05:48
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-02-13 22:28:41
+*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 100px; }
+
+body {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none; }
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+@font-face {
+  font-family: "iconfont";
+  src: url(../iconfont/iconfont.svg);
+  src: url(../iconfont/iconfont.woff);
+  src: url(../iconfont/iconfont.ttf);
+  src: url(../iconfont/iconfont.eot); }
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+header {
+  width: 100%;
+  height: 0.45rem;
+  background: #fff;
+  display: flex;
+  padding: 0 .1rem;
+  justify-content: space-between; }
+  header p {
+    text-align: center;
+    color: #ccc; }
+    header p span.iconfont {
+      display: block;
+      font-size: .2rem;
+      text-align: center;
+      color: #ccc; }
+  header form {
+    flex: 1;
+    margin: .07rem .1rem;
+    position: relative; }
+    header form i {
+      position: absolute;
+      top: .06rem;
+      left: .02rem; }
+    header form input {
+      width: 100%;
+      height: 0.3rem;
+      border: 0;
+      outline: none;
+      padding-left: .2rem;
+      border-radius: .5rem;
+      background: #f6f6f6; }
+  header .tu {
+    margin-top: .07rem;
+    width: 0.2rem;
+    height: 0.3rem; }
+    header .tu img {
+      width: 100%;
+      height: 100%; }
+
+section {
+  flex: 1;
+  background: #f2f2f2;
+  overflow: hidden;
+  overflow-y: scroll; }
+  section .banner {
+    width: 100%;
+    height: auto;
+    position: relative; }
+    section .banner ul {
+      display: flex;
+      width: 300%;
+      height: auto; }
+      section .banner ul li {
+        width: 33.3%;
+        height: auto; }
+        section .banner ul li img {
+          width: 100%;
+          height: auto; }
+    section .banner ol {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: .1rem;
+      right: .2rem;
+      width: 0.5rem;
+      height: 0.1rem;
+      z-index: 999; }
+      section .banner ol li {
+        width: 0.1rem;
+        height: 0.1rem;
+        border-radius: 50%;
+        display: inline-block;
+        background: #fff; }
+        section .banner ol li:hover {
+          background: #fabc09; }
+  section nav {
+    width: 100%;
+    height: auto;
+    background: #fff; }
+    section nav ul {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; }
+      section nav ul li {
+        width: 20%;
+        height: auto;
+        text-align: center;
+        padding: .05rem .1rem; }
+        section nav ul li img {
+          display: block;
+          width: 70%;
+          height: auto;
+          margin: 0 auto; }
+  section .content1 {
+    width: 90%;
+    height: 0.72rem;
+    margin-left: 5%;
+    margin-top: .1rem;
+    border-radius: .3rem;
+    border: .01rem solid purple;
+    overflow: hidden; }
+    section .content1 img {
+      width: 100%;
+      height: auto; }
+  section .content2 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    background: #fff;
+    margin-top: .1rem; }
+    section .content2 p {
+      margin: 0 .1rem; }
+  section .content3 {
+    display: flex;
+    margin-top: .1rem;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff; }
+    section .content3 h2 {
+      display: flex;
+      align-items: center;
+      height: .3rem;
+      line-height: .3rem; }
+      section .content3 h2 em {
+        display: inline-block;
+        width: 0.05rem;
+        height: 0.3rem;
+        background: red;
+        margin-right: .1rem; }
+      section .content3 h2 span {
+        width: 0.15rem;
+        height: 0.15rem;
+        border: .01rem solid black;
+        color: red;
+        font-size: .12rem;
+        line-height: .15rem;
+        text-align: center; }
+        section .content3 h2 span:nth-of-type(1) {
+          margin-left: .1rem; }
+      section .content3 h2 b {
+        color: red;
+        margin: 0 .05rem; }
+    section .content3 h3 span {
+      color: red; }
+  section .content4 {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding-top: .1rem; }
+    section .content4 ul {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 .1rem; }
+      section .content4 ul li {
+        width: 30%;
+        height: auto;
+        border: .01rem solid #ccc;
+        text-align: center; }
+        section .content4 ul li img {
+          width: 100%;
+          height: auto; }
+
+/*# sourceMappingURL=style.css.map */

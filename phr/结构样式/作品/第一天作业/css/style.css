@@ -1,0 +1,34 @@
+/*
+* @Author: Marte
+* @Date:   2017-12-28 19:09:29
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-12-28 23:00:27
+*/
+
+.box{width:1007px;height: 798px;margin: auto;}
+.header{height: 92px;border:2px solid black;}
+h2{color:#0e5cc9;letter-spacing: 10px;font-family: "楷书";font-weight: normal;}
+h2:before{content: "注意！";color:#d60001;font-size: 44px;padding-left: 20px;}
+
+.ppp{float:right;margin-right: 80px;margin-top:6px;width: 248px;height:38px;border-radius: 8px;border-color: blue;}
+.one{height:38px;margin-top:10px;}
+.luo,.peng{display: inline;}
+.one .peng{line-height:38px;font-style: italic;}
+.two{height:364px;width:657px;margin-top:10px;border-top: 5px solid #d60001;}
+h3{color:#d60001;margin-top:10px;padding-left: 10px;}
+.aaa{background:url(../images/bb_06.jpg) no-repeat;padding-left: 20px;margin-left: 20px;}
+.three{height:146px;margin-top:10px;}
+.yu{height:166px;width:590px;background:#f8f8f8;margin-top:10px;}
+textarea{margin-left: 5px;margin-top:5px;}
+.uu{width: 60px;height:24px;}
+.zz{float:right;color:white;background:#d80000;width: 68px;height:34px;}
+.four{height:60px;margin-top:50px;}
+.hua{font-size:14px;color:#999999;text-indent: 2em;line-height:20px;}
+.footer{width: 1346px;height: 129px;margin:auto;margin-top: 10px;border-top:1px solid #e4e4e4;}
+.op{font-size:12px;line-height:15px;text-align: center;}
+
+
+/* form img[alt][src$="png"]{
+    background:red
+}
+.content img[alt=""][src$="jpg"]{background:red;} */

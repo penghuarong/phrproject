@@ -1,0 +1,46 @@
+
+动画库
+	transition 与 animation 的区别
+		transition 是 一个需要事件触发的平滑过渡
+			eg: 
+				active点击  
+				hover划过  
+				checked
+				focus
+	需要制作一个 transition 动画需要哪些属性
+		transition:4属性 1必须的
+		transition-duration
+
+
+	animation 自执行动画
+	需要制作一个 animation 动画需要哪些属性
+		animation:8属性  2必须的
+		animation-name
+		animation-duration
+
+
+animated框架
+	animate.css是提供炫酷，有趣，跨浏览器css3动画的网站
+	它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等
+
+
+
+animate.css 是提供炫酷，有趣，跨浏览器css3动画的网站
+你可以在高级项目中使用这些效果，为高级浏览器用户提供更好的交互体验。动画效果包括强调突出，滑块，淡入淡出，放大缩小等
+
+animate.css 是一个来自国外的 CSS3 动画库，它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等多达 60 多种动画效果，几乎包含了所有常见的动画效果。
+
+首先引入animate css文件
+
+1.<link rel="stylesheet" href="animate.css">外部链接
+
+2.@import外部导入
+
+
+给指定的元素加上指定的动画样式名
+
+<div class="animated bounceOut Left flash"></div>
+
+注:有一个类名是必须的  animated(定义了动画的时长)
+注:动画无限循环需要添加的类名是  .infinited
+注:一个元素可以添加多个动画名称，用 空格 隔开，依次执行

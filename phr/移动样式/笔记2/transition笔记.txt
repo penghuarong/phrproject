@@ -1,0 +1,30 @@
+transition 需要事件触发的平滑过渡动画
+ transition-property 设置或检索对象参与过渡
+  none 不参与任何过渡
+  property 参与过渡的属性
+  all 所有过渡属性参与过渡 默认值
+ （可省略）
+ transition-duration 动画完成所需要的时间/ 动画执行的时间/动画运动的时长  
+   默认值 0
+   单位 s秒 ms毫秒
+ transition-delay 动画的延迟时间
+   单位 s ms
+ transition-timing-function 设置动画运动的类型
+ ease 默认值 平滑过渡
+ linear 匀速
+ ease-in 从慢到快
+ ease-out 从快到慢
+ ease-in-out 从慢到快再到慢
+
+perspective 指定观察者与【z=0】平
+面的距离，使具有三维位置变换的元素产生透视效果
+  none:不指定透视
+  <length>:指定观察者距离【z=0】平面的距离，为元素及其内容应用透视变换，不允许负值。
+
+transform-origin 设置或检索对象转换的原点位置/基点位置/中心点
+  center center 默认值 中心点 
+  第一个值表示水平方向 第二个值表示垂直方向 等价于50% 50%
+  left top关键字作为基点 左上角
+  left bottom 左下角
+  ……
+transition:width 2s 3s,height 3s 2s;

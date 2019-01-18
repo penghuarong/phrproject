@@ -1,0 +1,139 @@
+animation 自执行动画(不需要事件触发，页面加载完成开始执行)
+ 定义自执行动画需要一个关键帧@key
+frames
+ 语法:@keyframes name{
+        from{    // 0%
+             起始帧
+        }
+        to{    // 100%
+             结束帧
+        }
+                      }
+注：百分比后面的%是必须的
+注：自执行动画有两帧是必须的，一个from，一个to，我们可以通过不同的百分比定义不同时间段的动画
+animation-name 引用动画/调用动画
+animation-duration 动画执行的时间
+/动画完成时间/动画所需时间
+animation-delay 动画的延迟时间
+animation-timing-function 动画运动的类型/运动的方式
+  ease 默认值 平滑过渡
+  linear 匀速
+  ease-in 慢-快
+  ease-out 快-慢
+  ease-in-out 慢-快-慢
+animation-iteration-count 动画执行的次数
+  默认值 1
+  number 几次
+  infinite 无限循环
+animation-direction 动画运动的方向
+  normal 正方向运动(从from开始到
+to结束) 默认值
+  reverse 反向运动(从to开始到from
+结束)
+ alternate 正方向的持续运动(从from开始到to结束，再从to开始到from)
+animation-fill-mode 设置或检索对象动画的预留状态
+ none 不设置任何对象动画之外的状态 默认值
+ both 设置对象动画为开始或者结束时候的状态
+ backwards 设置对象动画为开始时候的状态(初始状态)
+ forwards 设置对象动画为结束时候的状态
+animation-play-state 检索或设置对象动画的状态
+ running 运动 默认值
+ paused 暂停
+
+
+
+
+ animation：自执行  用于实现关键帧动画
+@keyframes
+ animation:mydh 2s linear 2s （infinite）  alter;
+
+ animation-name:mydh--第一个参数表示动画的名称（给元素绑定了一个mydh的动画效果）/none为默认值 当为none时不引用任何动画名称
+
+ animation-duration:2s--表示动画持续的时长和速度曲线,时长决定速度
+
+ animation-timing-function:linear---表示动画的类型方式--值（linear:匀速  ease-in:慢到快  ease-out:快到慢  ease-in-out:慢快慢   ease:表示默认）
+
+ animation-delay:动画的延迟时间
+
+animation-iteration-count：具体数值;:动画执行的次数，infinite表示无限循环
+
+ animation-direction:；表示动画执行方向 alternate 表示正反交替（normal:表示正常状态） 反向：reverse
+
+ animation-fill-mode:  用于设置动画结束后的停留点（forwards:表示停留在最后一个点上  backwards:表示停留在第一个点上  默认值:none  both:介于最后和开始之间/动画结束或开始的状态）
+
+关键帧动画必须由@keyframes来引出
+
+@keyframes 动画名称(name){
+执行代码块（0%==from   100%==to）[关键帧动画的单位必须是百分比]
+}
+关键帧动画可以设置不同时段的百分比效果
+
+
+animation兼容的浏览器：	IE10、opera15+、firefox5+
+
+ transition: 过渡平滑的动画   最多4个参数  最少1个（transition-duration）
+ animation:  关键帧	最长8个参数  最少2个
+
+
+
+transition存在animation不存在的属性是：
+ transition-property
+
+ animation存在transition不存在：
+ animation-name  动画的名称
+ animation-iteration-count  动画执行的次数
+ animation-direction   运动方向
+
+公共属性：
+ duration  表示动画持续的时长和速度曲线
+ timing-function   方式类型
+ delay   延迟
+
+
+
+ box-shadow
+ box-shadow：X Y 模糊半径 颜色
+ x y偏移量可以为正负值
+ word-break:break-all;强制文本换行
+
+
+
+动画:
+ transition 4  1
+ animation  8  2	动画默认执行的时长默认是0，默认执行次数是1
+
+
+
+ 总结
+
+ 	
+
+css3中真正的动画是animation，transform和transition都只是对元素属性的变形或者是状态的过渡
+
+
+因为css3还没有正式发布，各个浏览器对它的的支持也各不相同，在设置css3属性（包括@开头的新属性）的时候要对各个浏览器表示前缀。
+
+
+
+animation动画的属性
+    -webkit-animation：name  duration  tming  delay  interation-count direction
+　　　1  animation-name 用来定义一个动画的名称，transition-name相同
+　　　
+　　　2  animation-duration 用来指定元素播放动画所持续的时间，单位s秒，其默认值是“0”；transition-duration 相同
+　　　
+　　　3  animation-timing-function：动画的播放方法，transition-easing相同
+　　　
+　　　4  animation-delay：默认值是0，用来指定元素动画的开始时间，即多久之后开始执行动画，transitio-delay相同
+　　　
+　　　5  animation-interation-count：用来指定元素动画的循环次数，其可取值number为数字，其默认值为“1”，infinite为无限次数循环
+　　　
+　　　6  animation-direction：用来指定元素动画播放的方向，当设置为alternate，他的作用是：动画播放在第偶数次向前播放，第基数次向反方向播放
+
+@keyframes被称为关键帧，用于引出一个动画{
+	开始帧（form == 0%）
+	结束帧（to ==100%）
+}
+可以定义不同百分比的动画效果
+
+
+opacity用于引入淡入淡出的动画（0-1之间的小数）

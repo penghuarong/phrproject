@@ -1,0 +1,230 @@
+@charset "UTF-8";
+@import "../iconfont/iconfont.css";
+/*
+* @Author: Marte
+* @Date:   2018-02-13 13:13:19
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-02-13 16:34:17
+*/
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: .14rem;
+  box-sizing: border-box; }
+
+html {
+height:100%;
+width:100%;
+  font-size: 100px; }
+
+body {
+height:100%;
+width:100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-callout: none;
+  -webkit-touch-callout: none; }
+
+
+a {
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+
+@mixin num($w,$h){
+    width:$w;
+    height:$h;
+}
+@mixin cir($w){
+    width:$w;
+    height:$w;
+    border-radius:50%;
+    display:inline-block;
+}
+%text{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+@mixin text($n){
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    word-break:break-all;
+    -webkit-line-clamp:$n;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+@font-face{
+    font-family:"iconfont";
+    src:url(../iconfont/iconfont.svg);
+    src:url(../iconfont/iconfont.woff);
+    src:url(../iconfont/iconfont.ttf);
+    src:url(../iconfont/iconfont.eot);
+}
+.box{
+    @include num(100%,100%);
+    display:flex;
+    flex-direction:column;
+}
+header{
+    @include num(100%,.45rem);
+    background:#fabc09;
+    display:flex;
+    padding:0 .1rem;
+    justify-content:space-between;
+
+    p{
+    text-align:center;
+    color:#fff;
+    span.iconfont{
+    display:block;
+    font-size:.2rem;
+    text-align:center;
+    color:#fff;
+    }
+    }
+    form{
+    flex:1;
+    margin:.07rem .1rem;
+    position:relative;
+    i{
+    position:absolute;
+    top:.06rem;
+    left:.02rem;
+    }
+    input{
+    @include num(100%,.3rem);
+    border:0;
+    outline:none;
+    padding-left:.2rem;
+    border-radius:.5rem;
+    background:#fef1ce;
+    }
+    }
+    .tu{
+    margin-top:.07rem;
+    @include num(.2rem,.3rem);
+    //background:pink;
+    img{
+    @include num(100%,100%);
+    }
+    }
+}
+section{
+    flex:1;
+    background:#f2f2f2;
+    overflow:hidden;
+    overflow-y:scroll;
+    .banner{
+    @include num(100%,auto);
+    position:relative;
+    ul{
+    display:flex;
+    @include num(300%,auto);
+    li{
+    @include num(33.3%,auto);
+    img{
+    @include num(100%,auto);
+    }
+    }
+    }
+    ol{
+    display:flex;
+    justify-content:space-between;
+    position:absolute;
+    bottom:.1rem;
+    right:.2rem;
+    @include num(.5rem,.1rem);
+    //background:pink;
+    z-index:999;
+    li{
+    @include cir(.1rem);
+    background:#fff;
+    &:hover{
+    background:#fabc09;
+    }
+    }
+    }
+    }
+    nav{
+    @include num(100%,auto);
+    background:#fff;
+    ul{
+    @include num(100%,auto);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    li{
+    @include num(20%,auto);
+    text-align:center;
+    padding:.05rem .1rem;
+    img{
+    display:block;
+    @include num(70%,auto);
+    margin:0 auto;
+    }
+    }
+    }
+    }
+    .content1{
+    @include num(100%,auto);
+    background:#f8eee5;
+    .top{
+    padding:.05rem .1rem;
+    display:flex;
+    //align-items:center;
+    justify-content:space-between;
+    h2{
+    display:flex;
+    justify-content:space-between;
+    line-height:.3rem;
+    }
+    em.iconfont{
+    display:block;
+    font-style:normal;
+    @include num(1rem,.2rem);
+    text-align:center;
+    border:.01rem solid black;
+    border-radius:.2rem;
+    line-height:.2rem;
+    margin-top:.05rem;
+    }
+    }
+    .bottom{
+    display:flex;
+    justify-content:space-between;
+    @include num(100%,auto);
+    .left{
+    @include num(50%,auto);
+    img{
+    @include num(100%,auto);
+    margin-top:.25rem;
+    }
+    }
+    .right{
+    @include num(22%,auto);
+    background:#fff;
+    border-radius:.1rem;
+    img{
+    @include num(.4rem,auto);
+    display:block;
+    margin:.05rem auto;
+    }
+    p{
+    text-align:center;
+    }
+    span{
+    @include num(.5rem,.25rem);
+    background:red;
+    color:#fff;
+    display:block;
+    border-radius:.2rem;
+    text-align:center;
+    margin:0 auto;
+    line-height:.25rem;
+    }
+    }
+    }
+    }
+}
