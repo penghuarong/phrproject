@@ -1,0 +1,30 @@
+.productTit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.productTit img {
+  width: 80px;
+}
+.productTit h2 {
+  font-size: 14px;
+}
+.describe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.describe p {
+  margin: auto;
+  width: 80%;
+}
+.describe img {
+  width: 100%;
+}
+.echartBox {
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 20px;
+  display: flex;
+}

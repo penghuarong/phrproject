@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+    <h2>还可以输入<b id="count">140</b>字</h2>
+    <textarea name="" cols="30" rows="10" maxlength="140" id="content"></textarea>
+    <script>
+    var count = document.querySelector("#count"),
+        content = document.querySelector("#content");
+    var wordCount = 140;
+    content.onkeyup = function(){
+        count.innerHTML = wordCount - Number(this.value.length);
+
+    }
+    </script>
+</body>
+</html>

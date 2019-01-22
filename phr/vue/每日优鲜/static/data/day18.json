@@ -1,0 +1,28 @@
+[{
+        "id": 1,
+        "img": "https://g-search2.alicdn.com/img/bao/uploaded/i4/i3/44768044/TB29SgKpQZmBKNjSZPiXXXFNVXa_!!44768044.jpg_580x580Q90.jpg_.webp",
+        "tit": "毛衣",
+        "price": 888,
+        "cheap": "2.3折"
+    },
+    {
+        "id": 2,
+        "img": "https://g-search3.alicdn.com/img/bao/uploaded/i4/i2/3163100878/O1CN011IMACG8ZkfEMq5g_!!3163100878.jpg_580x580Q90.jpg_.webp",
+        "tit": "早秋衬衫",
+        "price": 666,
+        "cheap": "3.3折"
+    },
+    {
+        "id": 3,
+        "img": "https://g-search3.alicdn.com/img/bao/uploaded/i4/i1/883696985/TB2T5ngoaAoBKNjSZSyXXaHAVXa_!!883696985.jpg_580x580Q90.jpg_.webp",
+        "tit": "牛仔",
+        "price": 999,
+        "cheap": "5.8折"
+    }, {
+        "id": 4,
+        "img": "https://g-search3.alicdn.com/img/bao/uploaded/i4/i1/1068441687/TB2Kjo0lTqWBKNjSZFAXXanSpXa_!!1068441687.jpg_580x580Q90.jpg_.webp",
+        "tit": "连帽卫衣",
+        "price": 1212,
+        "cheap": "8.8折"
+    }
+]

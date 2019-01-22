@@ -1,0 +1,167 @@
+[{
+    "tit": "公司信息"
+}, {
+    "tit": "热招职位",
+    "recommend": [{
+            "re_name": "推荐职位",
+            "re_list": ["技术", "产品", "运营", "设计", "高级管理", "销售"]
+        },
+        {
+            "re_name": "城市",
+            "re_list": ["北京", "上海", "广州", "太原", "榆次", "黄土高坡"]
+        },
+        {
+            "re_name": "经验",
+            "re_list": ["技术", "产品", "运营", "设计", "高级管理", "销售"]
+        }, {
+            "re_name": "薪资",
+            "re_list": ["1000", "2000", "10000", "20000", "23000", "500000"]
+        }
+    ],
+    "con": [{
+            "name": "全部",
+
+            "info": [{
+                    "img": "./static/images/1.png",
+                    "work": "web前端工程师",
+                    "address": "北京大兴",
+                    "mz": "花花"
+                },
+                {
+                    "img": "./static/images/1.png",
+                    "work": "web前端工程师",
+                    "address": "北京大兴",
+                    "mz": "花花"
+                },
+                {
+                    "img": "./static/images/1.png",
+                    "work": "web前端工程师",
+                    "address": "北京大兴",
+                    "mz": "花花"
+                },
+                {
+                    "img": "./static/images/1.png",
+                    "work": "web前端工程师",
+                    "address": "北京大兴",
+                    "mz": "花花"
+                }
+            ]
+        },
+        {
+            "name": "技术",
+
+            "info": [{
+                    "img": "./static/images/2.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                },
+                {
+                    "img": "./static/images/2.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                },
+                {
+                    "img": "./static/images/2.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                },
+                {
+                    "img": "./static/images/2.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                }
+            ]
+        },
+        {
+            "name": "产品",
+
+            "info": [{
+                    "img": "./static/images/1.png",
+                    "work": "web前端工程师",
+                    "address": "北京大兴",
+                    "mz": "花花"
+                },
+                {
+                    "img": "./static/images/1.png",
+                    "work": "web前端工程师",
+                    "address": "北京大兴",
+                    "mz": "花花"
+                },
+                {
+                    "img": "./static/images/1.png",
+                    "work": "web前端工程师",
+                    "address": "北京大兴",
+                    "mz": "花花"
+                },
+                {
+                    "img": "./static/images/1.png",
+                    "work": "web前端工程师",
+                    "address": "北京大兴",
+                    "mz": "花花"
+                }
+            ]
+        },
+        {
+            "name": "运营",
+
+            "info": [{
+                    "img": "./static/images/2.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                },
+                {
+                    "img": "./static/images/2.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                },
+                {
+                    "img": "./static/images/2.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                },
+                {
+                    "img": "./static/images/2.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                }
+            ]
+        },
+        {
+            "name": "供应链/物流",
+
+            "info": [{
+                    "img": "./static/images/3.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                },
+                {
+                    "img": "./static/images/3.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                },
+                {
+                    "img": "./static/images/3.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                },
+                {
+                    "img": "./static/images/3.png",
+                    "work": "web前端工程师",
+                    "address": "北京海淀",
+                    "mz": "彭彭"
+                }
+            ]
+        }
+    ]
+}]

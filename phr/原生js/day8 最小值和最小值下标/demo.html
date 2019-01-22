@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var arr=[3,4,2,8,15,1,98]  最小值为:1，最小值的下标为5.
+        var arr=[3,4,2,8,15,1,98];
+        /*for(var i=0;i<arr.length;i++)
+        {
+            for(var j=0;j<arr.length-i-1;j++)
+            {
+                var temp;
+                if(arr[j] > arr[j+1])
+                {
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+
+            }
+        }*/
+            var min,j;
+            min=arr[0];
+            for(var i=0;i<arr.length;i++)
+            {
+                if(min > arr[i])
+                {
+                    min = arr[i];
+                    j = i;
+                }
+            }
+            console.log("最小值为：" + min);
+            console.log("最小值下标为：" + j);
+
+
+
+
+
+
+
+
+        /*console.log(arr);
+        console.log(arr[0]);*/
+    </script>
+</body>
+</html>

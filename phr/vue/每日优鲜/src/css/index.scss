@@ -1,0 +1,273 @@
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    height: pxTorem(50px);
+    background: #ff4891;
+    line-height: pxTorem(50px);
+    font-size: pxTorem(16px);
+    color: #fff;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+section {
+    flex: 1;
+    overflow-y: scroll;
+    .checkAll {
+        width: pxTorem(40px);
+        height: pxTorem(40px);
+    }
+    ul {
+        width: 100%;
+        li {
+            width: 100%;
+            @include box_flex;
+            @include align(center);
+            padding: pxTorem(10px);
+            border-bottom: pxTorem(1px) solid #ccc;
+            img {
+                width: pxTorem(70px);
+            }
+            .right {
+                flex: 1;
+                margin-left: pxTorem(10px);
+                h3 {
+                    font-size: pxTorem(16px);
+                    color: rgba(0, 0, 0, .7);
+                }
+                h4 {
+                    margin-top: pxTorem(10px);
+                    @include box_flex;
+                    @include justify(space-between);
+                    @include align(center);
+                    font-size: pxTorem(16px);
+                    span {
+                        color: rgba(0, 0, 0, .5);
+                    }
+                    .counter {
+                        width: pxTorem(80px);
+                        height: pxTorem(20px);
+                        @include box_flex;
+                        border: .01rem solid #ccc;
+                        span {
+                            width: pxTorem(20px);
+                            height: pxTorem(20px);
+                            display: block;
+                            color: #999;
+                            text-align: center;
+                            line-height: pxTorem(20px);
+                            &:nth-child(1) {
+                                border-right: pxTorem(1px) solid #ccc;
+                            }
+                            &:nth-of-type(2) {
+                                border-left: pxTorem(1px) solid #ccc;
+                            }
+                        }
+                        input {
+                            width: pxTorem(40px);
+                            text-align: center;
+                            border: 0;
+                            font-size: pxTorem(16px);
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    height: pxTorem(50px);
+    background: #f7f7f7;
+    flex-shrink: 0;
+    @include box_flex;
+    a {
+        width: 20%;
+        @include box_flex;
+        @include direction(column);
+        @include align(center);
+        @include justify(center);
+        color: rgba(0, 0, 0, .7);
+        li {
+            width: 100%;
+            text-align: center;
+            @include box_flex;
+            @include direction(column);
+            @include align(center);
+            @include justify(center);
+            img {
+                width: pxTorem(25px);
+                margin: 0 auto;
+            }
+            span {
+                font-size: pxTorem(12px);
+            }
+        }
+    }
+}
+
+.head {
+    width: 100%;
+    height: pxTorem(50px);
+    background: #ff4891;
+    font-size: pxTorem(16px);
+    text-align: center;
+    color: #fff;
+    line-height: pxTorem(50px);
+}
+
+.car {
+    width: 100%;
+    height: 100%;
+    padding: pxTorem(10px);
+    &>input {
+        width: pxTorem(15px);
+        height: pxTorem(15px);
+    }
+    li {
+        @include box_flex;
+        @include align(center);
+        padding: pxTorem(10px) 0;
+        border-bottom: pxTorem(1px) solid #ccc;
+        &>input {
+            width: pxTorem(15px);
+            height: pxTorem(15px);
+        }
+        img {
+            width: pxTorem(70px);
+        }
+        .car_right {
+            flex: 1;
+            margin-left: pxTorem(10px);
+            h3 {
+                font-size: pxTorem(16px);
+                color: rgba(0, 0, 0, .7);
+            }
+            h4 {
+                margin-top: pxTorem(10px);
+                @include box_flex;
+                @include justify(space-between);
+                @include align(center);
+                font-size: pxTorem(16px);
+                span {
+                    color: rgba(0, 0, 0, .5);
+                }
+                .counter {
+                    width: pxTorem(80px);
+                    height: pxTorem(20px);
+                    @include box_flex;
+                    border: pxTorem(1px) solid #ccc;
+                    span {
+                        width: pxTorem(20px);
+                        height: pxTorem(20px);
+                        display: block;
+                        color: #999;
+                        text-align: center;
+                        line-height: pxTorem(20px);
+                        &:nth-child(1) {
+                            border-right: pxTorem(1px) solid #ccc;
+                        }
+                        &:nth-of-type(2) {
+                            border-left: pxTorem(1px) solid #ccc;
+                        }
+                    }
+                    input {
+                        width: pxTorem(40px);
+                        text-align: center;
+                        border: 0;
+                        font-size: pxTorem(16px);
+                        color: #999;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.car_foot {
+    width: 100%;
+    height: pxTorem(50px);
+    background: #f7f7f7;
+    @include box_flex;
+    @include justify(space-between);
+    @include align(center);
+    padding: 0 pxTorem(10px);
+    span {
+        font-size: pxTorem(16px);
+    }
+}
+
+.mark {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    .small {
+        width: pxTorem(300px);
+        height: pxTorem(400px);
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: pxTorem(-150px);
+        margin-top: pxTorem(-200px);
+        border-radius: pxTorem(10px);
+        @include box_flex;
+        @include align(center);
+        @include direction(column);
+        h4 {
+            width: 100%;
+            height: pxTorem(50px);
+            background: #ff4891;
+            color: #fff;
+            @include box_flex;
+            @include justify(space-between);
+            @include align(center);
+            span {
+                font-size: pxTorem(16px);
+                color: #ccc;
+                width: pxTorem(20px);
+                height: pxTorem(20px);
+                border-radius: 50%;
+                border: pxTorem(1px) solid #eee;
+                text-align: center;
+                line-height: pxTorem(18px);
+                margin-right: pxTorem(10px);
+            }
+        }
+        img {
+            width: pxTorem(200px);
+        }
+        h3,
+        p {
+            height: pxTorem(50px);
+            line-height: pxTorem(50px);
+            font-size: pxTorem(20px);
+            color: rgba(0, 0, 0, .7);
+            span {
+                color: #ff4891;
+            }
+        }
+    }
+}

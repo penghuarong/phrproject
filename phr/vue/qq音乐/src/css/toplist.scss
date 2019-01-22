@@ -1,0 +1,45 @@
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.toplist_wrap {
+    background: #f6f6f6;
+    flex: 1;
+    overflow-y: auto;
+    .toplist_list {
+        li {
+            @include box_flex;
+            @include align(center);
+            @include justify(space-between);
+            margin: pxTorem(10px) 0;
+            background: #fff;
+            padding: pxTorem(10px);
+            img {
+                width: pxTorem(100px);
+            }
+            .toplist_right {
+                flex: 1;
+                margin-left: pxTorem(10px);
+                h2 {
+                    font-size: pxTorem(18px);
+                }
+                p {
+                    height: pxTorem(25px);
+                    line-height: pxTorem(25px);
+                    span {
+                        color: rgba(0, 0, 0, .7);
+                        margin-right: pxTorem(5px);
+                    }
+                    i {
+                        color: rgba(0, 0, 0, .5);
+                    }
+                }
+            }
+        }
+    }
+}

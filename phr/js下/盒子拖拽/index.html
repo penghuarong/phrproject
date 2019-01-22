@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background:black;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+   <div id="box"></div>
+   <script>
+   var box = document.getElementById("box");
+      box.onmousedown = function(event){
+        var x = event.clientX - box.offsetLeft;
+        var y = event.clientY - box.offsetTop;
+        document.onmousemove = function(e){
+          var left = e.clientX - x;
+          var top = e.clientY - y;
+          var maxw = document.documentElement.clientWidth - box.offsetWidth;
+          var maxh = document.documentElement.clientHeight - box.offsetHeight;
+          if(left<0){
+            left = 0;
+          }
+          if(top<0){
+            top = 0;
+          }
+          if(left>maxw){
+            left = maxw;
+          }
+          if(top>maxh){
+            top = maxh;
+          }
+          box.style.left = left + "px";
+          box.style.top = top + "px";
+        }
+      }
+      box.onmouseup = function(){
+        document.onmousemove = null;
+      }
+
+
+
+
+      /* var box = document.getElementById("box");
+       box.onmousedown = function(event){
+         var x = event.clientX - box.offsetLeft;
+         var y = event.clientY - box.offsetTop;
+        document.onmousemove = function(e){
+            var left = e.clientX - x;
+            var top = e.clientY - y;
+            var maxw = document.documentElement.clientWidth - box.offsetWidth;
+            var maxh = document.documentElement.clientHeight - box.offsetHeight;
+            if(left<0){
+                left=0;
+            }
+            if(top<0){
+                top=0;
+            }
+            if(left>maxw){
+                left = maxw;
+            }
+            if(top>maxh){
+                top = maxh;
+            }
+            box.style.left = left +"px";
+            box.style.top = top +"px";
+        }
+       }
+       box.onmouseup = function(){
+        document.onmousemove = null;
+       }*/
+
+
+
+
+   </script>
+</body>
+</html>

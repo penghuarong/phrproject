@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+    *{
+        padding:0;
+        margin:0;
+        list-style:none;
+    }
+        .wrap{
+            width: 800px;
+            height: 45px;
+            margin:50px auto;
+            border:1px solid #ccc;
+        }
+        .wrap input[type="text"]{
+            width: 700px;
+            height: 45px;
+            float:left;
+            border:0;
+            outline:none;
+        }
+        .wrap input[type="submit"]{
+            width: 100px;
+            height: 45px;
+            float:left;
+            border:0;
+            outline:none;
+            background:skyblue;
+            color:#fff;
+        }
+        .newbox p:hover{
+            background:#f5f5f5;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <input type="text" name="">
+    <input type="submit" name="" value="百度一下">
+    <div class="newbox"></div>
+</div>
+
+   <script>
+        var arr = ["北京大学","北京八维","北大青鸟","山西大学","山西晋中","山西榆次","北京时间","北京天气预报"];
+        var ipt = document.querySelectorAll("input"),
+            newbox = document.querySelector(".newbox");
+
+           ipt[0].onkeyup = function(){
+            var val = this.value;
+            var str = "";
+            for(var i in arr){
+                if(val =="")return;
+                if(arr[i].indexOf(val) != -1){
+                    str += "<p>" + arr[i] + "</p>";
+                }
+            }
+            newbox.innerHTML=str;
+        }
+
+        var num = -1;
+        document.onkeyup = function(e){
+            var op = newbox.querySelectorAll("p");
+            if(e.keyCode == 40){
+                num++;
+                if(num>op.length-1) num = 0;
+                op[num].style.background = "#f5f5f5";
+            }
+            else if(e.keyCode == 38){
+                num--;
+                if(num<0)num = op.length-1;
+                op[num].style.background = "#f5f5f5";
+            }
+            else if(e.keyCode == 13){
+                ipt[0].value = op[num].innerHTML;
+                newbox.innerHTML = "";
+            }
+
+            for(var i in op){
+                op[i].index = i;
+            op[i].onclick = function(){
+                ipt[0].value = this.innerHTML;
+                newbox.innerHTML = "";
+                    }
+            }
+        }
+       /*ipt[0].onkeyup = function(){
+            var val = this.value;
+            var str = "";
+            for(var i in arr){
+                if(ipt[0].value == "")return;
+                if(arr[i].indexOf(val)!=-1){
+                    str += "<p>" + arr[i] + "</p>"
+                }
+            }
+            newbox.innerHTML=str;
+       }
+
+
+        var num = -1;
+       document.onkeyup = function(e){
+            var op = newbox.querySelectorAll("p");
+            if(e.keyCode == 40){
+                num++;
+                if(num>op.length-1)num=0;
+                op[num].style.background = "#ccc";
+            }
+            else if(e.keyCode == 38){
+                num--;
+                if(num<0)num=op.length-1;
+                op[num].style.background = "#ccc";
+            }
+            else if(e.keyCode == 13){
+                ipt[0].value = op[num].innerHTML;
+                newbox.innerHTML = "";
+            }
+            for(var i in op){
+                op[i].index=i;
+                op[i].onclick = function(){
+                    ipt[0].value = this.innerHTML;
+                    newbox.innerHTML = "";
+                }
+            }
+       }*/
+   </script>
+</body>
+</html>

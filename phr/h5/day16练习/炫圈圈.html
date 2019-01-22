@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="600" style="border:1px solid #ccc;background: cornsilk;margin:0 auto"></canvas>
+<script src="zepto.js"></script>
+<script>
+    var draw = document.querySelector("canvas");
+    var ud = draw.getContext('2d');
+
+    function randomnum(min,max){
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
+    var arr = [];
+    for(var i=0;i<11;i++){
+        arr.push({
+            value:randomnum(1000,10000),
+            color:`rgb(${randomnum(0,255)},${randomnum(0,255)},${randomnum(0,255)})`
+        })
+    }
+    console.log(arr);
+
+    var sum = arr.map(function(v,i){
+        return v.value;
+    }).reduce(function(a,b){
+        return a+b;
+    })
+
+    var maxarr = arr.map(function(v,i){//全是数的数组
+        return v.value;
+    })
+    var max = Math.max.apply(null,maxarr);//最大值
+    var index = maxarr.indexOf(max);//最下值下标
+    var sorts = maxarr.sort(function(a,b){
+        return b-a;
+    }).slice(0,5);
+
+    var start = 0;
+    var end = 0;
+    var start1 = 0;
+    var end1 = 0;
+    var deg = Math.PI/180;
+
+    arr.map(function(v,i){
+        end = start + v.value/sum*360;
+        var newdeg = start+v.value/sum*360/2;
+        var x1 = Math.cos(newdeg*deg)*150+300;
+        var y1 = Math.sin(newdeg*deg)*150+300;
+        var x2 = Math.cos(newdeg*deg)*170+300;
+        var y2 = Math.sin(newdeg*deg)*170+300;
+        var x3=0;
+        var y3 = y2;
+        var x4=0;
+        if(x2>300){
+            x3 = x2+100;
+            x4 = x2 + 20;
+        }else{
+            x3 = x2-100;
+            x4 = x2 -80;
+        }
+        if(i==index){
+            start1 = start;
+            end1 = end;
+        }
+        ud.beginPath();
+        ud.arc(300,300,150,start*deg,end*deg);
+        ud.lineTo(300,300);
+        ud.fillStyle = v.color;
+        ud.fill();
+        ud.closePath();
+        start = end;
+        sorts.map(function(vv,ii){
+            if(vv == v.value){
+                line(x1,y1,x2,y2,x3,y3,v.color);
+                text("123",x4,y2-10,v.color);
+                text("11111",x4,y2+20,"#ccc");
+            }
+        })
+
+    })
+
+    function line(x1,y1,x2,y2,x3,y3,color){
+        ud.beginPath();
+        ud.moveTo(x1,y1);
+        ud.lineTo(x2,y2);
+        ud.lineTo(x3,y3);
+        ud.strokeStyle = color;
+        ud.stroke();
+        ud.closePath();
+
+        ud.beginPath();
+        ud.fillStyle = color;
+        ud.arc(x3,y3,5,0,360);
+        ud.fill();
+        ud.closePath();
+    }
+
+    function text(txt,a,b,color){
+        ud.beginPath();
+        ud.fillStyle = color;
+        ud.fillText(txt,a,b);
+        ud.fill();
+        ud.closePath();
+    }
+
+    ud.beginPath();
+    ud.arc(300,300,170,start1*deg,end1*deg);
+    ud.lineTo(300,300);
+    ud.fillStyle = "rgba(255,255,255,0.5)";
+    ud.fill();
+    ud.closePath();
+
+    ud.beginPath();
+    ud.arc(300,300,100,0,360);
+    ud.fillStyle = "#fff";
+    ud.fill();
+    ud.closePath();
+
+    ud.beginPath();
+    ud.lineWidth = 20;
+    ud.arc(300,300,100,0,360);
+    ud.strokeStyle = "rgba(255,255,255,0.5)";
+    ud.stroke();
+    ud.closePath();
+</script>
+</body>
+</html>

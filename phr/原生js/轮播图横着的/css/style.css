@@ -1,0 +1,63 @@
+/*
+* @Author: Marte
+* @Date:   2018-03-24 11:08:35
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-03-26 13:42:43
+*/
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration: none;
+}
+#wrap{
+    width:1000px;
+    height:409px;
+    margin:50px auto;
+    position:relative;
+   //overflow:hidden;
+}
+#left,#right{
+    position: absolute;
+    opacity:.5;
+
+}
+#left:hover,#right:hover{
+    opacity:1;
+}
+#left{
+left:3%;
+top:45%;
+}
+#right{
+right:3%;
+top:45%;
+}
+#imgBox{
+    width:6000px;
+    height:409px;
+
+}
+#imgBox li{
+    float:left;
+}
+#tabBox{
+position:absolute;
+bottom:3%;
+right:4%;
+}
+#tabBox li{
+    float:left;
+    width: 46px;
+    height:46px;
+    border-radius: 50%;
+    background:#ccc;
+    margin:0 5px;
+    text-align:center;
+    line-height:46px;
+    font-size:20px;
+}
+#tabBox .active{
+    background:red;
+    color:#fff;
+}

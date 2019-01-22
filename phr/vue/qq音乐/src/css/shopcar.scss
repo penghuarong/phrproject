@@ -1,0 +1,110 @@
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    @include direction(column);
+}
+
+header {
+    height: pxTorem(45px);
+    @include flex_shrink(0);
+}
+
+footer {
+    height: pxTorem(45px);
+    background: #FF4E22;
+    @include flex_shrink(0);
+    @include box_flex;
+    @include justify(space-between);
+    @include align(center);
+    padding: 0 pxTorem(20px);
+}
+
+section {
+    flex: 1;
+    overflow-y: scroll;
+    .checkall {
+        margin: pxTorem(10px);
+    }
+    &>input {
+        -webkit-appearance: checkbox;
+        width: pxTorem(15px);
+        height: pxTorem(15px);
+    }
+    .shopcar_content {
+        width: 100%;
+        overflow-y: scroll;
+        li {
+            @include box_flex;
+            @include align(center);
+            padding: pxTorem(10px) 0;
+            border-bottom: pxTorem(0.5px) solid #ccc;
+            i {
+                width: pxTorem(20px);
+                padding-right: pxTorem(5px);
+                align-self: flex-start;
+                color: #ccc;
+            }
+            p {
+                width: pxTorem(25px);
+                @include box_flex;
+                @include align(center);
+                @include justify(center);
+                input {
+                    -webkit-appearance: checkbox;
+                    width: pxTorem(15px);
+                    height: pxTorem(15px);
+                }
+            }
+            img {
+                width: auto;
+            }
+            .shopcar_right {
+                flex: 1;
+                margin-left: pxTorem(10px);
+                h3 {
+                    @include text(1);
+                }
+                span {
+                    color: orange;
+                }
+                .counter {
+                    width: pxTorem(80px);
+                    height: pxTorem(20px);
+                    @include box_flex;
+                    border: pxTorem(1px) solid #ccc;
+                    span {
+                        width: pxTorem(20px);
+                        height: pxTorem(20px);
+                        display: block;
+                        color: #999;
+                        text-align: center;
+                        line-height: pxTorem(20px);
+                        &:nth-child(1) {
+                            border-right: pxTorem(1px) solid #ccc;
+                        }
+                        &:nth-of-type(2) {
+                            border-left: pxTorem(1px) solid #ccc;
+                        }
+                    }
+                    input {
+                        width: pxTorem(40px);
+                        text-align: center;
+                        border: 0;
+                        font-size: pxTorem(16px);
+                        color: #999;
+                    }
+                }
+            }
+        }
+    }
+}

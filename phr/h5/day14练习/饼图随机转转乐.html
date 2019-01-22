@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+<canvas style="border:1px solid #ccc" width="600px" height="600px"></canvas>
+<script>
+    var draw = document.querySelector('canvas');
+    var ud = draw.getContext('2d');
+
+    function randomnum(min,max){
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
+    var len = randomnum(20,40);//随机长度
+    console.log(len);
+
+    var arr = [];
+    for(var i=0;i<len;i++){
+        arr.push({
+            value:randomnum(30,300),//随机值
+            color:`rgb(${randomnum(0,255)},${randomnum(0,255)},${randomnum(0,255)})`//随机颜色
+        })
+    }
+   console.log(arr);
+    var sum = 0;
+    var start = 0;
+    var end = 0;
+    var deg = Math.PI/180;
+    arr.map(function(v,i){
+        sum += v.value;//总和
+    })
+    console.log(sum);
+
+    arr.map(function(v,i){
+        end = start+v.value/sum*360;//结束度=开始度+本身的度
+        ud.beginPath();
+        ud.arc(300,300,200,start*deg,end*deg);
+        ud.lineTo(300,300);
+        ud.fillStyle = v.color;
+        ud.fill();
+        ud.closePath();
+        start = end;
+    })
+
+    ud.beginPath();
+    ud.arc(300,300,150,0,360);
+    ud.fillStyle = "#fff";
+    ud.fill();
+    ud.closePath();
+</script>
+</body>
+</html>

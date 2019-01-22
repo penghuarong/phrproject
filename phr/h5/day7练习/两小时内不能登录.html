@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .form {
+            width: 240px;
+            margin: 100px auto;
+        }
+        
+        button {
+            width: 100px;
+            height: 25px;
+            background: red;
+            color: #fff;
+            border: 0;
+            outline: none;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        用户名：<input type="text" id="user"> 密码：
+        <input type="password">
+        <button>登录</button>
+    </div>
+    <script>
+        var user = document.querySelector('#user');
+        var btn = document.querySelector('button');
+        var ls = window.localStorage;
+
+        btn.onclick = function() {
+            var name = user.value;
+            var time = new Date().getTime();
+            var Data = {};
+            Data.name = name;
+            Data.time = time; //现在的时间
+            var newData = JSON.parse(ls.getItem('data')) || {}; //获取到的台里的内容
+            var T1 = 60 * 60 * 1000 * 2;
+            var T2 = Data.time - newData.time; //现在的时间-台里的时间
+            if (T1 > T2) {
+                if (Data.name != newData.name) {
+                    alert("两小时内不能登录其他的账号！");
+                    return false;
+                }
+            }
+            ls.setItem('data', JSON.stringify(Data)); //对象转成字符串放入台里
+        }
+    </script>
+</body>
+
+</html>

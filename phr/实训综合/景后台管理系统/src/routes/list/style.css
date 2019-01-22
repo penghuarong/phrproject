@@ -1,0 +1,19 @@
+.productBox {
+  display: flex;
+  align-items: center;
+}
+.productBox img {
+  width: 100px;
+  margin-right: 10px;
+}
+.filterBox {
+  width: 100%;
+}
+.status {
+  border:solid blue 1px;
+  color: blue;
+  margin-right: 3px;
+  display: inline-block;
+  text-align: center;
+  width: 70px;
+}

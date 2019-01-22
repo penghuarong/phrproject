@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .box,
+        .box1,
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background: #fff;
+        }
+        
+        .box {
+            /* 跳过第一个 */
+            animation: changecolor 1s steps(1, start) infinite;
+        }
+        
+        .box1 {
+            /* 6个过度 */
+            animation: changecolor 1s steps(1, end) infinite;
+        }
+        
+        .box2 {
+            /* 跳过最后一个 */
+            animation: changecolor 1s steps(5) infinite;
+        }
+        
+        @keyframes changecolor {
+            0% {
+                background: red;
+            }
+            25% {
+                background: greenyellow;
+            }
+            50% {
+                background: pink;
+            }
+            75% {
+                background: olive;
+            }
+            100% {
+                background: plum;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

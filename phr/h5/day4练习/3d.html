@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .box {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            perspective: 600px;
+        }
+        
+        .box1 {
+            width: 200px;
+            height: 200px;
+            float: left;
+            background: greenyellow;
+            transition: all 1s;
+        }
+        
+        .box1:hover {
+            transform: rotateY(90deg);
+        }
+        
+        .box2 {
+            width: 200px;
+            height: 200px;
+            float: left;
+            background: red;
+            transition: all 1s;
+        }
+        
+        .box2:hover {
+            transform: rotateX(90deg);
+        }
+        
+        .wrap {
+            width: 300px;
+            height: 300px;
+            border: 3px dashed red;
+            margin: 0 auto;
+            perspective: 600px;
+        }
+        
+        .wrap img {
+            transform: rotateX(-30deg) rotateY(-30deg) translateZ(-14400px);
+            transition: all 1s;
+        }
+        
+        .wrap:hover img {
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    <div class="wrap">
+        <img src="images/fan.jpg" alt="">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+[{
+    "utils": [{
+            "img": "./static/images/3.png",
+            "tit": "额度管理"
+        },
+        {
+            "img": "./static/images/4.png",
+            "tit": "额度管理"
+        },
+        {
+            "img": "./static/images/3.png",
+            "tit": "额度管理"
+        }, {
+            "img": "./static/images/4.png",
+            "tit": "额度管理"
+        }, {
+            "img": "./static/images/3.png",
+            "tit": "额度管理"
+        }, {
+            "img": "./static/images/3.png",
+            "tit": "额度管理"
+        }, {
+            "img": "./static/images/3.png",
+            "tit": "额度管理"
+        }, {
+            "img": "./static/images/4.png",
+            "tit": "额度管理"
+        }
+    ],
+    "food": [{
+            "img": "./static/images/2.png",
+            "tit": "饭票",
+            "info": "5折起，享美事"
+        },
+        {
+            "img": "./static/images/2.png",
+            "tit": "饭票",
+            "info": "5折起，享美事"
+        },
+        {
+            "img": "./static/images/2.png",
+            "tit": "饭票",
+            "info": "5折起，享美事"
+        },
+        {
+            "img": "./static/images/2.png",
+            "tit": "饭票",
+            "info": "5折起，享美事"
+        }
+    ],
+    "gift": [{
+            "img": "./static/images/1.png",
+            "name": "刷卡达标",
+            "info": "好礼三选一"
+        },
+        {
+            "img": "./static/images/1.png",
+            "name": "刷卡达标",
+            "info": "好礼三选一"
+        },
+        {
+            "img": "./static/images/1.png",
+            "name": "刷卡达标",
+            "info": "好礼三选一"
+        }
+    ]
+
+}]

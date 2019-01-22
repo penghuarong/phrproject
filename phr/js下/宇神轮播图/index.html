@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+			list-style: none;
+		}
+		#box{
+			width: 1000px;
+			height: 409px;
+			margin:50px auto;
+			position: relative;
+			overflow: hidden;
+
+		}
+		#imgs{
+			width: 6000px;
+			height: 409px;
+			position: relative;
+		}
+		#imgs li{
+			width: 1000px;
+			height: 409px;
+			float: left;
+		}
+		#dots{
+			height: 30px;
+			position: absolute;
+			right: 50px;
+			bottom:30px;
+			overflow: hidden;
+		}
+		#dots li{
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			color:#fff;
+			background: red;
+			float: left;
+			margin-right: 10px;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		#dots li.active{
+			background: blue;
+		}
+		#left{
+			position: absolute;
+			left: 10px;
+			top:50%;
+			margin-top:-22.5px;
+			z-index: 10;
+			cursor: pointer;
+		}
+		#right{
+			position: absolute;
+			right:10px;
+			top:50%;
+			margin-top: -22.5px;
+			z-index: 10;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="left">
+			<img src="img/l.png" alt="">
+		</div>
+		<div id="right">
+			<img src="img/r.png" alt="">
+		</div>
+		<ul id="imgs">
+			<li><img src="img/1.jpg" alt=""></li>
+			<li><img src="img/2.jpg" alt=""></li>
+			<li><img src="img/3.jpg" alt=""></li>
+			<li><img src="img/4.jpg" alt=""></li>
+			<li><img src="img/5.jpg" alt=""></li>
+			<li><img src="img/6.jpg" alt=""></li>
+		</ul>
+		<ul id="dots">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+	<script>
+		function Banner(obj){
+		    this.obj = obj;
+		    this.count = 0;
+		    this.CRight();
+		    this.timer = null;
+		    this.autoPlay();
+		    this.clearPlay();
+		    this.CLeft();
+		    this.CSmall();
+		}
+		Banner.prototype = {
+		    constructor:Banner,
+			CRight:function(){
+		        var that = this;
+				this.obj.right.onclick = function(){
+				    that.count++;
+                    that.changImg();
+				}
+			},
+            CLeft:function(){
+                var that = this;
+                this.obj.left.onclick = function(){
+                    that.count--;
+                    that.changImg();
+                }
+            },
+			CSmall:function(){
+                var that = this;
+                for( var i=0;i<this.obj.smallLi.length;i++ ){
+                    this.obj.smallLi[i].index = i;
+                    this.obj.smallLi[i].onclick = function(){
+                        that.count = this.index;
+                        that.changImg();
+					}
+				}
+			},
+			changImg:function(){
+                this.num(this.count);
+                for( var i=0;i<this.obj.bigLi.length;i++ ){
+                    this.obj.bigLi[i].style.display = "none";
+                    this.obj.smallLi[i].className = "";
+                }
+                this.obj.bigLi[this.count].style.display = "block";
+                this.obj.smallLi[this.count].className = "active";
+			},
+			autoPlay:function(){
+			    var that = this;
+			    this.timer = setInterval(function(){
+					that.count++;
+			        that.changImg();
+				},1500)
+			},
+			clearPlay:function(){
+			    var that =this;
+			    this.obj.box.onmouseover = function(){
+			        clearInterval(that.timer)
+				};
+                this.obj.box.onmouseout = function(){
+                    that.autoPlay();
+                };
+			},
+			num:function(num){
+			    if( num>this.obj.bigLi.length-1 ){
+			        this.count = 0
+				}else if( num<0 ){
+                    this.count = this.obj.bigLi.length-1
+				}
+			}
+		};
+		var banner = new Banner({
+			box:document.querySelector("#box"),
+			bigLi:document.querySelectorAll("#imgs>li"),
+			smallLi:document.querySelectorAll("#dots>li"),
+			left:document.querySelector("#left"),
+			right:document.querySelector("#right")
+		})
+	</script>
+	
+</body>
+</html>

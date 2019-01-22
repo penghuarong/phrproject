@@ -1,0 +1,82 @@
+const data = [{
+    id: 1,
+    name: "slide_one",
+    data: [{
+        id: 1,
+        img: "//m.360buyimg.com/mobilecms/jfs/t25534/207/1767774998/8085/523157d6/5bbc800fN502129b8.png",
+        tit: "美食"
+    }, {
+        id: 2,
+        img: "//m.360buyimg.com/mobilecms/jfs/t21658/347/221358098/7461/f86e6f74/5b03b170Nc9e0ec7c.png",
+        tit: "猫眼电影"
+    }, {
+        id: 3,
+        img: "//m.360buyimg.com/mobilecms/jfs/t18865/90/1804471517/14538/72c79ba/5ad87b67N1ebcb69b.png",
+        tit: "酒店"
+    }, {
+        id: 4,
+        img: "//m.360buyimg.com/mobilecms/jfs/t17725/156/1767366877/17404/f45d418b/5ad87bf0N66c5db7c.png",
+        tit: "体闲娱乐"
+    }, {
+        id: 5,
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "外卖"
+    }, {
+        id: 6,
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "KTV"
+    }, {
+        id: 7,
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "周边游"
+    }, {
+        id: 8,
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "丽人"
+    }, {
+        id: 9,
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "小吃快餐"
+    }, {
+        id: 10,
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "外卖"
+    }]
+
+}, {
+    id: 2,
+    name: "slide_one",
+    data: [{
+        img: "//m.360buyimg.com/mobilecms/jfs/t22228/270/207441984/11564/88140ab7/5b03fae3N67f78fe3.png",
+        tit: "生活服务"
+    }, {
+        img: "//m.360buyimg.com/mobilecms/jfs/t22228/270/207441984/11564/88140ab7/5b03fae3N67f78fe3.png",
+        tit: "猫眼电影"
+    }, {
+        img: "//m.360buyimg.com/mobilecms/jfs/t18865/90/1804471517/14538/72c79ba/5ad87b67N1ebcb69b.png",
+        tit: "酒店"
+    }, {
+        img: "//m.360buyimg.com/mobilecms/jfs/t17725/156/1767366877/17404/f45d418b/5ad87bf0N66c5db7c.png",
+        tit: "体闲娱乐"
+    }, {
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "外卖"
+    }, {
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "KTV"
+    }, {
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "周边游"
+    }, {
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "丽人"
+    }, {
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "小吃快餐"
+    }, {
+        img: "//m.360buyimg.com/mobilecms/jfs/t16990/157/2001547525/17770/a7b93378/5ae01befN2494769f.png",
+        tit: "外卖"
+    }]
+
+}]
+export default data

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600px" height="600px" style="border:1px solid #ccc" id="draw"></canvas>
+<script>
+    var draw = document.querySelector('canvas');
+    var ud = draw.getContext('2d');
+    var arr = [20,30,40,50,60,70,80,90,100,110];//纵坐标
+    var line = [];//折线随机数数组
+    //随机数折线
+    function randomnum(min,max){
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
+//    XY坐标
+    ud.beginPath();
+    ud.moveTo(50,50);
+    ud.lineTo(50,560);
+    ud.lineTo(560,560);
+    ud.stroke();
+    ud.closePath();
+//    X坐标箭头
+    ud.beginPath();
+    ud.moveTo(550,550);
+    ud.lineTo(560,560);
+    ud.lineTo(550,570);
+    ud.stroke();
+    ud.closePath();
+//    Y坐标箭头
+    ud.beginPath();
+    ud.moveTo(40,60);
+    ud.lineTo(50,50);
+    ud.lineTo(60,60);
+    ud.stroke();
+    ud.closePath();
+//X轴刻度循环
+    for(var i=0;i<10;i++){
+        ud.beginPath();
+        ud.moveTo(50+50*i,560);
+        ud.lineTo(50+50*i,570);
+        ud.fillText((i+1),50+50*i,580);
+        ud.textAlign = "center";
+        ud.textBaseline = "middle";
+        ud.stroke();
+        ud.closePath();
+        line.push(randomnum(20,110));//随机获取存入数组
+    }
+//Y轴刻度循环
+    arr.map(function(v,i){
+        ud.beginPath();
+        ud.moveTo(40,560-50*i);
+        ud.lineTo(50,560-50*i);
+        ud.fillText(v,30,560-50*i);
+        ud.stroke();
+        ud.closePath();
+    })
+
+//折线
+    ud.beginPath();
+    line.map(function(v,i){
+        if(i==0){
+            ud.moveTo(50,560-(50/10)*(v-20));
+        }else{
+            ud.lineTo(50+50*i,560-(50/10)*(v-20));
+        }
+    })
+    ud.stroke();
+    ud.closePath();
+
+
+</script>
+</body>
+</html>

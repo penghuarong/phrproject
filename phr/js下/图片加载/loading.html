@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<img src="load.gif" alt="">
+<img src="load.gif" alt="">
+<img src="load.gif" alt="">
+<img src="load.gif" alt="">
+	<script>
+		var arr=[
+		'https://img.alicdn.com/tfs/TB12qddoeuSBuNjy1XcXXcYjFXa-520-280.jpg_q90_.webp',
+		'https://img.alicdn.com/simba/img/TB1Bko2lntYBeNjy1XdSutXyVXa.jpg',
+		'https://img.alicdn.com/simba/img/TB1KZUga1uSBuNjSsplSuve8pXa.jpg',
+		'https://m.360buyimg.com/babel/jfs/t17740/155/1933438546/93686/51669fbf/5add8ff6N94bd8456.jpg'
+		]
+		var imgs=document.getElementsByTagName('img');
+		function loadingImg(obj,pic){
+			var p1=new Promise(function(resolve,reject){
+					var img=new Image();	//创建一个img;
+						img.src=pic;
+						img.onload=function(){
+								obj.src=pic;
+								resolve('成功')
+						}
+			})
+
+			return p1
+		}
+		/*loadingImg(imgs[0],arr[0])
+		.then(function( ){
+				return loadingImg(imgs[1],arr[1])
+		})
+		.then(function( ){
+				return loadingImg(imgs[2],arr[2])
+		})
+		.then(function( ){
+				return loadingImg(imgs[3],arr[3])
+		})*/
+
+		Promise.all([loadingImg(imgs[0],arr[0]),loadingImg(imgs[1],arr[1]),loadingImg(imgs[2],arr[2]),loadingImg(imgs[3],arr[3])])
+
+		/* var img=new Image();
+		 	 img.src=arr[0];
+		 	 img.onload=function(){
+		 		imgs[0].src	=arr[0];
+		 		var img1=new Image();
+		 			img1.src=arr[1];
+		 			img1.onload=function(){
+		 				imgs[1].src=arr[1];
+		 				var img2=new Image();
+		 					img2.src=arr[2];
+		 					img2.onload=function(){
+		 							imgs[2].src=arr[2];
+		 							var img3=new Image();
+		 								img3.src=arr[3];
+		 								img3.onload=function(){
+		 									imgs[3].src=arr[3]
+		 								}
+		 					}
+		 			}
+		 	}*/
+
+	</script>
+</body>
+</html>

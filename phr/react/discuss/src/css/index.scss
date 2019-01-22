@@ -1,0 +1,189 @@
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+#root,
+#App,
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    @include box_flex;
+    @include direction(column);
+}
+
+header {
+    height: pxTorem(45px);
+    @include box_flex;
+    padding: 0 pxTorem(10px);
+    @include align(center);
+    @include justify(space-between);
+    background: #06c1ae;
+    color: #fff;
+    form {
+        flex: 1;
+        padding: 0 pxTorem(10px);
+        @include box_flex;
+        @include align(center);
+        height: pxTorem(35px);
+        margin: 0 pxTorem(10px);
+        background: rgba(0, 0, 0, .2);
+        border-radius: pxTorem(5px);
+        span.iconfont {
+            font-size: pxTorem(16px);
+        }
+        input {
+            &::-webkit-input-placeholder {
+                color: #fff;
+            }
+        }
+    }
+    p {
+        @include box_flex;
+        @include direction(column);
+        @include align(center);
+        span {
+            font-size: pxTorem(10px);
+        }
+        span.iconfont {
+            font-size: pxTorem(16px);
+        }
+    }
+}
+
+header.headMovie {
+    font-size: pxTorem(20px);
+    @include box_flex;
+    @include justify(center);
+}
+
+section {
+    div {
+        div {
+            .carousel {
+                width: 100%;
+                ul {
+                    width: 100%;
+                    @include box_flex;
+                    @include justify(space-between);
+                    @include flexWrap(wrap);
+                    @include align(center);
+                    padding: 0 pxTorem(10px);
+                    a {
+                        width: 20%;
+                        color: rgba(0, 0, 0, .7);
+                        li {
+                            padding: pxTorem(10px) 0;
+                            @include box_flex;
+                            @include direction(column);
+                            @include align(center);
+                            @include justify(center);
+                            img {
+                                width: pxTorem(40px);
+                            }
+                        }
+                    }
+                }
+            }
+            div {
+                .list {
+                    width: 100%;
+                    a {
+                        color: rgba(0, 0, 0, .7);
+                        li {
+                            @include box_flex;
+                            padding: pxTorem(10px);
+                            .right {
+                                margin-left: pxTorem(10px);
+                                p {
+                                    font-size: pxTorem(20px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.detail {
+    img {
+        width: 100%;
+    }
+    p {
+        text-align: center;
+        font-size: pxTorem(20px);
+    }
+    h5,
+    h6 {
+        text-align: center;
+    }
+}
+
+.navList {
+    width: 100%;
+    height: pxTorem(50px);
+    @include box_flex;
+    @include align(center);
+    @include justify(space-around);
+    border-bottom: pxTorem(0.5px) solid #ccc;
+    li {
+        height: 100%;
+        a {
+            display: block;
+            font-weight: bold;
+            font-size: pxTorem(18px);
+            color: rgba(0, 0, 0, .7);
+            height: 100%;
+            line-height: pxTorem(50px);
+            &:hover {
+                color: red;
+                border-bottom: pxTorem(2px) solid red;
+            }
+        }
+    }
+}
+
+.content {
+    width: 100%;
+    padding: 0 pxTorem(10px);
+    li {
+        @include box_flex;
+        @include align(center);
+        padding: pxTorem(10px) 0;
+        .center {
+            flex: 1;
+        }
+        .center {
+            margin-left: pxTorem(10px);
+            h2 {
+                font-size: pxTorem(20px);
+                margin-bottom: pxTorem(20px);
+            }
+        }
+        .r {
+            width: pxTorem(60px);
+            @include box_flex;
+            @include align(center);
+            @include justify(center);
+            button {
+                width: pxTorem(50px);
+                height: pxTorem(30px);
+                font-size: pxTorem(16px);
+                color: #fff;
+                border: 0;
+                outline: none;
+                border-radius: pxTorem(5px);
+            }
+        }
+    }
+}

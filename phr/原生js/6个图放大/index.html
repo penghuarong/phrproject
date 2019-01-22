@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        ul,li{margin:0;padding:0;list-style: none}
+        #box{width:600px; height:400px;margin:20px auto;position: relative;}
+        ul li{float: left;width:200px;height:200px;}
+        img{width:100%;height:100%;}
+        .mark{width:600px;height:400px; background:#000;opacity: 0.5;}
+        .pic{width:300px;height:300px; position: absolute;left:150px;top:50px;}
+        span{position: absolute;width:20px;height:20px;left:450px;top:50px; background: #fff;text-align: center;}
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li><img src="img/1.JPG" alt=""></li>
+        <li><img src="img/2.JPG" alt=""></li>
+        <li><img src="img/3.JPG" alt=""></li>
+        <li><img src="img/4.JPG" alt=""></li>
+        <li><img src="img/5.JPG" alt=""></li>
+        <li><img src="img/6.JPG" alt=""></li>
+    </ul>
+    <!-- <div class="mark"></div>
+    <img src="img/1.JPG" alt="" class="pic">
+    <span>x</span> -->
+</div>
+    <script>
+    var box = document.querySelector("#box"),
+        imgs = document.querySelectorAll("#box img");
+    for(var i=0;i<imgs.length;i++)
+    {
+        imgs[i].onclick = function(){
+            var odiv = document.createElement("div");
+            var oimg = document.createElement("img");
+            var ospn = document.createElement("span");
+               odiv.className = "mark";
+               oimg.className = "pic";
+               oimg.src = this.src;
+               ospn.className = "span";
+               ospn.innerHTML = "x";
+            box.appendChild(odiv);
+            box.appendChild(oimg);
+            box.appendChild(ospn);
+            ospn.onclick = function(){
+                box.removeChild(odiv);
+                box.removeChild(oimg);
+                box.removeChild(ospn);
+            }
+        }
+    }
+    </script>
+</body>
+</html>

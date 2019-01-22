@@ -1,0 +1,41 @@
+[{
+        "id": 1,
+        "price": 2000,
+        "img": "https://img.alicdn.com/imgextra/i3/116354910/TB22wjQoH9YBuNjy0FgXXcxcXXa_!!0-saturn_solar.jpg_220x220.jpg",
+        "name": "新款韩版a修身显瘦中长款裙无袖背心裙",
+        "count": 1,
+        "isCheck": false
+    },
+    {
+        "id": 2,
+        "price": 3000,
+        "img": "https://img.alicdn.com/imgextra/i3/132405652/TB2zmAkkyMnBKNjSZFzXXc_qVXa_!!0-saturn_solar.jpg_220x220.jpg",
+        "name": "新款韩版a修身显瘦中长款裙无袖背心裙",
+        "count": 1,
+        "isCheck": false
+    },
+    {
+        "id": 3,
+        "price": 500,
+        "img": "https://img.alicdn.com/imgextra/i4/130475669/TB2CkMWwRjTBKNjSZFwXXcG4XXa_!!0-saturn_solar.jpg_220x220.jpg",
+        "name": "新款韩版a修身显瘦中长款裙无袖背心裙",
+        "count": 1,
+        "isCheck": false
+    },
+    {
+        "id": 4,
+        "price": 167,
+        "img": "https://img.alicdn.com/imgextra/i1/107965757/TB2egr7w9YTBKNjSZKbXXXJ8pXa_!!0-saturn_solar.jpg_220x220.jpg",
+        "name": "秋冬新款毛呢连衣裙女娃娃领针织打底衬衫裙",
+        "count": 1,
+        "isCheck": false
+    },
+    {
+        "id": 5,
+        "price": 299,
+        "img": "https://img.alicdn.com/imgextra/i1/51890002/TB2XR5lusIrBKNjSZK9XXagoVXa_!!0-saturn_solar.jpg_220x220.jpg",
+        "name": "2018秋装新款长袖小香风中长款蝴蝶结系",
+        "count": 1,
+        "isCheck": false
+    }
+]

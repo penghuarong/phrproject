@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+    *{
+        padding:0;
+        margin:0;
+        list-style:none;
+    }
+        .box{
+            width: 600px;
+            height: 600px;
+            background:#f6f6f6;
+            margin:0 auto;
+        }
+        h2{
+            width: 100%;
+            height: 45px;
+            line-height:45px;
+            text-align:center;
+            background:#fff;
+            border-bottom:1px solid #ccc;
+            font-weight:normal;
+         }
+        #wrap{
+            margin-top:10px;
+            padding:0 10px;
+        }
+        form{
+            display: flex;
+            background:#fff;
+            border-bottom:1px solid #ccc;
+        }
+        form span{
+            width: 100px;
+            line-height:45px;
+            text-align:center;
+        }
+        form input{
+            flex:1;
+            height: 45px;
+            border:0;
+        }
+        p{
+            width: 100%;
+            height: 20px;
+            color:red;
+            font-size:12px;
+            display: none;
+        }
+       button{
+           width: 400px;
+           height: 45px;
+           background:#ccc;
+           border:0;
+           outline:none;
+           margin-left:100px;
+           color:#fff;
+           font-size:18px;
+           margin-top:10px;
+       }
+        b{
+            width: 100px;
+            height: 30px;
+            line-height:30px;
+            font-weight:normal;
+            display: inline-block;
+            border:1px solid skyblue;
+            color:skyblue;
+            margin-top:8px;
+            text-align:center;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>注册账号</h2>
+    <div id="wrap">
+        <form action="">
+            <span>手机号</span>
+            <input type="text" name="">
+        </form>
+        <p>*您输入的手机格式不正确</p>
+        <form action="">
+            <span>注册密码</span>
+            <input type="text" name="" placeholder="输入六位以上数字加字母的密码">
+        </form>
+        <p>*您输入的手机格式不正确</p>
+        <form action="">
+            <span>确认密码</span>
+            <input type="text" name="" placeholder="请再次输入密码">
+        </form>
+        <p>*两次输入密码不一致</p>
+        <form action="">
+            <span>验证码</span>
+            <input type="text" name="" placeholder="请输入验证码">
+            <b id="yy">获取验证码</b>
+        </form>
+        <button id="btn">立即注册</button>
+    </div>
+    </div>
+<script>
+    var wrap = document.getElementById("wrap"),
+        ipt = document.getElementsByTagName("input"),
+        op = document.getElementsByTagName("p"),
+        yy = document.getElementById("yy"),
+        btn = document.getElementById("btn");
+        btn.disabled = true;
+        ipt[0].onblur = function(){
+            tel();
+        }
+        ipt[1].onblur = function(){
+            password();
+        }
+        ipt[2].onblur = function(){
+            againpas();
+        }
+        btn.onclick = function(){
+            jcyz();
+        }
+        var regtel = /^1[35678]\d{9}$/;
+        var regpas = /^[0-9|a-zA-z]{6,}$/;
+        function jcyz(){
+            tel();
+            password();
+            againpas();
+        }
+        function tel(){
+            if(!regtel.test(ipt[0].value)){
+                op[0].style.display = "block";
+            }
+            else{
+                op[0].style.display = "none";
+            }
+        }
+        function password(){
+            if(!regpas.test(ipt[1].value)){
+                op[1].style.display = "block";
+            }
+            else{
+                op[1].style.display = "none";
+            }
+        }
+        function againpas(){
+            if(ipt[1].value != ipt[2].value){
+                op[2].style.display = "block";
+            }
+            else{
+                op[2].style.display = "none";
+            }
+        }
+        document.onkeyup = function(){
+            if(ipt[0] != "" && ipt[0].value !=ipt[0].placeholder && ipt[1] != "" && ipt[1].value !=ipt[1].placeholder && ipt[2] != "" && ipt[2].value !=ipt[2].placeholder){
+                btn.disabled = false;
+                btn.style.background = "skyblue";
+            }
+        }
+        yy.onclick = function(){
+            var str = "asdfghjklpoiuytrewqzxcvbnmASDFGHJKLPOIUYTREWQZXCVBNM0987654321";
+            var yzm = "";
+            for(var i=0;i<4;i++){
+                var index = Math.floor(Math.random()*str.length);
+                yzm += str[index];
+            }
+            ipt[3].value = yzm;
+        }
+</script>
+</body>
+</html>

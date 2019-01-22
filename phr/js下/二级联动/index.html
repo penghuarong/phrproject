@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+<select>
+
+</select>
+<select>
+
+</select>
+<select style="display:none">
+
+</select>
+    <script src="city.min.js"></script>
+    <script>
+        var sel = document.querySelectorAll("select"),
+            index;
+        var str1 = "";
+        for(var i in obj.citylist){
+            str1 += "<option>" + obj.citylist[i].p + "</option>";
+        }
+        sel[0].innerHTML = str1;
+
+        var str2 = "";
+        for(var j in obj.citylist[0].c){
+            str2 += "<option>" + obj.citylist[0].c[j].n + "</option>";
+        }
+        sel[1].innerHTML = str2;
+
+        sel[0].onchange = function(){
+            index = sel[0].selectedIndex;
+            var str = "";
+            for(var i in obj.citylist[index].c){
+                str+="<option>" + obj.citylist[index].c[i].n + "</option>"
+            }
+            sel[1].innerHTML = str;
+        }
+
+        sel[1].onchange = function(){
+            var id = sel[1].selectedIndex;
+            var str = "";
+            if("a" in obj.citylist[index].c[id]){
+                sel[2].style.display = "inline-block";
+                for(var i in obj.citylist[index].c[id].a){
+                    str += "<option>" + obj.citylist[index].c[id].a[i].s + "</option>";
+                }
+                sel[2].innerHTML = str;
+            }else{
+                sel[2].style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        span{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background: red;
+            display: inline-block;
+            text-align:center;
+            line-height:100px;
+            font-size:20px;
+        }
+        span:nth-child(6),span:nth-child(7){
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button>开始</button>
+        <button>清空</button>
+    </div>
+    <script>
+        var box = document.getElementById("box"),
+            spns = document.getElementsByTagName("span"),
+            btns = document.getElementsByTagName("button");
+
+
+
+            btns[0].onclick = function()
+            {
+              btns[0].disabled = true;
+              timer = setInterval(one,100);
+              setTimeout(function(){
+                clearInterval(timer);
+                btns[0].disabled = false;
+              },2000);
+            }
+
+            btns[1].onclick = function(){
+                for(var i=0;i<spns.length;i++){
+                    spns[i].innerHTML = "";
+              }
+            }
+
+            function one(){
+                var redNum = [];
+                    blueNum = [];
+            while( redNum.length < 5 )
+            {
+                    var num = randomNum(1,33);
+                    if(redNum.indexOf(num) == -1)
+                    {
+                        redNum.push(num);
+                    }
+                }
+                redNum.sort(function(a,b){return a-b;});
+
+                while( blueNum.length < 2 )
+            {
+                    var num = randomNum(1,16);
+                    if(blueNum.indexOf(num) == -1)
+                    {
+                        blueNum.push(num);
+                    }
+                }
+                blueNum.sort(function(a,b){return a-b;});
+
+                var nums = redNum.concat(blueNum);
+
+                for(var i=0;i<spns.length;i++){
+                    spns[i].innerHTML = nums[i];
+                }
+            }
+
+
+
+
+            function randomNum(min,max)
+            {
+                return Math.floor(Math.random()*(max-min+1) + min);
+            }
+    </script>
+</body>
+</html>

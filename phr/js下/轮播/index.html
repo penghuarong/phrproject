@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/lbt.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <ul id="imgs">
+            <li><img src="images/img4.jpg" alt="" /></li>
+            <li><img src="images/img2.jpg" alt="" /></li>
+            <li><img src="images/img3.jpg" alt="" /></li>
+            <li><img src="images/img1.jpg" alt="" /></li>
+        </ul>
+        <ol id="tabs">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ol>
+        <span id="left"><</span>
+        <span id="right">></span>
+    </div>
+    <script>
+    //把所有的全局变量变成构造函数的属性
+    //把功能模块封装到原型的方法上
+    function Tab() {
+        this.wrap = document.querySelector(".wrap");
+        this.imgs = document.querySelectorAll("#imgs img");
+        this.tabs = document.querySelectorAll("#tabs li");
+        this.leftt = document.querySelector("#left");
+        this.rightt = document.querySelector("#right");
+        this.timer = null;
+        this.count = 0;
+        this.dianClick();
+        this.autoPlay();
+        this.clearPlay();
+        this.left();
+        this.right();
+    }
+    Tab.prototype = {
+        constructor:Tab,
+        dianClick:function(){
+            var that = this;
+            for(var i=0;i<this.tabs.length;i++){
+                this.tabs[i].index = i;
+                this.tabs[i].onclick = function(){
+                    that.hide();
+                    that.imgs[this.index].style.display = "block";
+                    that.tabs[this.index].className = "active";
+                    that.count = this.index;
+                }
+            }
+        },
+        hide:function(){
+            for(var i=0;i<this.imgs.length;i++){
+                this.imgs[i].style.display = "none";
+                this.tabs[i].className = "";
+            }
+        },
+        autoPlay:function(){
+            var that = this;
+            this.timer = setInterval(function(){
+                that.count++;
+                if(that.count>that.tabs.length-1)that.count = 0;
+                    that.hide();
+                    that.imgs[that.count].style.display = "block";
+                    that.tabs[that.count].className = "active";
+            },1000);
+        },
+        clearPlay:function(){
+            var that = this;
+            this.wrap.onmouseover = function(){
+                clearInterval(that.timer);
+            }
+            this.wrap.onmouseout = function(){
+                that.autoPlay();
+            }
+        },
+        left:function(){
+            var that = this;
+            this.leftt.onclick = function(){
+                that.count--;
+                if(that.count<0)that.count=that.tabs.length-1;
+                    that.hide();
+                    that.imgs[that.count].style.display = "block";
+                    that.tabs[that.count].className = "active";
+            }
+        },
+        right:function(){
+            var that = this;
+            this.rightt.onclick = function(){
+                that.count++;
+                if(that.count>that.tabs.length-1)that.count = 0;
+                    that.hide();
+                    that.imgs[that.count].style.display = "block";
+                    that.tabs[that.count].className = "active";
+            }
+        }
+    }
+    var t = new Tab();
+
+
+
+    /*function Tab(){
+        this.tabs = document.querySelectorAll("#tabs li"),
+        this.imgs = document.querySelectorAll("#imgs img"),
+        this.l = document.querySelector("#left"),
+        this.r = document.querySelector("#right"),
+        this.wrap = document.querySelector(".wrap"),
+        this.timer = null,
+        this.count = 0;
+        this.danClick();
+        this.autoPlay();
+        this.clearPlay();
+        this.Dleft();
+        this.Dright();
+    }
+    Tab.prototype = {
+        constructor:Tab,
+        danClick:function(){
+            var that = this;
+            for(var i=0;i<this.tabs.length;i++){
+                this.tabs[i].index=i;
+                this.tabs[i].onmouseover = function(){
+                    that.hidePic();
+                    that.imgs[this.index].style.display = "block";
+                    that.tabs[this.index].className = "active";
+                    that.count = this.index;
+                }
+            }
+        },
+        hidePic:function(){
+            for(var i=0;i<this.imgs.length;i++){
+                        this.imgs[i].style.display = "none";
+                        this.tabs[i].className = "";
+                    }
+        },
+        autoPlay:function(){
+            var that = this;
+            this.timer = setInterval(function(){
+                that.count++;
+                if(that.count>that.tabs.length-1)that.count = 0;
+                that.hidePic();
+                that.imgs[that.count].style.display = "block";
+                that.tabs[that.count].className = "active";
+            },1000);
+        },
+        clearPlay:function(){
+            var that = this;
+            this.wrap.onmouseover = function(){
+                clearInterval(that.timer);
+            }
+            this.wrap.onmouseout = function(){
+                that.autoPlay();
+            }
+
+        },
+        Dleft:function(){
+            var that = this;
+            this.l.onclick = function(){
+                that.count--;
+                if(that.count<0)that.count = that.imgs.length-1;
+                    that.hidePic();
+                    that.imgs[that.count].style.display = "block";
+                    that.tabs[that.count].className = "active";
+            }
+        },
+        Dright:function(){
+            var that = this;
+            this.r.onclick = function(){
+                that.count++;
+                if(that.count>that.imgs.length-1)that.count = 0;
+                that.hidePic();
+                that.imgs[that.count].style.display = "block";
+                that.tabs[that.count].className = "active";
+            }
+        },
+    }
+    var t = new Tab();*/
+    </script>
+</body>
+</html>

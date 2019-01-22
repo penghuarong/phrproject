@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            background: oldlace;
+        }
+        canvas{
+            animation:runn 5s linear infinite;
+        }
+        @keyframes runn{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas style="background: oldlace;" width="600px" height="600px"></canvas>
+    <script>
+
+            var draw = document.querySelector('canvas');
+            var ud = draw.getContext('2d');
+
+            ud.beginPath();
+            ud.fillStyle = '#000';
+            ud.arc(300,300,200,0.5*Math.PI,1.5*Math.PI);
+            ud.lineTo(300,300);
+            ud.fill();
+            ud.closePath();
+
+            ud.beginPath();
+            ud.fillStyle = '#fff';
+            ud.arc(300,300,200,1.5*Math.PI,0.5*Math.PI);
+            ud.lineTo(300,300);
+            ud.fill();
+            ud.closePath();
+
+            ud.beginPath();
+            ud.fillStyle = '#fff';
+            ud.arc(300,200,100,0,360);
+            ud.fill();
+            ud.closePath();
+
+            ud.beginPath();
+            ud.fillStyle = '#000';
+            ud.arc(300,400,100,0,360);
+            ud.fill();
+            ud.closePath();
+
+            ud.beginPath();
+            ud.fillStyle = '#000';
+            ud.arc(300,200,50,0,360);
+            ud.fill();
+            ud.closePath();
+
+            ud.beginPath();
+            ud.fillStyle = '#fff';
+            ud.arc(300,400,50,0,360);
+            ud.fill();
+            ud.closePath();
+
+
+    </script>
+</body>
+</html>

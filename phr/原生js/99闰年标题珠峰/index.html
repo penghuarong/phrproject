@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+   /* // task1：把 '123abc'转化成10进制数字
+    console.log(parseInt('123abc',10));
+
+    // task2：把 '123abc'转化成16进制数字
+    console.log(parseInt('123abc',16));
+
+    // task3：判断'1.123abc'转化成小数
+    console.log(parseFloat('1.123abc'));
+
+    // task4：将 123 转化为字符串
+    console.log(String(123));
+
+    // task5：将 123 转化为布尔值
+    console.log(Boolean(123));*/
+
+    // var name = prompt("请输入您的姓名");
+
+    //             if( name == "彭华荣" )
+    //                 alert("亲爱的彭华荣欢迎您回来");
+    //             else
+    //                 alert("欢迎游客进入");
+
+    //             name == "露娜" ? alert("亲爱的露娜欢迎您回来") :alert("欢迎游客进入");
+
+    /*var age = prompt("请输入您的年龄");
+    if( age < 18){
+        alert("未满18周岁不能进入");
+    }
+    else{
+        alert("欢迎您进入我家网吧");
+    }*/
+    /*var score = prompt("请输入您的成绩");
+    if( score < 0 || score >100 ){
+        alert("成绩输入有误！");
+    }
+    else if( score >= 0 && score < 60 ){
+        alert("您的成绩不及格");
+    }
+    else if( score >= 60 && score < 90 ){
+        alert("您的成绩是及格");
+    }
+    else if( score >= 90 && score < 100 ){
+        alert("您的成绩是优秀");
+    }
+    else{
+        alert("您的成绩是满分！");
+    }*/
+
+    /*var score = prompt("请输入您的成绩");
+    if(isNaN( score ))
+    {
+        alert("成绩必须是数字");
+    }
+    else if( score == "" || score == " ")
+    {
+        alert("您还没有输入！");
+    }
+    else if( score < 0 || score > 100)
+    {
+     alert("成绩输入有误！");
+    }
+    else
+    {
+        if( score == 100)
+        {
+        alert("您的成绩为满分！");
+        }
+        else if( score >= 90)
+        {
+        alert("您的成绩为优秀！");
+        }
+        else if( score >= 60)
+        {
+        alert("您的成绩为及格！");
+        }
+        else
+        {
+        alert("您的成绩不及格！");
+        }
+    }*/
+    /*var month = prompt("请输入月份：");
+    switch( month ){
+        case "a":
+        case "b" :
+        case "5" :alert("春季");break;
+        case "6" :
+        case "7" :
+        case "8" :alert("夏季");break;
+        case "9" :
+        case "10" :
+        case "11" :alert("秋季");break;
+        case "12" :
+        case "1" :
+        case "2" :alert("冬季");break;
+        default :alert("您输入的月份不存在！");
+
+    }
+*/
+/*var brower = "ie",property = "transform",fullProperty = "";
+   对brower做出如下判断，根据不同的浏览器添加不同的前缀，添加后放到fullProperty中如：
+   brower是ie,则给property添加-ms-的前缀，即fullProperty的值为-ms-transform;
+   brower是chrome,则给property添加-webkit-的前缀
+   brower是firefox,则给property添加-moz-的前缀
+   brower是opear,则给property添加-o-的前缀
+   如果都不是，则告诉用户：“您的浏览器支持property的值”
+   最后打印输出fullProperty。*/
+   /*var brower = "ie",property = "transform",fullProperty = "";
+   switch(brower){
+    case "ie" :
+    property = "transform";
+    fullProperty = '-ms-' + porperty;
+    alert(fullProperty);break;
+
+
+   }
+*/
+
+
+/*3、弹出输入框，要求用户输入会员级别，且根据级别做出判断：
+        ·如果是普通会员，提示用户您享受的折扣是9.5折
+        ·如果是铁牌会员，提示用户您享受的折扣是9折
+        ·如果是铜牌会员，提示用户您享受的折扣是8.5折
+        ·如果是银牌会员，提示用户您享受的折扣是8折
+        ·如果是金牌会员，提示用户您享受的折扣是7.5折
+        ·如果是钻石会员，提示用户您享受的折扣是7折
+        ·如果以上都不是，提示用户您还没有注册，请先注册哦！*/
+       /* var member = prompt("请输入会员级别：");*/
+
+
+// 1-100的值
+for( var i = 1; i <= 100; i++){
+    document.write( i + "  ");
+    if(i%20==0){
+        document.write("<br/>")
+    }
+
+}
+
+// 1号-6号标题
+for( var i = 1; i<= 6; i++ ){
+    document.write("<h" + i + ">" + i + "号标题</h" + i + ">" );
+}
+
+
+// 五行星星
+for( var i = 1 ; i <= 5 ; i++){
+    for( var j = 1 ; j <= i ; j++ ){
+     document.write("★" + " ");
+
+    }
+    document.write("<br/>");
+}
+// 99乘法表  变量不加引号
+for(var a = 1; a <= 9; a++){
+    for(var b=1;b<=a;b++){
+      document.write( a + "*" + b + "=" + a*b + "&nbsp;&nbsp;&nbsp;");
+    }
+    document.write("<br />")
+}
+// 正序遍历
+var str = "hello 1605AB";
+for(var i=0;i<str.length;i++){
+    console.log(str[i]);
+}
+// 倒着遍历
+for(var i=str.length-1;i>=0;i--){
+console.log(str[i]);
+}
+// for in 遍历  可遍历数组和对象
+var str = "hello 1605AB";
+for(var i in str){
+    console.log(str[i]);
+}
+
+for(var i=1,j=1;i<10,j<6;i++,j++){
+console.log(i + "-" +j);
+}
+
+for(var i=1,j=1;i<10,j<6;i++,j++){
+var k= i + j;
+}
+console.log(k);
+
+// 2000-3000年的闰年
+var count = 0;
+for(var year=2000;year<=3000;year++){
+    if(year%4==0 && year%100!=0 || year%400==0){
+      document.write(year + "&nbsp;&nbsp;&nbsp;");
+      count++;
+      if(count%10==0){
+        document.write("<br />")
+      }
+
+    }
+}
+document.write("<br />");
+document.write("2000-3000年一共有几个闰年" + count);//2000-3000有几个闰年
+
+
+document.write("<br />");
+
+
+//珠穆朗玛峰8848.88m纸的厚度1mm每折纸一次是原来的2倍
+var h = 0.001,count = 0;
+while( h <= 8848.88){
+    h *=2;
+    count++;
+}
+document.write("一毫米的纸折" + count+ "次会超过珠穆朗玛峰")
+
+console.log(true=="hello")
+
+        </script>
+
+</body>
+</html>

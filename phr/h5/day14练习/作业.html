@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+<canvas style="border:1px solid #ccc" width="600" height="600"></canvas>
+<script>
+    var draw = document.querySelector('canvas');
+    var ud = draw.getContext('2d');
+
+    var data = [{
+        len:180,
+        value: 800,
+        color: "#10c48f"
+    }, {
+        len:160,
+        value: 200,
+        color: "#6c8acf"
+    }, {
+        len:150,
+        value: 100,
+        color: "#ee605f"
+    }];
+    var start = 0;
+    var end = 0;
+    var sum = 0;
+    var deg = Math.PI/180;
+    data.map(function(v,i){
+        sum += v.value;
+    })
+    data.map(function(v,i){
+        var old = v.value/sum *360;
+        end = start + old;
+        ud.beginPath();
+        ud.arc(300,300,v.len,start*deg,end*deg);
+        ud.lineTo(300,300);
+        ud.fillStyle = v.color;
+        ud.fill();
+        ud.closePath();
+
+        var newold = start + old/2;
+        var x = Math.cos(newold*deg)*220;
+        var y = Math.sin(newold*deg)*220;
+        console.log(x,y);
+        ud.arc(x+300,y+300,20,0,360);
+        ud.textBaseline = "middle";
+        ud.textAlign = "center";
+        ud.fillStyle = v.color;
+        ud.fill();
+        start = end;
+    })
+
+    var small = [{
+        color:"rgba(255,255,255,.5)",
+        leng:100
+    },{
+        color:"#f4f4f4",
+        leng:90
+    },{
+        color:"#fff",
+        leng:80
+    }];
+    small.map(function(v,i){
+        ud.beginPath();
+        ud.arc(300,300,v.leng,0,360);
+        ud.fillStyle = v.color;
+        ud.fill();
+        ud.closePath();
+    })
+
+</script>
+</body>
+</html>

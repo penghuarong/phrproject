@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        span{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background: red;
+            display: inline-block;
+            text-align:center;
+            line-height:100px;
+            font-size:20px;
+        }
+        span:nth-child(6),span:nth-child(7){
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button>开始</button>
+        <button>清空</button>
+    </div>
+    <script>
+    /*var box = document.getElementById("box"),
+        spn = document.getElementsByTagName("span"),
+        btn = document.getElementsByTagName("button");
+        btn[0].onclick = function(){
+            btn[0].disabled = true;
+            var timer = setInterval(two,100);
+           setTimeout(function(){
+            clearInterval(timer);
+            btn[0].disabled = false;
+           },2000);
+
+        }
+        btn[1].onclick = function(){
+            for( var i=0;i<spn.length;i++){
+                spn[i].innerHTML = "";
+            }
+        }
+        function two(){
+            var redNum = [],
+                blueNum = [];
+
+                while(redNum.length < 5)
+                {
+                    var nums = randomNum(1,33);
+                    if(redNum.indexOf(nums) == -1){
+                        redNum.push(nums);
+                    }
+
+                }
+                redNum.sort(function(a,b){return a-b;});
+
+                while(blueNum.length < 2)
+                {
+                    var nums = randomNum(1,16);
+                    if(blueNum.indexOf(nums) == -1){
+                        blueNum.push(nums);
+                    }
+
+                }
+                blueNum.sort(function(a,b){return a-b;});
+
+                var newNum = redNum.concat(blueNum);
+
+                for( var i=0;i<spn.length;i++){
+                    spn[i].innerHTML = newNum[i];
+                }
+
+        }
+
+        function randomNum(min,max){
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }*/
+        /*var box = document.querySelector("#box"),
+            spn = document.querySelectorAll("span"),
+            btn = document.querySelectorAll("button");
+
+            btn[0].onclick = function(){
+                btn[0].disabled = true;
+                var timer = setInterval(randomaa,100);
+                setTimeout(function fn(){
+                    clearInterval(timer);
+                    btn[0].disabled = false;
+                },2000);
+            }
+            btn[1].onclick = function(){
+                for(var i=0;i<spn.length;i++){
+                spn[i].innerHTML = "";
+            }
+            }
+            function randomaa(){
+                var redNum = [],
+                    blueNum = [];
+            while(redNum.length<5)
+            {
+                var num = randomNum(1,33);
+                if(redNum.indexOf(num) == -1){
+                    redNum.push(num);
+                }
+
+            }
+            redNum.sort(function(a,b){return a-b;});
+            console.log(redNum);
+
+            while(blueNum.length<2)
+            {
+                var num = randomNum(1,16);
+                if(blueNum.indexOf(num) == -1){
+                    blueNum.push(num);
+                }
+
+            }
+            blueNum.sort(function(a,b){return a-b;});
+            console.log(blueNum);
+            var nums = redNum.concat(blueNum);
+            console.log(nums);
+
+            for(var i=0;i<spn.length;i++){
+                spn[i].innerHTML = nums[i];
+            }
+            }
+            function randomNum(min,max){
+                return Math.floor(Math.random()*(max-min+1) + min);
+            }*/
+            var box = document.querySelector("#box"),
+                spn = document.querySelectorAll("span"),
+                btn = document.querySelectorAll("button");
+
+                btn[0].onclick = function(){
+                    btn[0].disabled = true;
+                 var timer = setInterval(aa,100);
+                 setTimeout(function fn(){
+                    clearInterval(timer);
+                    btn[0].disabled = false;
+                 },2000);
+                }
+                btn[1].onclick = function(){
+                    for(var i=0;i<spn.length;i++){
+                        spn[i].innerHTML = "";
+                    }
+                }
+                function aa(){
+                    var redNum = [],
+                     blueNum = [];
+                     while(redNum.length<5){
+                        var nums = randomNum(1,33);
+                        if(redNum.indexOf(nums)==-1){
+                            redNum.push(nums);
+                        }
+                     }
+                     redNum.sort(function(a,b){return a-b;});
+                     console.log(redNum);
+
+                     while(blueNum.length<2){
+                        var nums = randomNum(1,16);
+                        if(blueNum.indexOf(nums)==-1){
+                            blueNum.push(nums);
+                        }
+                     }
+                     blueNum.sort(function(a,b){return a-b;});
+                     console.log(blueNum);
+
+                     var newNum = redNum.concat(blueNum);
+                     console.log(newNum);
+                     for(var i=0;i<spn.length;i++){
+                        spn[i].innerHTML = newNum[i];
+                     }
+                }
+                function randomNum(min,max){
+                    return Math.floor(Math.random()*(max-min+1)+min);
+                }
+    </script>
+</body>
+</html>

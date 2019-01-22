@@ -1,0 +1,988 @@
+{
+    "data": {
+        "currentPage": 1,
+        "hasMore": true,
+        "pageModules": [{
+                "dataList": [{
+                        "brandId": 0,
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/f206a383-76d0-43d0-90e5-99fd03e9074a_750H",
+                        "resource": "https://a.dmall.com/act/uRA4lMDFOUfzEm.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 1,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/1b1f6845-aed5-4468-a91a-425c0290407a_750H",
+                        "resource": "https://a.dmall.com/act/JIlFnHzMuqs.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 2,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/db627bef-671a-4e87-bb18-a79114e7cb2d_750H",
+                        "resource": "https://a.dmall.com/act/UZhWN8LcXEl.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 3,
+                        "storeId": 11928,
+                        "venderId": 59
+                    }
+                ],
+                "displayType": 119,
+                "groupFeature": {
+                    "subTitle": "",
+                    "title": "轮播图-HBZL",
+                    "heightWideRatio": 0.4,
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 119,
+                "name": "轮播图-HBZL",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 1
+            },
+            {
+                "dataList": [],
+                "displayType": 139,
+                "groupFeature": {
+                    "title": "搜索-HBZL",
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 139,
+                "name": "搜索-HBZL",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 4,
+                "spId": -1
+            },
+            {
+                "dataList": [{
+                        "brandId": 0,
+                        "data": {
+                            "title": "米面粮油",
+                            "showPlayIcon": false,
+                            "showTitle": true
+                        },
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/378f930b-187c-463e-b730-938df173023b_240x240H",
+                        "remark": "米面粮油",
+                        "resource": "https://a.dmall.com/act/VIwg2DKvjhzurCc.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 1,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "title": "调味冲调",
+                            "showPlayIcon": false,
+                            "showTitle": true
+                        },
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/90ca2e0f-94c9-4ce7-913f-a6ddaf30d379_240x240H",
+                        "remark": "调味冲调",
+                        "resource": "https://a.dmall.com/act/8M4VS1ozPk2KZlL.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 2,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "title": "乳品速食",
+                            "showPlayIcon": false,
+                            "showTitle": true
+                        },
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/9968e5e8-e61a-457a-a6fd-452718be9912_240x240H",
+                        "remark": "乳品速食",
+                        "resource": "https://a.dmall.com/act/HRWhyeA5E102bDY.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 3,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "title": "家庭清洁",
+                            "showPlayIcon": false,
+                            "showTitle": true
+                        },
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/c687c536-5311-4fff-8006-333130ea9d1d_240x240H",
+                        "remark": "家庭清洁",
+                        "resource": "https://a.dmall.com/act/j4OHyTEAQp.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 4,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "title": "母婴用品",
+                            "showPlayIcon": false,
+                            "showTitle": true
+                        },
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/c31a4338-031d-4536-89bb-2341eba70bd0_240x240H",
+                        "remark": "母婴用品",
+                        "resource": "https://a.dmall.com/act/An4ISwlg1j.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 5,
+                        "storeId": 11928,
+                        "venderId": 59
+                    }
+                ],
+                "displayType": 120,
+                "groupFeature": {
+                    "subTitle": "",
+                    "showHoleBar": false,
+                    "title": "功能区(上)-HBZL",
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 120,
+                "name": "功能区(上)-HBZL",
+                "showBgImg": true,
+                "showName": false,
+                "sort": 5
+            },
+            {
+                "dataList": [{
+                        "brandId": 0,
+                        "data": {
+                            "title": "酒水饮品",
+                            "showPlayIcon": false,
+                            "showTitle": true
+                        },
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/859fb3aa-6c7d-46af-8d42-3ed2dffe0b94_240x240H",
+                        "remark": "酒水饮品",
+                        "resource": "https://a.dmall.com/act/YbnHa7xqEl81wXoj.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 1,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "title": "饼干膨化",
+                            "showPlayIcon": false,
+                            "showTitle": true
+                        },
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/3cf69e7a-cd42-4c97-839b-120dab8b21c3_240x240H",
+                        "remark": "饼干膨化",
+                        "resource": "https://a.dmall.com/act/WocuZTfP35aI.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 2,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "title": "坚果糖果",
+                            "showPlayIcon": false,
+                            "showTitle": true
+                        },
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/5aee3877-3e86-4831-bba3-ee832270d82b_240x240H",
+                        "remark": "坚果糖果",
+                        "resource": "https://a.dmall.com/act/cjlep7QfTaO.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 3,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "title": "个人护理",
+                            "showPlayIcon": false,
+                            "showTitle": true
+                        },
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/2e76a42b-0d11-4bf7-aa68-a5f2dbf9af7c_240x240H",
+                        "remark": "个人护理",
+                        "resource": "https://a.dmall.com/act/KWmn2DeyO8vr0FM.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 4,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "title": "日用百货",
+                            "showPlayIcon": false,
+                            "showTitle": true
+                        },
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/30e0cd49-1ec9-4acf-987e-0f3936ff7f06_240x240H",
+                        "remark": "日用百货",
+                        "resource": "https://a.dmall.com/act/pk84uCrW1e6Nd7wH.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 5,
+                        "storeId": 11928,
+                        "venderId": 59
+                    }
+                ],
+                "displayType": 120,
+                "groupFeature": {
+                    "subTitle": "",
+                    "showHoleBar": false,
+                    "title": "功能区(下)-HBZL",
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 120,
+                "name": "功能区(下)-HBZL",
+                "showBgImg": true,
+                "showName": false,
+                "sort": 6
+            },
+            {
+                "dataList": [{
+                        "brandId": 0,
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201807/880ada26-699a-4136-b1ba-ef543e97ffb9_480x480H",
+                        "resource": "https://a.dmall.com/act/GgYzEORoVMu.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 1,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201808/adbb9053-a55c-4081-9236-17d8e5b9505e_480x480H",
+                        "resource": "https://a.dmall.com/act/tYhCIr2mZnoqB0J6.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 2,
+                        "storeId": 11928,
+                        "venderId": 59
+                    }
+                ],
+                "displayType": 130,
+                "groupFeature": {
+                    "subTitle": "",
+                    "showHoleBar": false,
+                    "title": "2N活动-新人专享&大转盘",
+                    "ratio": 1,
+                    "margin": 10,
+                    "showTitle": false
+                },
+                "moduleType": 130,
+                "name": "2N活动-新人专享&大转盘",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 7
+            },
+            {
+                "dataList": [{
+                    "brandId": 0,
+                    "dataType": 5,
+                    "imageUrl": "https://img.dmallcdn.com/mIndex/201811/90e96658-af16-49e7-9f76-97e6bf901298_750H",
+                    "resource": "https://a.dmall.com/act/YDhR8Nu0tQZr.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                    "sort": 1,
+                    "storeId": 11928,
+                    "venderId": 59
+                }],
+                "displayType": 146,
+                "groupFeature": {
+                    "subTitle": "",
+                    "title": "异形-618大促",
+                    "heightWideRatio": 0.35,
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 146,
+                "name": "异形-618大促",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 8
+            },
+            {
+                "dataList": [{
+                    "brandId": 0,
+                    "dataType": 5,
+                    "imageUrl": "https://img.dmallcdn.com/mIndex/201808/cf417dce-5533-4c5d-a5aa-3e5af46a382f_750H",
+                    "resource": "",
+                    "sort": 1,
+                    "storeId": 11928,
+                    "venderId": 59
+                }],
+                "displayType": 146,
+                "groupFeature": {
+                    "subTitle": "",
+                    "title": "腰通-热门促销",
+                    "heightWideRatio": 0.12,
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 146,
+                "name": "腰通-热门促销",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 10
+            },
+            {
+                "dataList": [{
+                    "brandId": 0,
+                    "dataType": 5,
+                    "imageUrl": "https://img.dmallcdn.com/mIndex/201811/fb899eed-0a18-4a6d-acf7-17e57890c8a2_750H",
+                    "resource": "https://a.dmall.com/act/e2iHK0ZQ1OPxpXDj.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                    "sort": 1,
+                    "storeId": 11928,
+                    "venderId": 59
+                }],
+                "displayType": 146,
+                "groupFeature": {
+                    "subTitle": "",
+                    "title": "腰通-粮油分类活动",
+                    "heightWideRatio": 0.29,
+                    "ratio": 1,
+                    "margin": 4,
+                    "showTitle": false
+                },
+                "moduleType": 146,
+                "name": "腰通-粮油分类活动",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 11
+            },
+            {
+                "dataList": [{
+                        "brandId": 0,
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/1dc83404-ef23-4d0c-b2a5-6fc7dab4e6b5_360x360H",
+                        "resource": "https://a.dmall.com/act/o6T78MgJhWZt.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 1,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/bee14f76-6a38-4c6f-a0a7-50e309748602_360x360H",
+                        "resource": "https://a.dmall.com/act/4lPG8uiDOHgS.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 2,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "dataType": 5,
+                        "imageUrl": "https://img.dmallcdn.com/mIndex/201811/fcf8f030-3a23-4958-8900-356d30408d5b_360x360H",
+                        "resource": "https://a.dmall.com/act/eYVWtjuNZFJ4XawH.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                        "sort": 3,
+                        "storeId": 11928,
+                        "venderId": 59
+                    }
+                ],
+                "displayType": 140,
+                "groupFeature": {
+                    "subTitle": "",
+                    "showHoleBar": false,
+                    "title": "1+3分类活动-3",
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 140,
+                "name": "1+3分类活动-3",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 12
+            },
+            {
+                "dataList": [{
+                    "brandId": 0,
+                    "dataType": 5,
+                    "imageUrl": "https://img.dmallcdn.com/mIndex/201811/d72392aa-0923-4f83-8214-680e04a1f544_750H",
+                    "resource": "https://a.dmall.com/act/A60iaPKpGNu4.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                    "sort": 1,
+                    "storeId": 11928,
+                    "venderId": 59
+                }],
+                "displayType": 146,
+                "groupFeature": {
+                    "subTitle": "",
+                    "title": "腰通-个户家清活动",
+                    "heightWideRatio": 0.29,
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 146,
+                "name": "腰通-个户家清活动",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 13
+            },
+            {
+                "dataList": [{
+                    "brandId": 0,
+                    "dataType": 5,
+                    "imageUrl": "https://img.dmallcdn.com/mIndex/201811/ccac76a1-7920-4fdd-bc39-a2313a550259_750H",
+                    "resource": "https://a.dmall.com/act/BXCNtHpklK.html?erpStoreId=11928&dmfrom=wx&from=wx&shareKey=1543753320978",
+                    "sort": 1,
+                    "storeId": 11928,
+                    "venderId": 59
+                }],
+                "displayType": 146,
+                "groupFeature": {
+                    "subTitle": "",
+                    "title": "POP店铺",
+                    "heightWideRatio": 0.29,
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 146,
+                "name": "POP店铺",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 14
+            },
+            {
+                "dataList": [{
+                    "brandId": 0,
+                    "dataType": 5,
+                    "imageUrl": "https://img.dmallcdn.com/mIndex/201808/00e19851-6f6e-4b31-a0cb-8161bfec463f_750H",
+                    "resource": "",
+                    "sort": 1,
+                    "storeId": 11928,
+                    "venderId": 59
+                }],
+                "displayType": 146,
+                "groupFeature": {
+                    "subTitle": "",
+                    "title": "腰通-精选生活",
+                    "heightWideRatio": 0.12,
+                    "ratio": 1,
+                    "margin": 18,
+                    "showTitle": false
+                },
+                "moduleType": 146,
+                "name": "腰通-精选生活",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 16,
+                "spId": -1
+            },
+            {
+                "dataList": [{
+                    "brandId": 0,
+                    "dataType": 5,
+                    "imageUrl": "https://img.dmallcdn.com/mIndex/201808/c1acbf77-4410-4756-bdef-5f5d96855d5f_750H",
+                    "resource": "",
+                    "sort": 1,
+                    "storeId": 11928,
+                    "venderId": 59
+                }],
+                "displayType": 146,
+                "groupFeature": {
+                    "subTitle": "",
+                    "title": "酒水奶饮-图",
+                    "heightWideRatio": 0.31,
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 146,
+                "name": "酒水奶饮-图",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 17,
+                "spId": -1
+            },
+            {
+                "dataList": [{
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000354800,
+                            "promotionPrice": 4990,
+                            "stock": 447,
+                            "price": 5800,
+                            "skuType": 2,
+                            "sell": true,
+                            "showPlayIcon": false,
+                            "name": "景田百岁山饮用天然矿泉水 570ml*24",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "景田百岁山饮用天然矿泉水 570ml*24",
+                                "img": "https://img.dmallcdn.com/20170901/d0aa3714-d3f0-4d99-958a-21916d2f32b0_360x360H",
+                                "skuId": 1000354800,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20170901/d0aa3714-d3f0-4d99-958a-21916d2f32b0_360x360H",
+                        "resource": "1000354800",
+                        "sort": 1,
+                        "spId": 1000354800,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000355291,
+                            "promotionPrice": 16900,
+                            "stock": 268,
+                            "price": 18600,
+                            "skuType": 2,
+                            "sell": true,
+                            "showPlayIcon": false,
+                            "name": "牛栏山陈酿白瓶白牛二42度 500ml*12",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "牛栏山陈酿白瓶白牛二42度 500ml*12",
+                                "img": "https://img.dmallcdn.com/20170901/04197a1a-3b21-4263-b802-5dc059457400_360x360H",
+                                "skuId": 1000355291,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20170901/04197a1a-3b21-4263-b802-5dc059457400_360x360H",
+                        "resource": "1000355291",
+                        "sort": 2,
+                        "spId": 1000355291,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000355460,
+                            "promotionPrice": 5500,
+                            "stock": 3165,
+                            "price": 5800,
+                            "skuType": 2,
+                            "sell": true,
+                            "showPlayIcon": false,
+                            "name": "三元小方白纯牛奶 250ml*24/箱",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "三元小方白纯牛奶 250ml*24/箱",
+                                "img": "https://img.dmallcdn.com/20171107/6478e58b-5a0a-40d9-a14b-499ac6a339b5_360x360H",
+                                "skuId": 1000355460,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20171107/6478e58b-5a0a-40d9-a14b-499ac6a339b5_360x360H",
+                        "resource": "1000355460",
+                        "sort": 3,
+                        "spId": 1000355460,
+                        "storeId": 11928,
+                        "venderId": 59
+                    }
+                ],
+                "displayType": 150,
+                "groupFeature": {
+                    "subTitle": "",
+                    "title": "酒水奶饮-商品-1N",
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 150,
+                "name": "酒水奶饮-商品-1N",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 18
+            },
+            {
+                "dataList": [{
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000355284,
+                            "promotionPrice": 6500,
+                            "stock": 761,
+                            "price": 6900,
+                            "count": 1,
+                            "skuType": 2,
+                            "sell": true,
+                            "showPlayIcon": false,
+                            "name": "燕京啤酒 330ml*24",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "燕京啤酒 330ml*24",
+                                "img": "https://img.dmallcdn.com/20170901/75f2f53d-fbe0-4ade-845c-9fe8b4c25b2c_360x360H",
+                                "skuId": 1000355284,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20170901/75f2f53d-fbe0-4ade-845c-9fe8b4c25b2c_360x360H",
+                        "resource": "1000355284",
+                        "sort": 1,
+                        "spId": 1000355284,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000354029,
+                            "promotionPrice": 5990,
+                            "stock": 898,
+                            "count": 1,
+                            "price": 6900,
+                            "skuType": 2,
+                            "sell": true,
+                            "showPlayIcon": false,
+                            "name": "百威啤酒 460ml*12",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "百威啤酒 460ml*12",
+                                "img": "https://img.dmallcdn.com/20170901/0d6e6b31-d8c2-4ef4-b54c-a9014b685e3b_360x360H",
+                                "skuId": 1000354029,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20170901/0d6e6b31-d8c2-4ef4-b54c-a9014b685e3b_360x360H",
+                        "resource": "1000354029",
+                        "sort": 2,
+                        "spId": 1000354029,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "stock": 20,
+                            "skuType": 2,
+                            "count": 1,
+                            "sell": true,
+                            "price": 699,
+                            "name": "牛栏山百年陈酿三牛36度 400ml*6",
+                            "showPlayIcon": false,
+                            "promotionList": [],
+                            "skus": {
+                                "shop": 11928,
+                                "title": "牛栏山百年陈酿三牛36度 400ml*6",
+                                "img": "https://img.dmallcdn.com/20180428/92a181bc-c047-4524-828b-81f519024aa9_360x360H",
+                                "skuId": 1000391900,
+                                "promotionInfo": ""
+                            },
+                            "videoInfo": [],
+                            "showTitle": false,
+                            "sku": 1000391900,
+                            "promotionPrice": 59800
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20180428/92a181bc-c047-4524-828b-81f519024aa9_360x360H",
+                        "resource": "1000391900",
+                        "sort": 3,
+                        "spId": 1000391900,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000353968,
+                            "promotionPrice": 13800,
+                            "stock": 78,
+                            "price": 13900,
+                            "count": 1,
+                            "skuType": 2,
+                            "sell": true,
+                            "showPlayIcon": false,
+                            "name": "红牛维生素功能饮料原味型 250ml*24",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "红牛维生素功能饮料原味型 250ml*24",
+                                "img": "https://img.dmallcdn.com/20171107/99be0a71-4f49-460c-bc39-3cda2764688d_360x360H",
+                                "skuId": 1000353968,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20171107/99be0a71-4f49-460c-bc39-3cda2764688d_360x360H",
+                        "resource": "1000353968",
+                        "sort": 4,
+                        "spId": 1000353968,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000355380,
+                            "promotionPrice": 11900,
+                            "stock": 203,
+                            "count": 1,
+                            "price": 12760,
+                            "skuType": 2,
+                            "sell": true,
+                            "showPlayIcon": false,
+                            "name": "北冰洋橙汁汽水 330ml*24",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "北冰洋橙汁汽水 330ml*24",
+                                "img": "https://img.dmallcdn.com/20170901/9e445e18-8050-4249-ab50-687147de71ad_360x360H",
+                                "skuId": 1000355380,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20170901/9e445e18-8050-4249-ab50-687147de71ad_360x360H",
+                        "resource": "1000355380",
+                        "sort": 5,
+                        "spId": 1000355380,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000354471,
+                            "promotionPrice": 10900,
+                            "stock": 46,
+                            "price": 11900,
+                            "count": 1,
+                            "skuType": 2,
+                            "sell": true,
+                            "showPlayIcon": false,
+                            "name": "椰树椰汁 245ml*24 新老包装随机发货",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "椰树椰汁 245ml*24 新老包装随机发货",
+                                "img": "https://img.dmallcdn.com/20170901/d5d657b2-2ed9-469e-a319-be1207dbcb67_360x360H",
+                                "skuId": 1000354471,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20170901/d5d657b2-2ed9-469e-a319-be1207dbcb67_360x360H",
+                        "resource": "1000354471",
+                        "sort": 6,
+                        "spId": 1000354471,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000352385,
+                            "promotionPrice": 6990,
+                            "stock": 209,
+                            "price": 7900,
+                            "skuType": 2,
+                            "sell": true,
+                            "count": 1,
+                            "showPlayIcon": false,
+                            "name": "伊利纯牛奶 250ml*24/箱",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "伊利纯牛奶 250ml*24/箱",
+                                "img": "https://img.dmallcdn.com/20171107/cf63f63a-40b4-41fd-ab42-32aacdabd333_360x360H",
+                                "skuId": 1000352385,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20171107/cf63f63a-40b4-41fd-ab42-32aacdabd333_360x360H",
+                        "resource": "1000352385",
+                        "sort": 7,
+                        "spId": 1000352385,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000354298,
+                            "promotionPrice": 5090,
+                            "stock": 455,
+                            "count": 1,
+                            "price": 5200,
+                            "skuType": 2,
+                            "sell": true,
+                            "showPlayIcon": false,
+                            "name": "三元冰岛式酸奶 200g*12",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "三元冰岛式酸奶 200g*12",
+                                "img": "https://img.dmallcdn.com/20170901/39cdcd8d-d9c4-4811-a14d-82c86aa27324_360x360H",
+                                "skuId": 1000354298,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20170901/39cdcd8d-d9c4-4811-a14d-82c86aa27324_360x360H",
+                        "resource": "1000354298",
+                        "sort": 8,
+                        "spId": 1000354298,
+                        "storeId": 11928,
+                        "venderId": 59
+                    },
+                    {
+                        "brandId": 0,
+                        "data": {
+                            "cornerSign": [],
+                            "videoInfo": [],
+                            "sku": 1000355467,
+                            "promotionPrice": 6050,
+                            "stock": 399,
+                            "price": 6900,
+                            "count": 1,
+                            "skuType": 2,
+                            "sell": true,
+                            "showPlayIcon": false,
+                            "name": "蒙牛特仑苏纯牛奶 250ml*12 新老包装随机发货",
+                            "promotionList": [{
+                                "typeName": "单品促销",
+                                "subTypeName": "精选价",
+                                "subType": 102,
+                                "type": 1
+                            }],
+                            "promotionDisplayLable": "精选价",
+                            "skus": {
+                                "shop": 11928,
+                                "title": "蒙牛特仑苏纯牛奶 250ml*12 新老包装随机发货",
+                                "img": "https://img.dmallcdn.com/20171013/ca3a1939-1148-4a85-a522-9ea2c9764802_360x360H",
+                                "skuId": 1000355467,
+                                "promotionInfo": ""
+                            },
+                            "showTitle": false
+                        },
+                        "dataType": 3,
+                        "imageUrl": "https://img.dmallcdn.com/20171013/ca3a1939-1148-4a85-a522-9ea2c9764802_360x360H",
+                        "resource": "1000355467",
+                        "sort": 9,
+                        "spId": 1000355467,
+                        "storeId": 11928,
+                        "venderId": 59
+                    }
+                ],
+                "displayType": 128,
+                "groupFeature": {
+                    "subTitle": "",
+                    "title": "酒水奶饮-商品-3N",
+                    "ratio": 1,
+                    "margin": 0,
+                    "showTitle": false
+                },
+                "moduleType": 128,
+                "name": "酒水奶饮-商品-3N",
+                "showBgImg": false,
+                "showName": false,
+                "sort": 19
+            }
+        ]
+    },
+    "errCode": "0000",
+    "errMsg": ""
+}

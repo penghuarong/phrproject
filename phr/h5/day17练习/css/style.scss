@@ -1,0 +1,225 @@
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @include sizing;
+}
+
+.wrap {
+    @include num(100%, 100%);
+    @include box_flex;
+    @include direction(column);
+}
+
+.header {
+    @include num(100%, 35%);
+    background: #283c7b;
+    padding: pxTorem(10px);
+    h2 {
+        font-size: pxTorem(20px);
+        color: #fff;
+        @include box_flex;
+        @include align;
+        @include justify;
+        position: relative;
+        i {
+            position: absolute;
+            right: 8%;
+            top: pxTorem(10px);
+            display: inline-block;
+            width: pxTorem(50px);
+            height: pxTorem(20px);
+            background: #f9cc11;
+            text-align: center;
+            line-height: pxTorem(20px);
+            font-size: pxTorem(10px);
+            border-radius: pxTorem(5px);
+            color: #000;
+        }
+        span {
+            font-size: pxTorem(15px);
+            margin: 0 pxTorem(10px);
+        }
+    }
+    p {
+        color: #e0e2f1;
+        padding: pxTorem(15px);
+    }
+}
+
+section {
+    flex: 1;
+    background: #e1e7f5;
+}
+
+footer {
+    @include num(100%, pxTorem(35px));
+    background: #fff;
+}
+
+.fixed {
+    width: 100%;
+    height: 80%;
+    position: fixed;
+    top: 20%;
+    @include box_flex;
+    @include justify;
+    @include direction(column);
+    .swiper-container {
+        width: 100%;
+        height: 80%;
+        .swiper-wrapper {
+            @include num(100%, 100%);
+            @include box_flex;
+            .swiper-slide {
+                @include num(100%, 100%);
+                @include box_flex;
+                @include justify;
+                .one {
+                    width: 90%;
+                    height: 100%;
+                    padding: pxTorem(10px);
+                    background: #fff;
+                    border-radius: pxTorem(5px);
+                    overflow: hidden;
+                    .head {
+                        padding: pxTorem(5px);
+                        width: 100%;
+                        @include box_flex;
+                        border-bottom: pxTorem(1px) solid #283c7b;
+                        .left {
+                            width: pxTorem(60px);
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        .right {
+                            flex: 1;
+                            margin-left: pxTorem(10px);
+                            @include box_flex;
+                            @include justify;
+                            @include direction(column);
+                            @include align;
+                            h3 {
+                                width: 70%;
+                                height: pxTorem(20px);
+                                background: #9e0116;
+                                color: #fff;
+                                text-align: center;
+                                line-height: pxTorem(20px);
+                            }
+                            h4 {
+                                color: #283c7b;
+                                height: pxTorem(20px);
+                                line-height: pxTorem(20px);
+                            }
+                            h1 {
+                                font-size: pxTorem(20px);
+                                color: #9e0116;
+                            }
+                            h5 {
+                                color: #9c9c9c;
+                            }
+                        }
+                    }
+                    .content {
+                        width: 100%;
+                        ul {
+                            width: 100%;
+                            padding: pxTorem(10px);
+                            li {
+                                width: 100%;
+                                color: #9b9b9b;
+                            }
+                        }
+                        .draw {
+                            width: 100%;
+                            height: auto;
+                            @include box_flex;
+                            @include justify;
+                        }
+                        p {
+                            color: #9b9b9b;
+                            margin-top: pxTorem(5px);
+                        }
+                        h2 {
+                            font-size: pxTorem(16px);
+                            @include num(pxTorem(120px), pxTorem(30px));
+                            border-radius: pxTorem(20px);
+                            border: pxTorem(1px) solid #9e0116;
+                            text-align: center;
+                            line-height: pxTorem(30px);
+                            color: #9e0116;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tab {
+        @include box_flex;
+        @include align;
+        @include justify;
+        margin-top: pxTorem(10px);
+        ul {
+            width: 90%;
+            height: pxTorem(40px);
+            background: #fff;
+            @include box_flex;
+            @include align;
+            @include justify;
+            border: 1px solid #ccc;
+            border-radius: pxTorem(5px);
+            li {
+                width: 33%;
+                height: 100%;
+                @include box_flex;
+                @include align;
+                @include justify;
+                border-right: 1px solid #ccc;
+                &:nth-child(3) {
+                    border: 0;
+                }
+                span {
+                    font-size: pxTorem(16px);
+                    margin-left: pxTorem(10px);
+                }
+            }
+        }
+    }
+}
+
+.yanse {
+    color: #9e0116;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    background-image: url(../images/自测_03.png);
+    z-index: 999;
+    visibility: visible!important;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    background-image: url(../images/自测_02.png);
+    visibility: visible!important;
+}
+
+.active {
+    &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        display: inline-block;
+        border: pxTorem(5px) solid transparent;
+        border-bottom-color: #9e0116;
+        position: relative;
+        left: pxTorem(-25px);
+        top: pxTorem(-25px);
+    }
+    border-top: pxTorem(1px) solid #9e0116;
+}

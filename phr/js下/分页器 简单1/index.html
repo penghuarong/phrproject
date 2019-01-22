@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            list-style:none;
+        }
+        #page li{
+            width: 20px;
+            height: 20px;
+            border:1px solid #ccc;
+            float:left;
+            text-align:center;
+            line-height:20px;
+            margin-right:10px;
+        }
+        #news li{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="news">
+        <li>第1条新闻</li>
+        <li>第2条新闻</li>
+        <li>第3条新闻</li>
+        <li>第4条新闻</li>
+        <li>第5条新闻</li>
+        <li>第6条新闻</li>
+        <li>第7条新闻</li>
+        <li>第8条新闻</li>
+        <li>第9条新闻</li>
+        <li>第10条新闻</li>
+        <li>第11条新闻</li>
+        <li>第12条新闻</li>
+        <li>第13条新闻</li>
+        <li>第14条新闻</li>
+        <li>第15条新闻</li>
+        <li>第16条新闻</li>
+        <li>第17条新闻</li>
+    </ul>
+    <select name="" id=""></select>
+    <ul id="page">
+
+    </ul>
+    <button><</button><button>></button>
+    <script>
+       var arr = ["2条/页","5条/页","10条/页","17条/页"];
+       var uls = document.querySelectorAll("ul"),
+           sel = document.getElementsByTagName("select"),
+           lis = document.querySelectorAll("#news li"),
+           btn = document.getElementsByTagName("button");
+           var count = lis.length;
+           var str = "";
+           for(var i=0;i<arr.length;i++){
+            str += "<option>" + arr[i] + "</option>";
+           }
+           sel[0].innerHTML = str;
+           sel[0].onchange = function(){
+                var val = parseInt(sel[0].value);//分成几页
+                var newcount = Math.ceil(count/val);//每页有几条
+                var str1 = "";
+                for(var i=1;i<=newcount;i++){
+                    str1 += "<li>" + i + "</li>";
+                }
+                uls[1].innerHTML = str1;
+                var pageli = document.querySelectorAll("#page li");
+                for(var i=0;i<pageli.length;i++){
+                    pageli[i].onclick = function(){
+                        var min = this.innerHTML*val-val;
+                        var max = this.innerHTML*val - 1;
+                        console.log(min);
+                        console.log(max);
+                        if(max>lis.length-1)max = lis.length-1;//避免 报错
+                        for(var i=0;i<lis.length;i++){
+                            lis[i].style.display = "none";
+                        }
+                        for(var j=min;j<max;j++){
+                            lis[j].style.display = "block";
+                        }
+                    }
+                }
+           }
+
+    </script>
+</body>
+</html>

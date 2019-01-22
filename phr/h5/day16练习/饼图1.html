@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="600" width="600"></canvas>
+</body>
+<script>
+    var myCanvas = document.getElementById('myCanvas');
+    var ctx = myCanvas.getContext('2d');
+
+    function getRandom(max, min) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    var arr = [];
+    for (var i = 0; i < 11; i++) {
+        arr.push({
+            value: getRandom(1000, 10000),
+            color: `rgb(${getRandom(0,255)},${getRandom(0,255)},${getRandom(0,255)})`
+        });
+    }
+    //总分数
+    var sum = arr.map(function(v, i) {
+        return v.value;
+    }).reduce(function(a, b) { //[1,2,3,4,5] 
+        return a + b;
+    });
+
+    //把value放到数组中
+    var maxArr = arr.map(function(v, i) {
+        return v.value;
+    });
+
+    //取数组里面的最大值
+    var max = Math.max.apply(null, maxArr);
+    console.log(maxArr);
+    // console.log(max);
+    console.log(arr);
+
+    //取最大值在数组里面的下标
+    var index = maxArr.indexOf(max);
+    console.log(index, 'index');
+
+    //排序
+    var sorts = maxArr.sort(function(a, b) {
+        return b - a;
+    }).slice(0, 5);
+    console.log(sorts);
+
+    var start = end = 0,
+        start1 = end1 = 0,
+        deg = Math.PI / 180;
+    //画饼图
+    arr.map(function(v, i) { //所有的数据
+        end = start + v.value / sum * 360;
+        var c_deg = start + (v.value / sum * 360) / 2;
+        var x1 = Math.cos(c_deg * deg) * 160 + 300;
+        var y1 = Math.sin(c_deg * deg) * 160 + 300;
+
+        var x2 = Math.cos(c_deg * deg) * 180 + 300;
+        var y2 = Math.sin(c_deg * deg) * 180 + 300;
+
+        var x3 = 0,
+            x4 = 0,
+            y3 = y2;
+        if (x2 > 300) {
+            x3 = x2 + 100;
+            x4 = x2 + 30;
+        } else {
+            x3 = x2 - 100;
+            x4 = x2 - 50;
+        }
+        console.log(x2);
+        if (i == index) {
+            start1 = start;
+            end1 = end;
+        }
+        ctx.beginPath();
+        ctx.arc(300, 300, 160, start * deg, end * deg);
+        ctx.lineTo(300, 300);
+        ctx.fillStyle = v.color;
+        ctx.fill();
+        ctx.closePath();
+
+        start = end;
+
+        //最大5个值线
+        sorts.map(function(va, ia) {
+            if (va == v.value) {
+                line(x1, y1, x2, y2, x3, y3, v.color);
+                text('雷神', x4, y2 - 10);
+                text('场次占比', x4, y2 + 20);
+            }
+        });
+    });
+    //放字的函数
+    function text(text, x, y, color) {
+        ctx.beginPath();
+        ctx.fillStyle = color;
+        ctx.fillText(text, x, y);
+        ctx.closePath();
+    }
+
+    //画线的函数
+
+    function line(x1, y1, x2, y2, x3, y3, color) {
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.lineTo(x3, y3);
+        ctx.strokeStyle = color;
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(x3, y3, 5, 0, 360);
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    //最大扇形的透明圆
+
+    ctx.beginPath();
+    ctx.arc(300, 300, 170, start1 * deg, end1 * deg);
+    ctx.lineTo(300, 300);
+    ctx.fillStyle = 'rgba(0,0,0,0.1)';
+    ctx.fill();
+    ctx.closePath();
+
+    //中间的白色园
+    ctx.beginPath();
+    ctx.arc(300, 300, 120, 0, 360);
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+    ctx.closePath();
+
+    //中间透明白色
+    ctx.beginPath();
+    ctx.arc(300, 300, 120, 0, 360);
+    ctx.lineWidth = 20;
+    ctx.strokeStyle = 'rgba(0,0,0,0.1)';
+    ctx.stroke();
+    ctx.closePath();
+</script>
+
+</html>

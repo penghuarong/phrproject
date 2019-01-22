@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            list-style:none
+        }
+    </style>
+</head>
+<body>
+<canvas width="600px" height="600px" style="border:1px solid #ccc" id="draw"></canvas>
+<script>
+    var draw = document.querySelector('#draw');
+    var ud = draw.getContext('2d');
+
+    var data = [
+        { deg: 30, name: '直接访问', color: "rgb(213, 58, 53)" },
+        { deg: 100, name: '邮件营销', color: "rgb(51, 75, 92)" },
+        { deg: 90, name: '联盟广告', color: "rgb(106, 176, 184)" },
+        { deg: 80, name: '视频广告', color: "rgb(233, 143, 111)" },
+        { deg: 60, name: '搜索引擎', color: "rgb(145, 199, 174)" }
+    ]
+
+    var start = 0;
+    var end = 0;
+    ud.translate(300,300);
+    data.map(function(v,i){
+        var hu = Math.PI/180;
+        end = start + v.deg;
+        ud.beginPath();
+        ud.fillStyle = v.color;
+        ud.arc(0,0,200,start*hu,end*hu);
+        ud.lineTo(0,0);
+        ud.fill();
+
+
+        var deg2 = start + v.deg/2;
+        var x = Math.cos(deg2*hu)*150;
+        var y = Math.sin(deg2*hu)*150;
+        ud.textBaseline = "middle";
+        ud.textAlign = "center";
+        ud.fillStyle = "#000";
+        ud.fillText(v.name,x,y);
+        ud.closePath();
+        start = end;
+    })
+
+
+    ud.beginPath();
+    ud.fillStyle = '#fff';
+    ud.arc(0,0,120,0,360);
+    ud.fill();
+    ud.closePath();
+</script>
+</body>
+</html>

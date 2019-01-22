@@ -1,0 +1,148 @@
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @include sizing;
+}
+
+.wrap {
+    @include num(100%, 100%);
+    @include box_flex;
+    @include direction(column);
+}
+
+header {
+    @include num(100%, pxTorem(45px));
+    background: #e23c3e;
+    @include box_flex;
+    @include justify;
+    @include align;
+    @include flex_shrink(0);
+    img {
+        width: pxTorem(50px);
+    }
+}
+
+section {
+    @include num(100%, 100%);
+    flex: 1;
+    background: #f1f0f6;
+    overflow: hidden;
+    @include box_flex;
+    @include direction(column);
+    .banner {
+        width: 100%;
+        .swiper-container,
+        .swiper-wrapper,
+        .swiper-slide {
+            @include num(100%, 100%);
+        }
+        .swiper-slide img {
+            width: 100%;
+            display: block;
+        }
+    }
+    .nav {
+        width: 100%;
+        background: #fff;
+        ul {
+            padding: pxTorem(10px);
+            @include box_flex;
+            @include justify(space-between);
+            li {
+                @include box_flex;
+                @include direction(column);
+                @include justify;
+                @include align;
+                h5 {
+                    font-size: pxTorem(8px);
+                    margin: pxTorem(5px) 0;
+                }
+            }
+        }
+    }
+    .content {
+        // @include num(100%, 100%);
+        flex: 1;
+        margin-top: pxTorem(5px);
+        overflow: hidden;
+        ul {
+            @include num(100%, auto);
+            li {
+                @include num(100%, auto);
+                @include box_flex;
+                padding: pxTorem(10px);
+                border-bottom: 1px solid #ccc;
+                background: #fff;
+                .left {
+                    flex: 1;
+                    margin-right: pxTorem(10px);
+                    p:nth-child(1) {
+                        font-size: pxTorem(15px);
+                        @include box_flex;
+                        @include align;
+                        height: pxTorem(30px);
+                        line-height: pxTorem(30px);
+                        span {
+                            display: inline-block;
+                            font-size: pxTorem(10px);
+                            width: pxTorem(15px);
+                            height: pxTorem(15px);
+                            background: #efbd66;
+                            color: #fff;
+                            text-align: center;
+                            line-height: pxTorem(15px);
+                            margin: 0 pxTorem(5px);
+                        }
+                    }
+                    p:nth-child(2) {
+                        height: pxTorem(30px);
+                        line-height: pxTorem(30px);
+                        @include box_flex;
+                        @include justify(space-between);
+                        @include align;
+                        color: #afafaf;
+                    }
+                    p:nth-child(3) {
+                        height: pxTorem(30px);
+                        line-height: pxTorem(30px);
+                        @include box_flex;
+                        @include justify(space-between);
+                        @include align;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    @include num(100%, pxTorem(45px));
+    @include flex_shrink(0);
+    ul {
+        @include num(100%, 100%);
+        padding: 0 pxTorem(10px);
+        @include box_flex;
+        @include justify(space-between);
+        @include align;
+        li {
+            @include box_flex;
+            @include direction(column);
+            @include justify;
+            @include align;
+            &:hover i.iconfont,
+            &:hover span {
+                color: #e23c3e;
+            }
+            i.iconfont {
+                font-size: pxTorem(20px);
+                color: #b6b6b6;
+            }
+            span {
+                color: #b6b6b6;
+            }
+        }
+    }
+}

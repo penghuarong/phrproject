@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+<input type="text" name="" id="ipt">
+<div id="box"></div>
+    <script>
+    var ipt = document.querySelector("#ipt"),
+        box = document.querySelector("#box");
+        ipt.onkeyup = function(c){
+            var e = e || window.event;
+            if(e.keyCode ==13)
+            {
+            var op = document.createElement("p");
+            var ospn = document.createElement("span");
+
+            op.innerHTML = ipt.value;
+            ospn.innerHTML = new Date().toLocaleString();
+
+            box.appendChild(op);
+            op.appendChild(ospn);
+
+            ipt.value = "";
+
+            }
+
+        }
+    </script>
+</body>
+</html>

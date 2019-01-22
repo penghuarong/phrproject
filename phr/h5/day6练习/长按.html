@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .list {
+            width: 100%;
+            position: relative;
+        }
+        
+        .list li {
+            height: 50px;
+            width: 100%;
+            text-align: center;
+            line-height: 50px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .fixed {
+            width: 100px;
+            height: 96px;
+            background: salmon;
+            border-radius: 5px;
+            position: absolute;
+            left: 60%;
+            top: 50px;
+            display: none;
+        }
+        
+        .fixed li {
+            height: 30px;
+            text-align: center;
+            line-height: 31px;
+            border: 1px solid #ccc;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ol class="fixed">
+        <li>顶置</li>
+        <li>删除</li>
+        <li>取消关注</li>
+    </ol>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        var flag = false;
+        $('.list').on('touchstart', 'li', function() {
+            var index = $(this).index();
+            timer = setTimeout(function() {
+                flag = true;
+                $('.fixed').show();
+                $('.fixed').css('top', (index + 1) * 51 + 'px');
+            }, 1000);
+        })
+        $('.list').on('touchmove', 'li', function() {
+            clearInterval(timer);
+            fleg = false;
+        })
+        $('.list').on('touchend', 'li', function() {
+            clearInterval(timer);
+            if (!flag) {
+                $('.fixed').hide();
+            }
+            flag = false;
+        })
+    </script>
+</body>
+
+</html>

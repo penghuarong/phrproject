@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="box">
+		<ul class="left">
+			<li>营养套餐</li>
+			<li>酒水饮料</li>
+			<li>酒水饮料</li>
+			<li>酒水饮料</li>
+			<li>酒水饮料</li>
+			<li>酒水饮料</li>
+			<li>酒水饮料</li>
+		</ul>
+		<ol class="right" id="box">
+			<li>
+				<img src="css/img.png" alt="">
+				<ul class="box1">
+					<li>高爆鸡丁</li>
+					<li>家常菜</li>
+					<li>￥<span>25</span></li>
+				</ul>
+				<div class="box2">
+					<button class="none">－</button><span></span><input type="button" value="＋">
+				</div>
+			</li>
+			<li>
+				<img src="css/img.png" alt="">
+				<ul class="box1">
+					<li>高爆鸡丁</li>
+					<li>家常菜</li>
+					<li>￥<span>25</span></li>
+				</ul>
+				<div class="box2">
+					<button class="none">－</button><span></span><input type="button" value="＋">
+				</div>
+			</li>
+			<li>
+				<img src="css/img.png" alt="">
+				<ul class="box1">
+					<li>高爆鸡丁</li>
+					<li>家常菜</li>
+					<li>￥<span>25</span></li>
+				</ul>
+				<div class="box2">
+					<button class="none">－</button><span></span><input type="button" value="＋">
+				</div>
+			</li>
+			<li>
+				<img src="css/img.png" alt="">
+				<ul class="box1">
+					<li>高爆鸡丁</li>
+					<li>家常菜</li>
+					<li>￥<span>25</span></li>
+				</ul>
+				<div class="box2">
+					<button class="none">－</button><span></span><input type="button" value="＋">
+				</div>
+			</li>
+		</ol>
+		<p class="p">已选： <span id="fen">0</span>份 总计：￥<span id="yuan">0</span>元</p>
+	</div>
+	<script>
+	var jBtns = document.querySelectorAll(".box2 button"),
+	    spns = document.querySelectorAll(".box2 span"),
+	    fen = document.querySelector("#fen"),
+	    yuan = document.querySelector("#yuan"),
+	    ipts = document.querySelectorAll(".box2 input");
+        for(var i=0;i<ipts.length;i++){
+            ipts[i].index=i;
+            ipts[i].onclick = function(){
+                spns[this.index].innerHTML = +spns[this.index].innerHTML + 1;
+                if(spns[this.index].innerHTML>0){
+                    jBtns[this.index].className = "";
+                }
+                tj();
+            }
+        }
+         for(var i=0;i<jBtns.length;i++){
+            jBtns[i].index=i;
+            jBtns[i].onclick = function(){
+                spns[this.index].innerHTML = +spns[this.index].innerHTML - 1;
+                if(spns[this.index].innerHTML<=0){
+                    jBtns[this.index].className = "none";
+                    spns[this.index].innerHTML = "";
+                }
+                tj();
+            }
+        }
+        function tj(){
+            var fen = document.querySelector("#fen"),
+                yuan = document.querySelector("#yuan");
+                var count = 0;
+                for(var i=0;i<spns.length;i++){
+                    count += Number(spns[i].innerHTML);
+                }
+                fen.innerHTML = count;
+                yuan.innerHTML = count*25;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    /*console.log(fen);
+	    for(var i=0;i<ipts.length;i++){
+	    	ipts[i].index=i;
+	    	ipts[i].onclick = function(){
+	    		spns[this.index].innerHTML = +spns[this.index].innerHTML+1;
+	    		//jBtns[this.index].className = "";
+	    		if(spns[this.index].innerHTML>0){
+	    			jBtns[this.index].className = "";
+	    		}
+	    		tj();
+	    	}
+
+	    }
+	    for(var i=0;i<jBtns.length;i++){
+	    	jBtns[i].index=i;
+	    	jBtns[i].onclick = function(){
+	    		spns[this.index].innerHTML = +spns[this.index].innerHTML-1;
+	    		//jBtns[this.index].className = "";
+	    		if(spns[this.index].innerHTML<=0){
+	    			jBtns[this.index].className = "none";
+	    			spns[this.index].innerHTML = "";
+	    		}
+	    		tj();
+	    	}
+
+	    }
+	function tj(){
+		count = 0;
+		for(var i=0;i<spns.length;i++){
+			count += Number(spns[i].innerHTML);
+		}
+		fen.innerHTML = count;
+		yuan.innerHTML = count*25;
+	}*/
+
+	</script>
+</body>
+</html>

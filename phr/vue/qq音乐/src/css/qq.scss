@@ -1,0 +1,35 @@
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+header {
+    height: pxTorem(45px);
+    font-size: pxTorem(18px);
+    color: #fff;
+    @include flex_shrink(0);
+    line-height: pxTorem(45px)!important;
+}
+
+.nav {
+    width: 100%;
+    height: pxTorem(45px);
+    @include box_flex;
+    @include align(center);
+    li {
+        height: 100%;
+        line-height: pxTorem(45px);
+        flex: 1;
+        text-align: center;
+        a {
+            height: 100%;
+            font-size: pxTorem(16px);
+            color: rgba(0, 0, 0, .7);
+            display: block;
+        }
+    }
+}

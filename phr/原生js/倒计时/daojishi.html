@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        .box{background:#0f0;}
+    </style>
+</head>
+<body>
+
+<h1 style="font-size: 60px;">距离月考还有：</h1>
+<h2 id="box"></h2>
+   <script>
+   /*downtime("2018-4-7");
+   setInterval("downtime('2018-4-7')",100);
+   function downtime(nn)
+   {
+       var stime = new Date(nn);
+       var ntime = new Date();
+       var timer = stime - ntime;
+       var days = Math.floor(timer/1000/60/60/24),
+           hours = Math.floor(timer/1000/60/60%24),
+           minutes = Math.floor(timer/1000/60%60),
+           seconds = Math.floor(timer/1000%60),
+           milliseconds = Math.floor(timer%1000);
+       var timeStr = days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒" + milliseconds + "毫秒";
+       box.innerHTML= timeStr;
+   }*/
+
+        // var box = document.querySelector("#box");
+        // setInterval("fn('2018-4-7')",100);
+        // function fn(aa){
+        //     var stime = new Date(aa),
+        //         ntime = new Date(),
+        //         timer = stime - ntime;
+        // var days = Math.floor(timer/1000/60/60/24),
+        //     hours = Math.floor(timer/1000/60/60%24);
+        //     minutes = Math.floor(timer/1000/60%60);
+        //     seconds = Math.floor(timer/1000%60);
+        //     milliseconds = Math.floor(timer%1000);
+        // var newstr = add(days) + "天" + add(hours) + "小时" + add(minutes) + "分钟" + add(seconds) + "秒" + add(milliseconds) + "毫秒" ;
+        //     box.innerHTML=newstr;
+        // }
+        // function add(i){
+        //     return i<10?"0" + i:i;
+        // }
+        var box = document.querySelector("#box");
+        setInterval(fn,100);
+        function fn(){
+          var sTime = new Date("2018-4-5"),
+            nTime = new Date(),
+            timer = sTime - nTime;
+            //chuo = timer.toLocaleString();
+            var days = Math.floor(timer/1000/60/60/24),
+                hours = Math.floor(timer/1000/60/60%24),
+                minutes = Math.floor(timer/1000/60%60),
+                seconds = Math.floor(timer/1000%60),
+                milliseconds = Math.floor(timer%1000);
+                var newStr = days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒" + milliseconds + "毫秒";
+                box.innerHTML = newStr;
+        }
+
+
+   </script>
+</body>
+</html>

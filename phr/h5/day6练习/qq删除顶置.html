@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .wrap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+        
+        .list {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+        
+        .list li {
+            width: 150%;
+            height: 50px;
+            display: flex;
+            line-height: 50px;
+            border-bottom: 1px solid #ccc;
+            transition: all 0.1s;
+        }
+        
+        .content {
+            flex: 4;
+        }
+        
+        .del {
+            flex: 1;
+            background: red;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .top {
+            flex: 1;
+            background: orange;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .active {
+            transform: translate(-33.3%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="list" id="list">
+            <li>
+                <div class="content">小花花</div>
+                <div class="top">置顶</div>
+                <div class="del">删除</div>
+            </li>
+            <li>
+                <div class="content">花容月貌</div>
+                <div class="top">置顶</div>
+                <div class="del">删除</div>
+            </li>
+            <li>
+                <div class="content">云云</div>
+                <div class="top">置顶</div>
+                <div class="del">删除</div>
+            </li>
+            <li>
+                <div class="content">萝卜</div>
+                <div class="top">置顶</div>
+                <div class="del">删除</div>
+            </li>
+            <li>
+                <div class="content">大爷</div>
+                <div class="top">置顶</div>
+                <div class="del">删除</div>
+            </li>
+
+        </ul>
+    </div>
+    <script src="js/zepto.js"></script>
+    <script>
+        var lis = document.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            touches(lis[i]);
+        }
+
+        function touches(el) {
+            el.addEventListener('touchstart', start, false);
+            el.addEventListener('touchmove', move, false);
+            el.addEventListener('touchend', end, false);
+        }
+        var startX, startY, endX, endY;
+
+        function start(e) {
+            startX = e.touches[0].pageX;
+            startY = e.touches[0].pageY;
+        }
+
+        function move(e) {
+            endX = e.touches[0].pageX - startX;
+            endY = e.touches[0].pageY - startY;
+        }
+
+        function end(e) {
+            console.log(e.touches);
+            if (endX < 0) {
+                this.classList.add('active');
+            } else if (endX > 0) {
+                this.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+
+</html>

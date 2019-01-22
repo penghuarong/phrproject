@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+<canvas style="border:1px solid #ccc" width="600" height="600"></canvas>
+<script>
+    var draw = document.querySelector('canvas');
+    var ud = draw.getContext('2d');
+    var data = [60,90,120,110,190,180,80,70,100,140,160,150];
+    function line(x1,y1,x2,y2){
+        ud.beginPath();
+        ud.moveTo(x1,y1);
+        ud.lineTo(x2,y2);
+        ud.stroke();
+        ud.closePath();
+    }
+    line(50,50,50,550);
+    line(550,50,550,550);
+    for(var i=0;i<11;i++){
+        line(50,50+50*i,550,50+50*i);
+        text(20*i,20,550-50*i);
+    }
+    for(var i=0;i<12;i++){
+        text((i+1)+"月",75+30*i+11*i,560);
+    }
+    function text(txt,x,y){
+        ud.beginPath();
+        ud.fillText(txt,x,y);
+        ud.textBaseline = "middle";
+        ud.textAlign = "center";
+        ud.closePath();
+    }
+    function square(x,y,w,h){
+        ud.beginPath();
+        ud.fillStyle = "#abcdef";
+        ud.fillRect(x,y,w,h);
+        ud.fill();
+        ud.closePath();
+    }
+    data.map(function(v,i){
+        square(60+30*i+11*i,550,30,-v*2.5);
+        text(v,75+30*i+11*i,550-v*2.5-10);
+    })
+</script>
+</body>
+</html>

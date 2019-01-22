@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            list-style:none;
+        }
+        .wrap{
+            margin:0 auto;
+            width:500px;
+            height:500px;
+        }
+        canvas{
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <canvas width="500" height="500"></canvas>
+    颜色<input type="color" id="color">
+    粗细<input type="range" id="range" max="10">
+    <button class="eraser">橡皮擦</button>
+    <button class="save">保存</button>
+</div>
+<script>
+    var draw = document.querySelector("canvas");
+    var color = document.querySelector("#color");
+    var range = document.querySelector("#range");
+    var eraser = document.querySelector(".eraser");
+    var save = document.querySelector(".save");
+    var ud = draw.getContext('2d');
+
+    draw.onmousedown = function(e){
+
+        ud.lineWidth = range.value;
+
+        ud.beginPath();
+        ud.moveTo(e.offsetX,e.offsetY);
+        draw.onmousemove = function(event){
+          ud.lineTo(event.offsetX,event.offsetY);
+          ud.stroke();
+        }
+        ud.closePath();
+    }
+    draw.onmouseup = function(){
+        draw.onmousemove = null;
+    }
+
+    color.onchange = function(){
+        ud.strokeStyle = this.value;
+    }
+
+    eraser.onclick = function(){
+        if(this.innerHTML == "橡皮擦"){
+            this.innerHTML = "画布";
+            ud.globalCompositeOperation = "destination-out";
+        }else{
+            this.innerHTML = "橡皮擦";
+            ud.globalCompositeOperation = "source-over";
+        }
+    }
+
+    save.onclick = function(){
+        var aa = draw.toDataURL();//base64路劲
+        var img = new Image();
+        img.src = aa;
+        document.body.appendChild(img);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 400px;
+            background:#ccc;
+            position:absolute;
+        }
+        p{
+            cursor:pointer;
+        }
+        #foot{
+            width: 100px;
+            height: 45px;
+            background:red;
+            margin-top:700px;
+            display: none;
+            line-height:45px;
+            text-align:center;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p id="min">最小化</p>
+        <p id="max">最大化</p>
+        <p id="close">关闭</p>
+    </div>
+    <div id="foot">还原</div>
+    <script>
+        var box = document.getElementById("box"),
+            max = document.getElementById("max"),
+            close = document.getElementById("close"),
+            foot = document.getElementById("foot");
+        var x = (document.documentElement.clientWidth - box.offsetWidth)/2;
+        var y = (document.documentElement.clientHeight - box.offsetHeight)/2;
+        box.style.left = x + "px";
+        box.style.top = y + "px";
+        min.onclick = function(){
+            box.style.display = "none";
+            foot.style.display = "block";
+        }
+        foot.onclick = function(){
+            box.style.display = "block";
+            foot.style.display = "none";
+        }
+        max.onclick = function(){
+            if(max.innerHTML == "最大化"){
+            box.style.width = document.documentElement.clientWidth + "px";
+            box.style.height = document.documentElement.clientHeight + "px";
+            box.style.left = 0;
+            box.style.top = 0;
+            max.innerHTML = "还原";
+            }
+            else if(max.innerHTML == "还原"){
+                box.style.width = "400px";
+                box.style.height = "400px";
+                box.style.left = x + "px";
+                box.style.top = y + "px";
+                max.innerHTML = "最大化";
+            }
+        }
+        close.onclick = function(){
+            box.style.display = "none";
+        }
+        box.onmousedown = function(event){
+            var x = event.clientX - box.offsetLeft;
+            var y = event.clientY - box.offsetTop;
+            document.onmousemove = function(e){
+                var xx = e.clientX - x;
+                var yy = e.clientY - y;
+                var maxw = document.documentElement.clientWidth - box.offsetWidth;
+                var maxh = document.documentElement.clientHeight - box.offsetHeight;
+                if(xx<0){
+                    xx = 0;
+                }
+                if(yy<0){
+                    yy = 0;
+                }
+                if(xx>maxw){
+                    xx = maxw;
+                }
+                if(yy>maxh){
+                    yy = maxh;
+                }
+                box.style.left = xx + "px";
+                box.style.top = yy + "px";
+            }
+        }
+        box.onmouseup = function(){
+            document.onmousemove = null;
+        }
+    </script>
+</body>
+</html>

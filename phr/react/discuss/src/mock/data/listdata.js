@@ -1,0 +1,62 @@
+const listdata = [{
+    id: 1,
+    img: "//p1.meituan.net/200.0/deal/ebee186962d71b90044b46422df4faa540449.jpg@114_0_381_381a%7C267h_267w_2e_90Q",
+    tit: "全聚德",
+    detail: "[东城区]精品烤鸭3-4人餐1份",
+    price: "398"
+}, {
+    id: 2,
+    img: "//p0.meituan.net/200.0/deal/d245d3a59e6c902f81d28c6874a3536167156.jpg@12_0_775_775a%7C267h_267w_2e_90Q",
+    tit: "奶茶嫁给粉",
+    detail: "[5店通用]10元代金券1张，可叠加",
+    price: "222"
+}, {
+    id: 3,
+    img: "//p0.meituan.net/200.0/deal/0be5db2a43e4772eb64d219630fe92f046534.jpg@75_0_451_451a%7C267h_267w_2e_90Q",
+    tit: "华莱士",
+    detail: "[15店通用]鸡腿堡+薯条+中杯可乐1份",
+    price: "111"
+}, {
+    id: 4,
+    img: "//p0.meituan.net/200.0/deal/0263f3a1476fc144c9ed3bf8dc9a920e34925.jpg@120_0_400_400a%7C267h_267w_2e_100q",
+    tit: "姐妹土豆粉",
+    detail: "[5店通用]10元代金券1张，可叠加",
+    price: "234"
+}, {
+    id: 5,
+    img: "//p1.meituan.net/200.0/deal/b23f19b528b0e280f39b57eb76dfe102136300.jpg",
+    tit: "自助烤肉",
+    detail: "[5店通用]10元代金券1张，可叠加",
+    price: "565"
+}, {
+    id: 6,
+    img: "//p1.meituan.net/200.0/deal/ebee186962d71b90044b46422df4faa540449.jpg@114_0_381_381a%7C267h_267w_2e_90Q",
+    tit: "全聚德",
+    detail: "[5店通用]10元代金券1张，可叠加",
+    price: "398"
+}, {
+    id: 7,
+    img: "//p0.meituan.net/200.0/deal/d245d3a59e6c902f81d28c6874a3536167156.jpg@12_0_775_775a%7C267h_267w_2e_90Q",
+    tit: "奶茶嫁给粉",
+    detail: "[5店通用]10元代金券1张，可叠加",
+    price: "222"
+}, {
+    id: 8,
+    img: "//p0.meituan.net/200.0/deal/0be5db2a43e4772eb64d219630fe92f046534.jpg@75_0_451_451a%7C267h_267w_2e_90Q",
+    tit: "华莱士",
+    detail: "[5店通用]10元代金券1张，可叠加",
+    price: "111"
+}, {
+    id: 9,
+    img: "//p0.meituan.net/200.0/deal/0263f3a1476fc144c9ed3bf8dc9a920e34925.jpg@120_0_400_400a%7C267h_267w_2e_100q",
+    tit: "姐妹土豆粉",
+    detail: "[5店通用]10元代金券1张，可叠加",
+    price: "234"
+}, {
+    id: 10,
+    img: "//p1.meituan.net/200.0/deal/b23f19b528b0e280f39b57eb76dfe102136300.jpg",
+    tit: "自助烤肉",
+    detail: "[5店通用]10元代金券1张，可叠加",
+    price: "565"
+}]
+export default listdata

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/user.js"></script>
+</head>
+<body>
+<div id="box">
+        <ul id="fill_in">
+            <form action="javascript:void(0)">
+                <li>用户名: <input type="text" id="user" class="user" placeholder="用户名"></li>
+                <li>评论内容: <textarea placeholder="评论内容 10-100字" id="content" maxlength="100"></textarea></li>
+                <li><input type="submit" id="btn" value="提交" class="btn"><p id="pId">您还能输入<span id="count">100</span>字</p></li>
+            </form>
+        </ul>
+        <div id="message_text">
+            <div>
+                <h2><button id="btn1">隐藏留言</button><p id="pid">已有 <a id="pl">0</a>人评论</p></h2>
+            </div>
+
+            <ul id="ulBox">
+                <!-- <li>
+                    <img src="img/userBj.png" alt="">
+                    <h3>张三</h3>
+                    <h5>2012-2-2 12:23:34</h5>
+                    <p>阿萨德法师的</p>
+                </li> -->
+
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

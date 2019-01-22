@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            list-style:none;
+        }
+        .wrap{
+            width: 400px;
+            height: 400px;
+            margin:20px auto;
+            background:#f9f9f9;
+            overflow:hidden;
+        }
+        #lis{
+            height: 30px;
+        }
+        #lis li{
+            float:left;
+            height: 30px;
+            line-height:30px;
+            width: 100px;
+            text-align:center;
+            cursor:pointer;
+        }
+        .active{
+            background:orange;
+        }
+        .box div{
+            height: 370px;
+            line-height:370px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul id="lis">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="box">
+            <div style="background:red">1</div>
+            <div style="background:pink">2</div>
+            <div style="background:green">3</div>
+            <div style="background:yellow">4</div>
+        </div>
+    </div>
+    <script>
+    function Fn(){
+        this.wrap = document.querySelector(".wrap");
+        this.lis = document.querySelectorAll("#lis li");
+        this.divs = document.querySelectorAll(".box div");
+        this.count = 0;
+        this.timer = null;
+        this.dianClick();
+        this.autoPlay();
+        this.clearPlay();
+    }
+    Fn.prototype = {
+        constructor:Fn,
+        dianClick:function(){
+            var that = this;
+            for(var i=0;i<this.lis.length;i++){
+                this.lis[i].index = i;
+                this.lis[i].onclick = function(){
+                that.hide();
+                that.divs[this.index].style.display = "block";
+                that.lis[this.index].className = "active";
+                }
+            }
+        },
+        hide:function(){
+            for(var i=0;i<this.divs.length;i++){
+                this.divs[i].style.display = "none";
+                this.lis[i].className = "";
+            }
+        },
+        autoPlay:function(){
+            var that = this;
+            this.timer = setInterval(function(){
+                that.count++;
+                if(that.count>that.lis.length-1)that.count=0;
+                that.hide();
+                that.divs[that.count].style.display = "block";
+                that.lis[that.count].className = "active";
+            },1000);
+        },
+        clearPlay:function(){
+            var that = this;
+            this.wrap.onmouseover = function(){
+                clearInterval(that.timer);
+            }
+            this.wrap.onmouseout = function(){
+                that.autoPlay();
+            }
+        }
+    }
+    var t = new Fn();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*function Fn(){
+            this.lis = document.querySelectorAll("#lis li");
+            this.divs = document.querySelectorAll(".box div");
+            this.wrap = document.querySelector(".wrap");
+            this.count = 0;
+            this.timer = null;
+            this.danClick();
+            this.autoPlay();
+            this.clearPlay();
+        }
+        Fn.prototype={
+            constructor:Fn,
+            danClick:function(){
+                    var that = this;
+                    for(var i=0;i<this.lis.length;i++){
+                        this.lis[i].index = i;
+                    this.lis[i].onclick = function(){
+                        that.hide();
+                        that.divs[this.index].style.display = "block";
+                        that.lis[this.index].className = "active";
+                    }
+                    }
+            },
+            hide:function(){
+                var that = this;
+                for(var i=0;i<this.divs.length;i++){
+                            this.divs[i].style.display = "none";
+                            this.lis[i].className = "";
+                        }
+                    },
+            autoPlay:function(){
+                var that = this;
+                timer = setInterval(function(){
+                    that.count++;
+                    if(that.count>that.lis.length-1)that.count = 0;
+                        that.hide();
+                        that.divs[that.count].style.display = "block";
+                        that.lis[that.count].className = "active";
+                },1000);
+            },
+            clearPlay:function(){
+                var that = this;
+                this.wrap.onmouseover = function(){
+                    clearInterval(timer);
+                }
+                this.wrap.onmouseout = function(){
+                    that.autoPlay();
+                }
+            }
+        }
+        var t = new Fn;*/
+
+    </script>
+</body>
+</html>

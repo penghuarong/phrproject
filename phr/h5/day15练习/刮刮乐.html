@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            list-style:none;
+        }
+        .wrap{
+            width:200px;
+            height:300px;
+            background: rgba(255,0,0,.5);
+            margin:100px auto;
+            position: relative;
+        }
+        h2{
+            width:100%;
+            height:100%;
+            line-height:300px;
+            text-align: center;
+        }
+        canvas{
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h2>一等奖</h2>
+        <canvas width="200px" height="300px"></canvas>
+    </div>
+    <script>
+        var draw = document.querySelector('canvas');
+        var ud = draw.getContext('2d');
+        var h2s = document.querySelector('h2');
+        ud.beginPath();
+        ud.fillStyle = "#ccc";
+        ud.fillRect(0,0,200,300);
+        ud.closePath();
+        draw.onmousedown = function(e){
+            draw.onmousemove = function(e){
+                ud.clearRect(e.offsetX,e.offsetY,20,20);
+            }
+        }
+        draw.onmouseup = function(){
+            draw.onmousemove = null;
+        }
+        var num = Math.random();
+        if(num<0.4){
+            h2s.innerHTML = "三等奖";
+        }else if(num>0.7){
+            h2s.innerHTML = "一等奖";
+        }else{
+            h2s.innerHTML = "二等奖";
+        }
+    </script>
+</body>
+</html>

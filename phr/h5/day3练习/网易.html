@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/wangyi.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <title>Document</title>
+</head>
+<script src="js/flexible.js"></script>
+
+<body>
+    <div class="wrap">
+        <header>
+            <span class="iconfont icon-wode" id="person"></span>
+            <h2>网易<span>各有态度</span></h2>
+            <p>
+                <i class="iconfont icon-xiazai"></i>
+                <i class="iconfont icon-xinxi"></i>
+            </p>
+        </header>
+        <section>
+            <div class="nav">
+                <ul>
+                    <li>新闻</li>
+                    <li>娱乐</li>
+                    <li>新闻</li>
+                    <li>娱乐</li>
+                    <li>新闻</li>
+                    <li>娱乐</li>
+                    <li>新闻</li>
+                </ul>
+            </div>
+            <div class="banner">
+                <img src="images/banner_03.png" alt="">
+                <span>切换智能版</span>
+                <p>十九大今天开幕 差不多很拉不多很拉不多很拉风</p>
+            </div>
+            <div class="bar">
+                中国十九大蝴蝶益王府而非吃蝴蝶益王府而非吃的啦吃饱了
+            </div>
+            <div class="content">
+                <div class="left">
+                    <img src="images/3.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>习近平彭丽媛吃多拉风河流别迟到了服务日了不错的啦覅汇入女热从地狱里挖法人</h2>
+                    <p><span>新闻 6小时前</span><span><i class="iconfont icon-xiaoxi2"></i>7897</span></p>
+                </div>
+            </div>
+            <div class="content">
+                <div class="left">
+                    <img src="images/5.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>习近平彭丽媛吃多拉风河流别迟到了服务日了不错的啦覅汇入女热从地狱里挖法人</h2>
+                    <p><span>新闻 6小时前</span><span><i class="iconfont icon-xiaoxi2"></i>7897</span></p>
+                </div>
+            </div>
+            <div class="content">
+                <div class="left">
+                    <img src="images/6.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>习近平彭丽媛吃多拉风河流别迟到了服务日了不错的啦覅汇入女热从地狱里挖法人</h2>
+                    <p><span>新闻 6小时前</span><span><i class="iconfont icon-xiaoxi2"></i>7897</span></p>
+                </div>
+            </div>
+            <div class="content">
+                <div class="left">
+                    <img src="images/7.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>习近平彭丽媛吃多拉风河流别迟到了服务日了不错的啦覅汇入女热从地狱里挖法人</h2>
+                    <p><span>新闻 6小时前</span><span><i class="iconfont icon-xiaoxi2"></i>7897</span></p>
+                </div>
+            </div>
+            <div class="content">
+                <div class="left">
+                    <img src="images/8.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>习近平彭丽媛吃多拉风河流别迟到了服务日了不错的啦覅汇入女热从地狱里挖法人</h2>
+                    <p><span>新闻 6小时前</span><span><i class="iconfont icon-xiaoxi2"></i>7897</span></p>
+                </div>
+            </div>
+        </section>
+        <div class="fixed">
+            <div class="form">
+                <span class="iconfont icon-youxiang"></span>
+                <input type="text" placeholder="邮箱">
+            </div>
+            <div class="form">
+                <span class="iconfont icon-fenxiang6"></span>
+                <input type="text" placeholder="密码">
+            </div>
+            <p><span class="iconfont icon-tian"></span>使用<span style="color:blue">网易云成本低啦</span>;成本和毒辣否认借了出碟</p>
+            <div class="btn">
+                <button>登录</button>
+            </div>
+            <div class="login">
+                <span>立即登录</span><span style="color:red">忘记密码</span>
+            </div>
+            <h2 class="she"><span></span>社交账号登录<span></span></h2>
+            <ul class="list">
+                <li>
+                    <img src="images/qq_03.png" alt="">
+                    <img src="images/weib_03.png" alt="">
+                </li>
+            </ul>
+            <div class="computer">
+                <ul>
+                    <li>
+                        <span class="iconfont icon-tianmao2"></span>
+                        <p>标准版</p>
+                    </li>
+                    <li>
+                        <span class="iconfont icon-tianmao2"></span>
+                        <p>简约版</p>
+                    </li>
+                    <li>
+                        <span class="iconfont icon-tianmao2"></span>
+                        <p>电脑版</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mark"></div>
+    </div>
+    <script src="js/zepto.js"></script>
+    <script>
+        $('.wrap').on('swipeRight', function() {
+            $('.mark').show();
+            $('.fixed').addClass('active');
+        })
+        $('.wrap').on('swipeLeft', function() {
+            $('.mark').hide();
+            $('.fixed').removeClass('active');
+        })
+        $('#person').on('click', function() {
+            $('.mark').show();
+            $('.fixed').addClass('active');
+        })
+        $('.mark').on('click', function() {
+            $('.mark').hide();
+            $('.fixed').removeClass('active');
+        })
+    </script>
+</body>
+
+</html>

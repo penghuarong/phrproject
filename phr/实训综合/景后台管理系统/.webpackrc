@@ -1,0 +1,16 @@
+{
+  "extraBabelPlugins": [
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
+  ],
+  "proxy": {
+    "/api": {
+      "target": "http://39.108.180.233:3001/",
+      "changeOrigin": true
+    },
+    "/ser": {
+      "target": "http://jsonplaceholder.typicode.com/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/ser" : "" }
+    }
+  }
+}

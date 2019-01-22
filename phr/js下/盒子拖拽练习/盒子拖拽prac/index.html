@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        #box{
+            background:red;
+            width: 100px;
+            height: 100px;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+        #bigbox{
+            width: 800px;
+            height: 400px;
+            border:1px solid #ccc;
+            margin:0 auto;
+            position:relative;
+        }
+        #wai,#waii{
+            width: 150px;
+            height: 150px;
+            background:yellow;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        #waii{
+            top:150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bigbox">
+        <div id="box"></div>
+    </div>
+        <div id="wai"></div>
+        <div id="waii"></div>
+    <script>
+    function Parent(box){
+        this.box = box;
+        this.bx = document.getElementById(this.box);
+        this.boxClick();
+    }
+    Parent.prototype = {
+        constructor:Parent,
+        boxClick:function(){
+            var that = this;
+            this.bx.onmousedown = function(event){
+                that.x = event.clientX - that.bx.offsetLeft;
+                that.y = event.clientY - that.bx.offsetTop;
+                that.boxMove();
+                that.boxUp();
+            }
+        },
+        boxMove:function(){
+            var that = this;
+            document.onmousemove = function(e){
+                    var l = e.clientX - that.x;
+                    var r = e.clientY - that.y;
+                    var maxw = document.documentElement.clientWidth - that.bx.offsetWidth;
+                    var maxh = document.documentElement.clientHeight - that.bx.offsetHeight;
+                    l = Math.max(0,Math.min(l,maxw));
+                    r = Math.max(0,Math.min(r,maxh));
+                    that.bx.style.left = l + "px";
+                    that.bx.style.top = r + "px";
+                }
+        },
+        boxUp:function(){
+            this.bx.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        }
+
+    }
+
+
+    function Child(box,bigbox){
+        Parent.call(this,box);
+        this.bigbox = bigbox;
+        this.bigb = document.getElementById(this.bigbox);
+    }
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+    Child.prototype.boxMove = function(){
+        var that = this;
+            document.onmousemove = function(e){
+                    var l = e.clientX - that.x;
+                    var r = e.clientY - that.y;
+                    var maxw = that.bigb.offsetWidth - that.bx.offsetWidth;
+                    var maxh = that.bigb.offsetHeight - that.bx.offsetHeight;
+                    l = Math.max(0,Math.min(l,maxw));
+                    r = Math.max(0,Math.min(r,maxh));
+                    that.bx.style.left = l + "px";
+                    that.bx.style.top = r + "px";
+                }
+    }
+    new Child("box","bigbox");
+    new Parent("wai");
+    new Parent("waii");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    @include direction(column);
+}
+
+.login_header {
+    width: 100%;
+    height: pxTorem(45px);
+    background: blueviolet;
+    color: #fff;
+    text-align: center;
+    line-height: pxTorem(45px);
+}
+
+.login_section {
+    flex: 1;
+    form {
+        div {
+            width: 100%;
+            height: pxTorem(50px);
+            @include box_flex;
+            @include align(center);
+            padding: 0 pxTorem(10px);
+            input {
+                flex: 1;
+                height: pxTorem(30px);
+                border: pxTorem(1px) solid #ccc;
+                font-size: pxTorem(18px);
+                padding-left: pxTorem(10px);
+                margin-left: pxTorem(10px);
+            }
+        }
+        .btn {
+            @include box_flex;
+            @include direction(column);
+            height: pxTorem(80px);
+            @include justify(space-between);
+            button {
+                width: 100%;
+                height: pxTorem(35px);
+                font-size: pxTorem(18px);
+                color: #fff;
+                border: 0;
+                outline: none;
+            }
+        }
+    }
+}

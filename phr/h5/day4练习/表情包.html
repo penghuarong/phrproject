@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            background: url(images/sha.png) no-repeat 0 0;
+            animation: skill 1s steps(6) infinite;
+        }
+
+        @keyframes skill {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -680px 0;
+            }
+        }
+
+        .box2 {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ccc;
+            background: url(images/tu.png) no-repeat 0 0;
+            animation: tutu 0.5s steps(12) infinite;
+        }
+
+        @keyframes tutu {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -576px 0;
+            }
+        }
+
+       .wrap {
+            width: 600px;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            background: url(images/nv.png) no-repeat 0 0;
+            animation: girl 1s steps(7) infinite;
+        }
+
+        ul {
+            margin: 0 auto;
+        }
+
+        ul li {
+            float: left;
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+            margin: 0 8px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        @keyframes girl {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -1260px 0;
+            }
+        }
+
+        .faster {
+            animation: girl 0.2s steps(7) infinite;
+        }
+
+        .fast {
+            animation: girl 0.7s steps(7) infinite;
+        }
+
+        .slow {
+            animation: girl 2s steps(7) infinite;
+        }
+
+        .slower {
+            animation: girl 3s steps(7) infinite;
+        }
+
+        .pause {
+            animation-play-state: paused;
+        }
+
+        .gress {
+            width: 140px;
+            height: 150px;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+            background: url(images/gress.png) no-repeat 0 0;
+            animation: carrent 1s steps(12) infinite;
+        }
+
+        @keyframes carrent {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -1680px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="wrap">
+        <div class="box3" id="box3"></div>
+        <ul>
+            <li class="faster">最快</li>
+            <li class="fast">快</li>
+            <li class="slow">正常</li>
+            <li class="slower">慢</li>
+            <li class="pause">暂停</li>
+        </ul>
+    </div>
+    <div class="gress">
+
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $('ul').on('click', 'li', function() {
+            var cla = $(this).attr('class');
+            $('#box3').removeClass().addClass('box3 ' + cla);
+        })
+    </script>
+</body>
+
+</html>

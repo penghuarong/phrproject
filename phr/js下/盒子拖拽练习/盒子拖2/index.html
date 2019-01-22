@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+    *{
+        padding:0;
+        margin:0;
+        list-style:none;
+    }
+        #box{
+            width: 100px;
+            height: 100px;
+            background:red;
+            position:absolute;
+        }
+        #bigbox{
+            width: 800px;
+            height: 500px;
+            border:1px solid #ccc;
+            margin:0 auto;
+            position:relative;
+        }
+        #one{
+            width: 150px;
+            height: 150px;
+            background:yellow;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+<div id="bigbox">
+    <div id="box"></div>
+</div>
+<div id="one"></div>
+    <script>
+        function Parent(box){
+            this.box = box;
+            this.bx = document.getElementById(this.box);
+            this.boxDown();
+            this.boxUp();
+        }
+        Parent.prototype = {
+            constructor:Parent,
+            boxDown:function(){
+                var that = this;
+                this.bx.onmousedown = function(event){
+                    that.x = event.clientX - that.bx.offsetLeft;
+                    that.y = event.clientY - that.bx.offsetTop;
+
+                    that.boxMove();
+                }
+            },
+            boxMove:function(){
+                var that = this;
+                var maxw = document.documentElement.clientWidth - that.bx.offsetWidth;
+                var maxh = document.documentElement.clientHeight - that.bx.offsetHeight;
+                document.onmousemove = function(e){
+                        var l = e.clientX - that.x;
+                        var r = e.clientY - that.y;
+                        l = Math.max(0,Math.min(l,maxw));
+                        r = Math.max(0,Math.min(r,maxh));
+                        that.bx.style.left = l + "px";
+                        that.bx.style.top = r + "px";
+                    }
+            },
+            boxUp:function(){
+                var that = this;
+                this.bx.onmouseup = function(){
+                    document.onmousemove = null;
+                }
+            }
+        }
+
+        function Child(box,bigbox){
+            Parent.call(this,box);
+            this.bigbox = bigbox;
+            this.bigb = document.getElementById(this.bigbox);
+        }
+        Child.prototype = Object.create(Parent.prototype);
+        Child.prototype.constructor = Child;
+        Child.prototype.boxMove = function(){
+            var that = this;
+            var maxw = this.bigb.offsetWidth - that.bx.offsetWidth;
+            var maxh = this.bigb.offsetHeight - that.bx.offsetHeight;
+                document.onmousemove = function(e){
+                        var l = e.clientX - that.x;
+                        var r = e.clientY - that.y;
+                        l = Math.max(0,Math.min(l,maxw));
+                        r = Math.max(0,Math.min(r,maxh));
+                        that.bx.style.left = l + "px";
+                        that.bx.style.top = r + "px";
+                    }
+        }
+        new Child("box","bigbox");
+        new Parent("one");
+    </script>
+</body>
+</html>

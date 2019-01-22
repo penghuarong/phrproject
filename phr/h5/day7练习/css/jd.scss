@@ -1,0 +1,132 @@
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @include sizing;
+}
+
+.wrap {
+    @include num(100%, 100%);
+    @include box_flex;
+    @include direction(column);
+    position: relative;
+}
+
+header {
+    @include num(100%, pxTorem(45px));
+    background: #f9f9f9;
+    @include box_flex;
+    @include justify(space-between);
+    @include align;
+    padding: 0 pxTorem(10px);
+    &>span.iconfont {
+        font-size: pxTorem(14px);
+        color: #ccc;
+    }
+    .form {
+        flex: 1;
+        margin: 0 pxTorem(10px);
+        border: pxTorem(1px) solid #ccc;
+        height: pxTorem(30px);
+        border-radius: pxTorem(30px);
+        @include box_flex;
+        @include align;
+        span.iconfont {
+            @include num(pxTorem(30px), pxTorem(30px));
+            @include box_flex;
+            @include align;
+            @include justify;
+            font-size: pxTorem(12px);
+        }
+        input {
+            flex: 1;
+        }
+    }
+    #btn {
+        @include num(pxTorem(40px), pxTorem(25px));
+        background: red;
+        color: #fff;
+        border: 0;
+        outline: none;
+        font-size: pxTorem(12px);
+        border-radius: pxTorem(5px);
+    }
+}
+
+section {
+    flex: 1;
+    .content {
+        @include num(100%, auto);
+        padding: 0 pxTorem(10px);
+        h3 {
+            font-size: pxTorem(12px);
+            @include box_flex;
+            @include align;
+            @include justify(space-between);
+            height: pxTorem(20px);
+            span.iconfont {
+                font-size: pxTorem(16px);
+            }
+        }
+        .list {
+            @include num(100%, auto);
+            @include box_flex;
+            @include align;
+            @include flexWrap(wrap);
+            margin-top: pxTorem(10px);
+            li {
+                background: #f8f8f8;
+                padding: pxTorem(5px) pxTorem(10px);
+                border-radius: pxTorem(5px);
+                margin: pxTorem(10px);
+            }
+        }
+    }
+}
+
+.mark {
+    @include num(100%, 100%);
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include box_flex;
+    @include justify;
+    @include align;
+    .small {
+        @include num(pxTorem(200px), pxTorem(150px));
+        background: #fff;
+        border-radius: pxTorem(10px);
+        @include box_flex;
+        @include direction(column);
+        h2 {
+            width: 100%;
+            flex: 1;
+            @include box_flex;
+            @include justify;
+            @include align;
+            font-size: pxTorem(13px);
+        }
+        p {
+            width: 100%;
+            height: pxTorem(30px);
+            @include box_flex;
+            span {
+                width: 50%;
+                height: pxTorem(30px);
+                line-height: pxTorem(30px);
+                text-align: center;
+            }
+            span.sure {
+                background: red;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

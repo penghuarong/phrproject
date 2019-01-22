@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+<canvas style="border:1px solid #ccc" width="600px" height="600px"></canvas>
+<script>
+    var draw = document.querySelector('canvas');
+    var ud = draw.getContext('2d');
+    var deg = Math.PI/180;
+    var init=0;
+    bb();
+    function bb(){
+        init++;
+        if(init<360){
+            requestAnimationFrame(bb);
+        }
+        else{
+            cancelAnimationFrame(bb);
+        }
+        ud.clearRect(0,0,600,600);
+        ud.beginPath();
+        ud.arc(300,300,200,0,init*deg);
+        ud.lineWidth = 20;
+        ud.stroke();
+        ud.closePath();
+
+        ud.beginPath();
+        ud.lineWidth = 1;
+        ud.strokeText(Math.floor((init/360)*100)+'%',300,300);
+        ud.font = "30px normal";
+        ud.textAlign = "center";
+        ud.textBaseline = "middle";
+        ud.closePath();
+    }
+    /*aa();
+    function aa(){
+        init++;
+        if(init<=360){
+            requestAnimationFrame(aa);
+        }else{
+            cancelAnimationFrame(aa);
+        }
+
+        ud.clearRect(0,0,600,600);
+        ud.beginPath();
+        ud.arc(300,300,200,0,init*deg);
+        ud.lineWidth = 20;
+        ud.stroke();
+        ud.closePath();
+
+        ud.beginPath();
+        ud.lineWidth = 1;
+        ud.font = '30px normal';
+        ud.strokeText(Math.floor((init/360)*100)+'%',300,300);
+        ud.textAlign = "center";
+        ud.textBaseline = "middle";
+        ud.closePath();
+    }*/
+</script>
+</body>
+</html>

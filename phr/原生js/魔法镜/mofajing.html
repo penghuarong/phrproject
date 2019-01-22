@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+    #maxImg img{display: none;}
+    </style>
+</head>
+<body>
+    <div id="minImg">
+        <img src="img/m1.png" alt="" />
+        <img src="img/m2.png" alt="" />
+        <img src="img/m3.png" alt="" />
+        <img src="img/m4.png" alt="" />
+        <img src="img/m5.png" alt="" />
+        <img src="img/m6.png" alt="" />
+    </div>
+    <div id="maxImg">
+        <img src="img/m1.jpg" alt="" />
+        <img src="img/m2.jpg" alt="" />
+        <img src="img/m3.jpg" alt="" />
+        <img src="img/m4.jpg" alt="" />
+        <img src="img/m5.jpg" alt="" />
+        <img src="img/m6.jpg" alt="" />
+    </div>
+    <script>
+        /*var minImg = document.getElementById("minImg").getElementsByTagName("img"),
+            maxImg = document.getElementById("maxImg").getElementsByTagName("img");
+            maxImg[0].style.display = "block";
+        for(var i=0;i<minImg.length;i++){
+            minImg[i].index = i;
+            minImg[i].onmouseover = function(){
+                for(var j=0;j<maxImg.length;j++){
+                    maxImg[j].style.display = "none";
+                }
+                maxImg[this.index].style.display = "block";
+            }
+        }*/
+        /*var minImg = document.getElementById("minImg").getElementsByTagName("img"),
+            maxImg = document.getElementById("maxImg").getElementsByTagName("img");
+            maxImg[0].style.display = "block";
+            for(var i=0;i<minImg.length;i++){
+                minImg[i].index = i;
+                minImg[i].onmouseover = function(){
+                    for(var j=0;j<maxImg.length;j++){
+                        maxImg[j].style.display = "none";
+                    }
+                    maxImg[this.index].style.display = "block";
+                }
+            }*/
+            /*var minImg = document.getElementById("minImg").getElementsByTagName("img"),
+                maxImg = document.getElementById("maxImg").getElementsByTagName("img");
+                maxImg[0].style.display = "block";
+                for(var i=0;i<minImg.length;i++)
+                {
+                    minImg[i].index=i;
+                    minImg[i].onmouseover = function(){
+                        for(var j=0;j<maxImg.length;j++)
+                        {
+                            maxImg[j].style.display = "none";
+                        }
+                        maxImg[this.index].style.display = "block";
+                    }
+                }
+*/
+            var minImg = document.querySelectorAll("#minImg img"),
+                maxImg = document.querySelectorAll("#maxImg img");
+                maxImg[0].style.display = "block";
+                for(var i=0;i<minImg.length;i++){
+                    minImg[i].index=i;
+                    minImg[i].onmouseover = function(){
+                        for(var j=0;j<maxImg.length;j++){
+                            maxImg[j].style.display = "none";
+                        }
+                            maxImg[this.index].style.display = "block";
+                    }
+                }
+    </script>
+</body>
+</html>

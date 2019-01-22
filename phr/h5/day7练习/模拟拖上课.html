@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .box1,
+        .box2 {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #ccc;
+            margin: 0 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+        }
+        
+        .box1 img,
+        .box2 img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <img src="img/1.jpg" alt="" draggable="true" class="pic">
+    </div>
+    <div class="box2"></div>
+</body>
+<script>
+    var pic = document.querySelector('.pic');
+    var box2 = document.querySelector('.box2');
+    var box1 = document.querySelector('.box1');
+    var aa;
+//    pic.ondragstart = function(e){
+//        aa = e.target;
+//    }
+//    box2.ondragover = function(e){
+//        e.preventDefault();
+//    }
+//    box2.ondrop = function(e){
+//        e.target.appendChild(aa);
+//    }
+    pic.ondragstart = function(e) {
+        aa = e.target;
+        // console.log(e.target);
+    }
+    box2.ondragover = function(e) {
+        e.preventDefault();
+    }
+    box2.ondrop = function(e) {
+        e.target.appendChild(aa);
+    }
+    box1.ondragover = function(e) {
+        e.preventDefault();
+    }
+    box1.ondrop = function(e) {
+        e.target.appendChild(aa);
+    }
+</script>
+
+</html>

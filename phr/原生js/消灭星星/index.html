@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        body{
+            background:rgba(0,0,0,.8);
+        }
+        img{
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+   <script>
+   setInterval(function fn(){
+        var oimg = document.createElement("img");
+
+            oimg.src ="img/xingxing.gif";
+            oimg.style.width = randomNum(50,1000) + "px";
+            oimg.style.left = randomNum(0,800) + "px";
+            oimg.style.top = randomNum(0,800) + "px";
+
+            document.body.appendChild(oimg);
+
+        oimg.onclick = function(){
+            document.body.removeChild(oimg);
+        }
+
+   },500);
+
+        function randomNum(min,max){
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }
+   </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/*
+ * @Author: PengHuaRong 
+ * @Date: 2018-10-13 11:59:03 
+ * @Last Modified by: PengHuaRong
+ * @Last Modified time: 2018-10-13 11:59:59
+ */
+
+@import "_mixin.scss";
+@import "common.scss";
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.wraper {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+}
+
+.left {
+    width: pxTorem(120px);
+    @include flex_shrink(0);
+    margin-right: pxTorem(10px);
+    li {
+        height: pxTorem(45px);
+        text-align: center;
+        line-height: pxTorem(45px);
+        font-size: pxTorem(16px);
+    }
+}
+
+.right {
+    flex: 1;
+    li {
+        width: 100%;
+        h3 {
+            font-size: pxTorem(20px);
+            height: pxTorem(50px);
+            line-height: pxTorem(50px);
+        }
+        img {
+            width: 45%;
+            margin: pxTorem(5px);
+        }
+    }
+}

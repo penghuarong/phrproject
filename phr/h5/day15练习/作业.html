@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="600" height="600" style="border:1px solid #ccc;background: cornsilk;"></canvas>
+    <script src="zepto.js"></script>
+    <script>
+        var draw = document.querySelector("canvas");
+        var ud = draw.getContext('2d');
+        $.ajax({
+            url:"data/data.json",
+            success:function(data){
+                console.log(data);
+                var start = -90;
+                var end = 0;
+                var deg = Math.PI/180;
+                var arr = [];
+                $.each(data,function(i,v){
+                    console.log(i,v);
+                    //颜色
+                    end = start + 360/100*v.content;
+                    ud.beginPath();
+                    ud.fillStyle = v.color;
+                    ud.arc(300,300,150,start*deg,end*deg);
+                    ud.lineTo(300,300);
+                    ud.fill();
+                    ud.closePath();
+                    start = end;
+                    //中间的圆
+                    ud.beginPath();
+                    ud.fillStyle = "#fff";
+                    ud.arc(300,300,80,0,360);
+                    ud.fill();
+                    ud.closePath();
+                    //中间的数
+                    if($.inArray(v.content,arr)==-1){
+                        arr.push(v.content);
+                    }
+                    var aa = Math.max.apply(null,arr);
+                    ud.beginPath();
+                    ud.font = "30px normal";
+                    ud.fillStyle = "skyblue";
+                    ud.fillText(aa+"%",255,300);
+                    ud.closePath();
+                    //中间的字
+                    if(aa==v.content){
+                        bb = v.title;
+                    }
+                    ud.beginPath();
+                    ud.font = "12px normal";
+                    ud.fillStyle = "#ccc";
+                    ud.fillText(bb,255,330);
+                    ud.closePath();
+                    //中间的圈
+                    ud.beginPath();
+                    ud.strokeStyle = "rgba(255,255,255,.1)";
+                    ud.lineWidth = 20;
+                    ud.arc(300,300,90,0,360);
+                    ud.stroke();
+                    ud.closePath();
+                    //大圈
+                    ud.beginPath();
+                    ud.strokeStyle = "rgba(255,255,255,.1)";
+                    ud.lineWidth = 20;
+                    ud.arc(300,300,150,-90*deg,-90+43.19*360/100*deg);
+                    ud.stroke();
+                    ud.closePath();
+                })
+            }
+        })
+
+        var deg = Math.PI/180;
+        var deg2 = -90 + 360/100*43.19/2;
+        var x = Math.cos(deg2*deg)*150;
+        var y = Math.sin(deg2*deg)*150;
+        ud.beginPath();
+        ud.strokeStyle = "skyblue";
+        ud.fillStyle = "skyblue";
+        ud.fillText("雷神3：诸神黄昏",x+300+12,y+300-15);
+        ud.fillStyle = "#ccc";
+        ud.fillText("场次占比43.19%",x+300+12,y+300+10);
+        ud.moveTo(x+300,y+300);
+        ud.lineTo(x+300+10,y+300-10);
+        ud.lineTo(x+300+10+100,y+300-10);
+        ud.stroke();
+        ud.closePath();
+
+        ud.beginPath();
+        ud.fillStyle = "skyblue";
+        ud.arc(x+300+10+100,y+300-10,5,0,360);
+        ud.fill();
+        ud.closePath();
+
+        var deg3 = -90+360/100*43.19 + 360/100*14.69/2;
+        var a = Math.cos(deg3*deg)*150;
+        var b = Math.sin(deg3*deg)*150;
+        ud.beginPath();
+        ud.strokeStyle = "pink";
+        ud.fillStyle = "pink";
+        ud.fillText("密战",a+300-190,b+300);
+        ud.fillStyle = "#ccc";
+        ud.fillText("场次占比14.69%",a+300-190,b+300+30);
+        ud.moveTo(a+300,b+300);
+        ud.lineTo(a+300,b+300+10);
+        ud.lineTo(a+300-200,b+300+10);
+        ud.stroke();
+        ud.closePath();
+
+        ud.beginPath();
+        ud.fillStyle = "pink";
+        ud.arc(a+300-200,b+300+10,5,0,360);
+        ud.fill();
+        ud.closePath();
+
+        var deg4 = -90+360/100*43.19+360/100*14.69 + 360/100*13.88/2;
+        var c = Math.cos(deg4*deg)*150;
+        var d = Math.sin(deg4*deg)*150;
+        ud.beginPath();
+        ud.strokeStyle = "yellow";
+        ud.fillStyle = "yellow";
+        ud.fillText("全球风暴",c+300-90,d+300);
+        ud.fillStyle = "#ccc";
+        ud.fillText("场次占比13.88%",c+300-90,d+300+30);
+        ud.moveTo(c+300,d+300);
+        ud.lineTo(c+300-10,d+300+10);
+        ud.lineTo(c+300-100,d+300+10);
+        ud.stroke();
+        ud.closePath();
+
+        ud.beginPath();
+        ud.fillStyle = "yellow";
+        ud.arc(c+300-100,d+300+10,5,0,360);
+        ud.fill();
+        ud.closePath();
+
+        var deg5 = -90+360/100*43.19+360/100*14.69+360/100*13.88 + 360/100*6.38/2;
+        var e = Math.cos(deg5*deg)*150;
+        var f = Math.sin(deg5*deg)*150;
+        ud.beginPath();
+        ud.strokeStyle = "orange";
+        ud.fillStyle = "orange";
+        ud.fillText("羞羞的铁拳",e+300-90,f+300-10);
+        ud.fillStyle = "#ccc";
+        ud.fillText("场次占比6.38%",e+300-90,f+300+20);
+        ud.moveTo(e+300,f+300);
+        ud.lineTo(e+300-100,f+300);
+        ud.stroke();
+        ud.closePath();
+
+        ud.beginPath();
+        ud.fillStyle = "orange";
+        ud.arc(e+300-100,f+300,5,0,360);
+        ud.fill();
+        ud.closePath();
+
+        var deg6 = -90+360/100*43.19+360/100*14.69+360/100*13.88+360/100*6.38 + 360/100*5.54/2;
+        var g = Math.cos(deg6*deg)*150;
+        var h = Math.sin(deg6*deg)*150;
+        ud.beginPath();
+        ud.strokeStyle = "green";
+        ud.fillStyle = "green";
+        ud.fillText("七十七天",g+300-90,h+300-10-10);
+        ud.fillStyle = "#ccc";
+        ud.fillText("场次占比5.54%",g+300-90,h+300+20-10);
+        ud.moveTo(g+300,h+300);
+        ud.lineTo(g+300-10,h+300-10);
+        ud.lineTo(g+300-100,h+300-10);
+        ud.stroke();
+        ud.closePath();
+
+        ud.beginPath();
+        ud.fillStyle = "green";
+        ud.arc(g+300-100,h+300-10,5,0,360);
+        ud.fill();
+        ud.closePath();
+
+    </script>
+</body>
+</html>

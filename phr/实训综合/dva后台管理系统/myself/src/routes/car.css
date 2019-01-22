@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.antLayoutHeader {
+    background: #F8D147;
+}
+
+.antLayoutHeader ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.antLayoutHeader ul li:nth-child(1) img {
+    width: 100px;
+}
+
+.antLayoutHeader ul li:not(:nth-child(1)) img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.carouselImg img {
+    height: 550px;
+    width: 100%;
+}
+
+.introduce {
+    width: 1100px;
+    margin: 50px auto;
+}
+
+.introduce h2 {
+    text-align: center;
+}
+
+.introduce p {
+    letter-spacing: 1px;
+}
+
+.content {
+    background: #fff;
+}
+
+.loginHeader {
+    background: rgb(64, 106, 152);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+.loginCon {
+    width: 100%;
+    height: 800px;
+    position: relative;
+    background: url("http://sso.uc.66yunlian.cn/static/img/backgroud.ed6ed4d.png") #7c95e6 no-repeat left center;
+}
+
+.login_form {
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    margin-top: -100px;
+    background: #fff;
+    border-top: 5px solid rgb(64, 106, 152);
+}
