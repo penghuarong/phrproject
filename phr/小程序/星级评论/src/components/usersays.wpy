@@ -1,0 +1,68 @@
+<style lang='less'>
+	.wet-says-container {
+		width:100%;
+		height:auto;
+		padding-bottom:40rpx;
+		box-sizing:border-box;
+		.user-msg {
+			width:100%;
+			height:auto;
+
+		}
+	}
+</style>
+
+<template>
+    <view class="wet-says-container">
+    	<view class="user-msg">
+    		<view class="name">
+    			{{datas.username}}
+    			<text wx:if="{{datas.is_vip}}">vip</text>
+    			<text wx:else>普通用户</text>
+    		</view>
+    		<view class="grade">打分：{{datas.grade}}</view>
+    		<view class="cont-best">{{datas.saycontent_best}}</view>
+    		<view class="cont-main">{{datas.main_content}}</view>
+    	</view>
+    </view>
+</template>
+
+<script>
+    
+    import wepy from 'wepy'
+
+    export default class Index extends wepy.component {
+
+        props = {
+        	datas:{
+        		type:Object,
+        		value:{}
+        	}
+        };
+
+        data = {
+            
+        };
+
+        components = {
+
+        };
+
+        methods = {
+
+        };
+
+        computed = {
+
+        };
+
+        onLoad() {
+            
+        };
+
+        onShow() {
+
+        };
+    }
+
+</script>

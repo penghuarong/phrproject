@@ -1,0 +1,27 @@
+<template>
+    <view class="indexlist">
+        <repeat for="{{indexListData.news.list}}">
+            <view class="list">
+                <view class="listleft">
+                    <text style="font-size:14px">{{item.title}}</text>
+                    <text style="color:#ccc;font-size:12px">{{item.wx_category_name}}</text>
+                </view>
+                <view class="img">
+                    <image src="{{item.article_images}}"/>
+                </view>
+            </view>
+        </repeat>
+    </view>
+</template>
+<script>
+    import wepy from "wepy";
+    export default class swiper extends wepy.component{
+        props={
+            indexListData:{}
+        }
+    }
+</script>
+<style>
+
+</style>
+

@@ -1,0 +1,33 @@
+<template>
+    <view class="search">
+           <view class="top" style="height:{{barHeight}}px"></view>
+           <view class="head" style="top:25px">
+                <image src="../static/images/1_03.png" class="qian" style="float:left"/>
+                <view class="input" @tap="clickInput">
+                    <swiper autoplay="true" interval="2000" duration="300" vertical="true" circular="true">
+                        <block>
+                            <swiper-item>
+                                <view>1</view>
+                            </swiper-item>
+                            <swiper-item>
+                                <view>2</view>
+                            </swiper-item>
+                            <swiper-item>
+                                <view>3</view>
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                </view>
+           </view>
+       </view>
+</template>
+<script>
+    import wepy from "wepy";
+    export default class Choosecar extends wepy.component{
+        
+    }
+</script>
+<style>
+
+</style>
+

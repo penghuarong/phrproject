@@ -1,0 +1,11 @@
+<template>
+    <view>
+        评测
+    </view>
+</template>
+<script>
+    import wepy from "wepy";
+    export default class Evaluating extends wepy.component{
+        
+    }
+</script>

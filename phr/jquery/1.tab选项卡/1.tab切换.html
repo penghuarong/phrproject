@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        #box {
+            width: 500px;
+            height: auto;
+            overflow: hidden;
+            margin: 100px auto;
+        }
+        
+        ul {
+            width: 100%;
+            height: 40px;
+        }
+        
+        li {
+            width: 100px;
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #3e3e3e;
+            border-bottom: 1px solid #3e3e3e;
+            cursor: pointer;
+        }
+        
+        .current {
+            border-bottom: 1px solid red;
+            color: red;
+        }
+        
+        #content {
+            width: auto;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+        
+        #content div {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        
+        #content div.show {
+            display: block;
+        }
+        
+        #content div p {
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li>吸顶灯</li>
+            <li>男装</li>
+            <li>婴儿推车</li>
+            <li>床</li>
+            <li>吊灯</li>
+        </ul>
+        <div id="content">
+            <div>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+            </div>
+            <div>
+                <p>2</p>
+                <p>2</p>
+                <p>2</p>
+                <p>2</p>
+                <p>2</p>
+            </div>
+            <div>
+                <p>3</p>
+                <p>3</p>
+                <p>3</p>
+                <p>3</p>
+                <p>3</p>
+            </div>
+            <div>
+                <p>4</p>
+                <p>4</p>
+                <p>4</p>
+                <p>4</p>
+                <p>4</p>
+            </div>
+            <div>
+                <p>5</p>
+                <p>5</p>
+                <p>5</p>
+                <p>5</p>
+                <p>5</p>
+            </div>
+        </div>
+    </div>
+    <script src="../jquery-1.8.3.min.js"></script>
+    <script>
+        /*
+                                                                        			$();
+                                                                        			选择器
+                                                                        			on();
+                                                                        			index();
+                                                                        			addClass();
+                                                                        			siblings();
+                                                                        			removeClass();
+                                                                        			eq();
+                                                                        			children();
+                                                                        		*/
+
+        //        $(function() {
+        //            $("ul li").on("mouseover", function() {
+        //                var n = $(this).index();
+        //                $(this).addClass("current").siblings().removeClass("current");
+        //                $("#content").children().eq(n).addClass("show").siblings().removeClass("show");
+        //            });
+        //        });
+
+
+        //        $(function() {
+        //            $("#box").on("click","ul li",function(){
+        //                var n = $(this).index();
+        //                $(this).addClass("current").siblings().removeClass("current");
+        //                $("#content").children().eq(n).addClass("show").siblings().removeClass("show");
+        //            })
+        //        })
+
+
+        $(function() {
+            $("ul li").on("click", function() {
+                var n = $(this).index();
+                $(this).addClass("current").siblings().removeClass("current");
+                $("#content").children().eq(n).addClass("show").siblings().removeClass("show");
+            })
+        })
+    </script>
+</body>
+
+</html>

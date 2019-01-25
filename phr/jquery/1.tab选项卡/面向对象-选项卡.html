@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.current{
+			background: red;
+		}
+		#box div{
+			width: 200px;
+			height: 200px;
+			background: red;
+			display: none;
+		}
+		#box .show{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<div id="box">
+	<a href="javascript:;">上一张</a>
+	<input type="button" value="按钮1" class="nums">
+	<input type="button" value="按钮2" class="nums">
+	<input type="button" value="按钮3" class="nums">
+	<a href="javascript:;">下一张</a>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+</div>
+	<script>
+		function Tab(obj){
+			this.box = document.getElementById(obj);
+			this.btns = this.box.getElementsByTagName("input");
+			this.next = this.box.getElementsByTagName("a")[1];
+			this.prev = this.box.getElementsByTagName("a")[0];
+			this.boxes = this.box.getElementsByTagName("div");
+			this.timer = null;
+			this.num = 0;
+			//this.init();
+		}
+		Tab.prototype.init = function(){
+			this.btns[0].className = "current";
+			this.boxes[0].className = "show";
+			for(var i=0;i<this.btns.length;i++){
+				this.btns[i].index = i;
+			}
+			this.change();
+			this.autoPlay();
+			this.stop();
+			this.nextClick();
+			this.prevClick();
+		};
+		Tab.prototype.natural = function(){
+			for(var i=0;i<this.btns.length;i++){
+				this.btns[i].className = "";
+				this.boxes[i].className = "";
+			}
+		};
+		Tab.prototype.change = function(){
+			var _this = this;
+			for(var i=0;i<this.btns.length;i++){
+				this.btns[i].onclick = function(){
+					_this.num = this.index;
+					_this.move(_this.num);
+				};
+			}
+		};
+		Tab.prototype.autoPlay = function(){
+			var _this = this;
+			this.timer = setInterval(function(){
+				_this.num++;
+				if(_this.num>=_this.btns.length){
+					_this.num = 0;
+				}
+				_this.move(_this.num);
+			},1000);
+		};
+		Tab.prototype.nextClick = function(){
+			var _this = this;
+			this.next.onclick = function(){
+				_this.num++;
+				if(_this.num>=_this.btns.length){
+					_this.num = 0;
+				}
+				_this.move(_this.num);
+			};	
+		};
+		Tab.prototype.prevClick = function(){
+			var _this = this;
+			this.prev.onclick = function(){
+				_this.num--;
+				if(_this.num<0){
+					_this.num = _this.btns.length-1;
+				}
+				_this.move(_this.num);
+			};
+		};
+		Tab.prototype.move = function(n){
+			var _this = this;
+			_this.natural();
+			_this.btns[n].className = "current";
+			_this.boxes[n].className = "show";
+		};
+		Tab.prototype.stop = function(){
+			var  _this = this;
+			this.box.onmouseover = function(){
+				clearInterval(_this.timer);
+			};
+			this.box.onmouseout = function(){
+				_this.autoPlay();
+			};
+		};
+		var tab = new Tab("box");
+		tab.init();
+	</script>
+</body>
+</html>

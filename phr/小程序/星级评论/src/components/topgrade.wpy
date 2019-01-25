@@ -1,0 +1,66 @@
+<style lang='less'>
+	.imgCon {
+		width:80rpx;
+		height:80rpx;
+		maring:0 10rpx;
+		.gImg {
+			width:100%;
+			height:100%;
+			display:block;
+		}
+	}
+</style>
+
+<template>
+    <view class="imgCon" @tap="selectG({{ind}})">
+    	<image wx:if="{{datas.check}}" src="{{datas.checksrc}}" class="gImg" />
+    	<image wx:else src="{{datas.src}}" class="gImg" />
+    </view>
+</template>
+
+<script>
+    
+    import wepy from 'wepy'
+
+    export default class Index extends wepy.component {
+
+        props = {
+        	datas:{
+        		type:Object,
+        		value:{},
+        		twoWay:true
+        	},
+        	ind:{
+        		type:Number,
+        		value:0
+        	}
+        };
+
+        data = {
+            
+        };
+
+        components = {
+
+        };
+
+        methods = {
+			selectG:(ind)=>{
+				this.$emit('selectGrade',ind)
+			}
+        };
+
+        computed = {
+
+        };
+
+        onLoad() {
+            
+        };
+
+        onShow() {
+
+        };
+    }
+
+</script>

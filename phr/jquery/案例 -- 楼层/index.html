@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象（楼层）</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		li{
+			list-style: none;
+		}
+
+		#wrap{
+			width: 1080px;
+			margin:0 auto;
+		}
+		ol{
+			position: fixed;
+			right: 0;
+			bottom: 10px;
+			transform: translateX(50%);
+		}
+		ol>li{
+			margin-top: 10px;
+			padding-left:10px;
+			width: 150px;
+			line-height: 40px;
+		}
+		ol>li:nth-child(1){background: #eee;}
+		ol>li:nth-child(2){background: #ddd;}
+		ol>li:nth-child(3){background: #ccc;}
+		ol>li:nth-child(4){background: #bbb;}
+		ol>li:nth-child(5){background: #aaa;}
+		ol>li:nth-child(6){background: #999;}
+		.hover{
+			margin-left: -50px;
+		}
+
+		ul>li{
+			width: 100%;
+			line-height: 100px;
+			font-size: 100px;
+			text-align: center;
+			line-height: 300px;
+			background: #eee;
+		}
+		ul>li:nth-child(2){background: #ddd;height: 600px;}
+		ul>li:nth-child(3){background: #ccc;height: 500px;}
+		ul>li:nth-child(4){background: #bbb;height: 400px;}
+		ul>li:nth-child(5){background: #aaa;height: 300px;}
+		ul>li:nth-child(6){background: #999;height: 700px;}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<ul>
+			<li>1F</li>
+			<li>2F</li>
+			<li>3F</li>
+			<li>4F</li>
+			<li>5F</li>
+			<li>6F</li>
+		</ul>
+		<ol>
+			<li class="hover">1F</li>
+			<li>2F</li>
+			<li>3F</li>
+			<li>4F</li>
+			<li>5F</li>
+			<li>6F</li>
+		</ol>
+	</div>
+	<script>
+		
+		function Floor(){
+			this.init();
+		}
+
+		Floor.prototype = {
+			constructor : Floor,
+			init : function(){
+				this.ul = document.querySelector("ul");
+				this.ulli = this.ul.querySelectorAll("li");
+				this.ol = document.querySelector("ol");
+				this.olli = this.ol.querySelectorAll("li");
+
+				this.ulHeightArr = [];
+				for(var i=0;i<this.ulli.length;i++){
+					this.ulHeightArr.push(parseInt(getStyle(this.ulli[i],"height")))
+				}
+				this.ulTopArr = [0];
+				for(var i=1;i<this.ulli.length;i++){
+					this.ulTopArr[i] = 0;
+					for(var j=0;j<i;j++){
+						this.ulTopArr[i] += this.ulHeightArr[j];
+					}
+				}
+
+				this.bindEvent();
+				this.scrollFn();
+			},
+			bindEvent : function(){
+				var that = this;
+				for(var i=0;i<this.olli.length;i++){
+					this.olli[i].index = i;
+					this.olli[i].onclick = function(){
+						that.sideClick(this.index);
+						that.toSome(this.index);
+					}
+				}
+			},
+			scrollFn : function(){
+				var that = this;
+				document.onscroll = function(){
+					var top = document.body.scrollTop || document.documentElement.scrollTop;
+					for(var i=0;i<that.ulTopArr.length;i++){
+						if(top <= that.ulTopArr[i]){
+							that.toSome(i);
+							break;
+						}
+					}
+				}
+			},
+			sideClick : function(ind){
+				var sum = 0;
+				for(var j=0;j<ind;j++){
+					sum += this.ulHeightArr[j];
+				}
+				document.body.scrollTop = sum;
+				document.documentElement.scrollTop = sum;
+			},
+			toSome : function(ind){
+				for(var i=0;i<this.olli.length;i++){
+					this.olli[i].className = "";
+				}
+				this.olli[ind].className = "hover";
+			}
+		};
+	
+		function getStyle(obj,attr){
+			if(obj.currentStyle){
+				return obj.currentStyle[attr];
+			}else{
+				return getComputedStyle(obj,null)[attr];
+			}
+		}
+
+		new Floor();
+	</script>
+</body>
+</html>

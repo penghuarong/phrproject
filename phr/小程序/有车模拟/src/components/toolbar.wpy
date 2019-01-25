@@ -1,0 +1,22 @@
+<template>
+     <view class="toolbar">
+        <repeat for="{{toolbarData.tag_list[0].toolbars}}">
+            <view>
+                <image src="{{item.icon}}"/>
+                <text>{{item.title}}</text>
+            </view>
+        </repeat>
+    </view>
+</template>
+<script>
+    import wepy from "wepy";
+    export default class swiper extends wepy.component{
+        props={
+            toolbarData:{}
+        }
+    }
+</script>
+<style>
+
+</style>
+

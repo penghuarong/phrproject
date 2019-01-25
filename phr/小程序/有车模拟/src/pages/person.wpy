@@ -1,0 +1,108 @@
+<template>
+    <view class="person">
+        <view class="header">社区</view>
+        <scroll-view scroll-y style="height: 500px;" scroll-into-view="{{toView}}" scroll-with-animation="true" bindscrolltoupper="top" bindscrolltolower="bottom">
+            <repeat for="{{newArr}}" item="val" >
+                <view class="li">
+                    <view id="{{val}}">{{val}}</view>
+                    <repeat for="{{letterData}}">
+                        <view wx:if="{{val === item.letter}}">
+                            <view style="height:500px;background:{{item.color}}">
+                                {{item.tit}}
+                            </view>
+                        </view>
+                    </repeat>
+                </view>
+            </repeat>
+        </scroll-view>
+        <view class="fixed">
+            <repeat for="{{newArr}}">
+                <view @tap="toup({{item}})">{{item}}</view>
+            </repeat>
+        </view>
+    </view>
+</template>
+<script>
+    import wepy from "wepy";
+    export default class scrollTo extends wepy.page{
+        data={
+            letterData:[
+                {
+                    letter:"A",
+                    tit:"aaa",
+                    color:"red"
+                },
+                {
+                    letter:"B",
+                    tit:"bbb",
+                    color:"pink"
+                },
+                 {
+                    letter:"C",
+                    tit:"ccc",
+                    color:"blue"
+                },   
+                {
+                    letter:"D",
+                    tit:"ddd",
+                    color:"limegreen"
+                },
+            ],
+            newArr:[],
+            toView:"",
+            page:0
+        }
+        onLoad(){
+            let arr=[];
+            this.letterData.forEach((item)=>{
+                arr.push(item.letter)
+            })
+            this.newArr = [...arr]
+        }
+        methods={
+            toup(name){
+                this.toView = name
+            },
+            top(){
+                console.log("top")
+            },
+            bottom(){
+                console.log("bottom")
+                wepy.showLoading({
+                    title:'Loading...'
+                })
+                if(this.page<3){
+                    this.page++;
+                    setTimeout(() => {
+                        let loadData=[
+                            {
+                                letter:"C",
+                                tit:"ccc",
+                                color:"black"
+                            },   
+                            {
+                                letter:"D",
+                                tit:"ddd",
+                                color:"orange"
+                            }
+                        ]
+                        this.letterData = [...this.letterData,...loadData]
+                        wepy.hideLoading();
+                    }, 1000);
+                    return
+                }
+            }
+        }
+    }
+</script>
+<style>
+.person{
+    width:100%;
+    height: 100%;
+}
+.fixed{
+    position: fixed;
+    top:20%;
+    right:10px;
+}
+</style>

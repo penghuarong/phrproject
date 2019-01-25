@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>瀑布流</title>
+</head>
+<style>
+	.wrap{
+		position: relative;
+		margin:0 auto;
+	}
+	.wrap>img{
+		position: absolute;
+		border:1px solid #ffeb3b;
+		border-radius: 10px;
+	}
+</style>
+<body>
+	<div id="wrap" class="wrap">
+		<img src="images/0.jpg" alt="">
+		<img src="images/1.jpg" alt="">		
+		<img src="images/2.jpg" alt="">
+		<img src="images/3.jpg" alt="">		
+		<img src="images/4.jpg" alt="">
+		<img src="images/5.jpg" alt="">		
+		<img src="images/6.jpg" alt="">
+		<img src="images/7.jpg" alt="">		
+		<img src="images/8.jpg" alt="">	
+		<img src="images/6.jpg" alt="">
+		<img src="images/7.jpg" alt="">		
+		<img src="images/8.jpg" alt="">
+	</div>
+	<script src="jquery1.7.js"></script>
+	<script>
+		$(document).ready(function(){
+			var winW=$(window).width();
+			var imgW=$("#wrap img").width()+20;
+			var view=Math.floor(winW/imgW);
+			$("#wrap").width(imgW*view);
+			var arr=[];
+			var p=0;
+			function init(start,end){
+				for(var i=start;i<end;i++){
+					if(i<view){
+						arr.push(0);
+					}
+					var minH=Math.min.apply(Math,arr);
+					var ind=$.inArray(minH,arr);
+					var imgH=$("#wrap img").eq(i).height()+20;
+					$("#wrap img").eq(i).stop().animate({"left":imgW*ind,"top":minH},1000);
+					arr[ind]+=imgH;
+					p++;
+				}
+			}
+
+			init(0,$("#wrap img").length);
+
+			function showImg(){
+				var data={"dataimg":[
+					{"src":"images/20.jpg"},
+					{"src":"images/21.jpg"},
+					{"src":"images/22.jpg"},
+					{"src":"images/23.jpg"},
+					{"src":"images/24.jpg"},
+					{"src":"images/25.jpg"},
+					{"src":"images/26.jpg"},
+					{"src":"images/27.jpg"},
+					{"src":"images/28.jpg"}
+				]}
+				init(p,$("#wrap img").length);
+				var maxH=Math.min.apply(Math,arr);
+				var index=$.inArray(maxH,arr);
+				$.each(data.dataimg,function(i,val){
+					$("<img>").attr("src",val.src).appendTo("#wrap").css({"left":imgW*index,"top":maxH});
+				})
+			}
+
+			$(window).on("scroll",function(){
+				var top=$(document).height()-$(window).height();
+				var scrT=$(this).scrollTop();
+				if(scrT>=top){
+					showImg();
+				}
+			})
+
+		})
+	</script>
+</body>
+</html>

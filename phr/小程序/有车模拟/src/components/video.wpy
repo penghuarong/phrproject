@@ -1,0 +1,11 @@
+<template>
+    <view>
+        视频
+    </view>
+</template>
+<script>
+    import wepy from "wepy";
+    export default class Video extends wepy.component{
+        
+    }
+</script>

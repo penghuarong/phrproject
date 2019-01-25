@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0 auto;
+	}
+	.man_list{
+		width:300px;
+	}
+	.man_list dl{
+		padding-top:10px;
+	}
+	.man_list dl>dt{
+		height:30px;
+		line-height: 30px;
+		background:#3498db url('img/bg1.png') no-repeat right center;
+	}
+	dt span{
+		float:right;
+		font-size: 30px;
+		color:#fff;
+
+	}
+	dd{
+		line-height: 20px;
+		text-indent: 2em;
+		display: none;
+	}
+	.man_list dl .bg{
+		background:#3498db url('img/bg2.png') no-repeat right center;
+	}
+</style>
+<body>
+	<div class="man_list">
+		<dl>
+			<dt>标题一</dt>
+			<dd>生活是蜿蜒在山中的小径，坎坷不平，沟崖在侧。摔倒了，要哭就哭吧，怕什么，不要装模作样！这是直率，不是软弱，因为哭一场并不影响赶路，反而能增添一份小心。山花烂漫，景色宜人，如果陶醉了，想笑就笑吧，不心故作矜持！这是直率，不是骄傲，因为笑一次并不影响赶路，反而能增添一份信心。</dd>
+		</dl>
+		<dl>
+			<dt>标题二</dt>
+			<dd>生活是蜿蜒在山中的小径，坎坷不平，沟崖在侧。摔倒了，要哭就哭吧，怕什么，不心装模作样！这是直率，不是软弱，因为哭一场并不影响赶路，反而能增添一份小心。山花烂漫，景色宜人，如果陶醉了，想笑就笑吧，不心故作矜持！这是直率，不是骄傲，因为笑一次并不影响赶路，反而能增添一份信心。</dd>
+		</dl>
+		<dl>
+			<dt>标题三</dt>
+			<dd>生活是蜿蜒在山中的小径，坎坷不平，沟崖在侧。摔倒了，要哭就哭吧，怕什么，不心装模作样！这是直率，不是软弱，因为哭一场并不影响赶路，反而能增添一份小心。山花烂漫，景色宜人，如果陶醉了，想笑就笑吧，不心故作矜持！这是直率，不是骄傲，因为笑一次并不影响赶路，反而能增添一份信心。</dd>
+		</dl>
+		<dl>
+			<dt>标题四</dt>
+			<dd>生活是蜿蜒在山中的小径，坎坷不平，沟崖在侧。摔倒了，要哭就哭吧，怕什么，不心装模作样！这是直率，不是软弱，因为哭一场并不影响赶路，反而能增添一份小心。山花烂漫，景色宜人，如果陶醉了，想笑就笑吧，不心故作矜持！这是直率，不是骄傲，因为笑一次并不影响赶路，反而能增添一份信心。</dd>
+		</dl>
+		<dl>
+			<dt>标题五</dt>
+			<dd>生活是蜿蜒在山中的小径，坎坷不平，沟崖在侧。摔倒了，要哭就哭吧，怕什么，不心装模作样！这是直率，不是软弱，因为哭一场并不影响赶路，反而能增添一份小心。山花烂漫，景色宜人，如果陶醉了，想笑就笑吧，不心故作矜持！这是直率，不是骄傲，因为笑一次并不影响赶路，反而能增添一份信心。</dd>
+		</dl>
+	</div>
+	<script src="../jquery-1.8.3.min.js"></script>
+	<script>
+		$(function(){
+			$("dt").on("click",function(){
+			    $(this).next().slideToggle(200);
+			})
+		});
+	</script>
+</body>
+</html>

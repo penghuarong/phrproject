@@ -1,0 +1,52 @@
+<style lang="less">
+    
+</style>
+
+<template>
+   	<view>分享</view>
+</template>
+
+<script>
+    
+    import wepy from 'wepy'
+
+    export default class Example extends wepy.page {
+        
+        config = {
+        };
+
+        data = {
+           	
+        };
+
+        components = {
+
+        };
+
+        methods = {
+
+        };
+
+		events = {
+
+		};
+
+		watch = {
+
+		};
+
+		computed = {
+
+		};
+
+        onLoad() {
+            
+        };
+
+        onShow() {
+
+        };
+
+    }
+
+</script>

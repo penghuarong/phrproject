@@ -1,0 +1,178 @@
+<template>
+     <view class="wrapper">
+       <Head></Head>
+       <view class="nav" style="margin-top:50px;margin-bottom:2px">
+            <scroll-view scroll-x style="width:100%" class="scrollnav" >
+                <repeat for="{{indexdata.tag_list}}">
+                    <text class="{{ind == index ? 'active navname' : 'navname'}}" @tap="navClick" @tap="changeCom({{item.tag}})" data-index="{{index}}" >{{item.tag}}</text>
+                </repeat>
+            </scroll-view>
+       </view>
+       <view>
+           <Hot wx:if="{{currentNav === '热门'}}"/>
+           <Video wx:if="{{currentNav === '视频'}}"/>
+           <Visitor wx:if="{{currentNav === '导购'}}"/>
+           <Evaluating wx:if="{{currentNav === '评测'}}"/>
+       </view>
+       <Swiper :swiperData.sync="indexdata"></Swiper>
+       <Toolbar :toolbarData.sync="indexdata"></Toolbar>
+       <IndexList :indexListData.sync="indexdata"></IndexList>
+   </view>
+</template>
+<script>
+    import wepy from "wepy";
+    import Hot from "../components/hot";
+    import Video from "../components/video";
+    import Visitor from "../components/visitor";
+    import Evaluating from "../components/evaluating";
+    import Head from "../components/head";
+    import Swiper from "../components/swiper";
+    import IndexList from "../components/indexlist"
+    import Toolbar from "../components/toolbar";
+    import {connect} from "wepy-redux";
+    import {getCarIndexData} from "../store/actions";
+    import {CAR_INDEX_DATA} from "../store/types/car";
+     @connect({
+        indexdata(state){
+            return state.car.indexdata
+        }
+    },{
+        getCarIndexData:CAR_INDEX_DATA
+    })
+    export default class carIndex extends wepy.page{
+        data={
+            barHeight:null,
+            currentNav:"热门",
+            ind:0
+        }
+        components={
+            Evaluating,
+            Swiper,
+            Toolbar,
+            IndexList,
+            Hot,
+            Video,
+            Visitor,
+            Head
+        }
+        onReady(){
+            wx.request({
+                url:"https://www.easy-mock.com/mock/5b66e3d11fc80e53a3ad62d4/example/index",
+                success:(res)=>{
+                   this.methods.getCarIndexData(res.data.result)
+                }
+            })
+        }
+        methods={
+            navClick: function(e) {
+                console.log(e.currentTarget.dataset.index)
+                this.ind = e.currentTarget.dataset.index;
+            },
+            changeCom:(navname)=>{
+                this.currentNav = navname
+            },
+            clickInput:function(){
+                wx.navigateTo({
+                    url:"/pages/search"
+                })
+            }
+        }
+    }
+</script>
+<style>
+page,
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+.search{
+    padding: 10px;
+    box-sizing: border-box;
+    position: fixed;
+    width:70%;
+}
+.search .qian{
+    width:25px;
+    height: 25px;
+    margin-right: 10px;
+}
+.input{
+    flex:1;
+    border:1px solid #ccc;
+    border-radius: 20px;
+    padding-left: 10px;
+    width:70%;
+    height: 25px;
+    float: left;
+    background: #f8f8f8;
+    overflow: hidden;
+}
+
+.head{
+    position: fixed;
+    width:70%;
+    height: 30px;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  box-sizing: border-box;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  margin-top:25px;
+}
+.scrollnav{
+    width:100%;
+    white-space: nowrap;
+}
+.navname{
+    width:20%;
+    text-align: center;
+    display: inline-block;
+}
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.toolbar view {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.toolbar view image {
+  width: 40px;
+  height: 37px;
+}
+.active{
+    border-bottom: 2px solid red;
+}
+.toolbar view text {
+  font-size: 12px;
+  padding: 5px 0;
+}
+.indexlist .listleft {
+  display: flex;
+}
+.list {
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.list .listleft {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.list image {
+  width: 100px;
+  height: 60px;
+}
+</style>

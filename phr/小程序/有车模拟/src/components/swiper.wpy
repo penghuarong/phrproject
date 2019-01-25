@@ -1,0 +1,21 @@
+<template>
+    <swiper indicator-dots="true" autoplay="true" interval="2000" duration="300">
+        <repeat for="{{swiperData['ads_news_banner']}}">
+            <swiper-item>
+            <image src="{{item.display_url}}" class="slide-image" width="355" height="150"/>
+            </swiper-item>
+        </repeat>
+    </swiper>
+</template>
+<script>
+    import wepy from "wepy";
+    export default class swiper extends wepy.component{
+        props={
+            swiperData:{}
+        }
+    }
+</script>
+<style>
+
+</style>
+

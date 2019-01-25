@@ -1,0 +1,64 @@
+[{
+    "letter": "A",
+    "type": [{
+        "name": "安踏"
+    }, {
+        "name": "安琪"
+    }]
+}, {
+    "letter": "B",
+    "type": [{
+        "name": "波拉"
+    }, {
+        "name": "啵啵"
+    }]
+}, {
+    "letter": "C",
+    "type": [{
+        "name": "吃饭"
+    }, {
+        "name": "赤司"
+    }]
+}, {
+    "letter": "D",
+    "type": [{
+        "name": "帝国"
+    }, {
+        "name": "滴滴滴滴"
+    }]
+}, {
+    "letter": "E",
+    "type": [{
+        "name": "安踏"
+    }, {
+        "name": "安琪"
+    }]
+}, {
+    "letter": "F",
+    "type": [{
+        "name": "服服服"
+    }, {
+        "name": "夫妇付"
+    }]
+}, {
+    "letter": "G",
+    "type": [{
+        "name": "过过过"
+    }, {
+        "name": "顾姑姑"
+    }]
+}, {
+    "letter": "H",
+    "type": [{
+        "name": "河南"
+    }, {
+        "name": "河北"
+    }]
+}, {
+    "letter": "I",
+    "type": [{
+        "name": "i呀"
+    }, {
+        "name": "i啊"
+    }]
+}]

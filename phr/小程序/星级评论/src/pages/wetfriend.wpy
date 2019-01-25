@@ -1,0 +1,128 @@
+<style lang="less">
+    .wet-container {
+        width:100%;
+        height:100%;
+        .wet-grade {
+            width:100%;
+            height:100rpx;
+            font-size:34rpx;
+            font-weight:bold;
+            line-height:110rpx;
+        }
+    }
+    .sys-class {
+        width:100%;
+        height:auto;
+        padding:20rpx;
+        box-sizing:border-box;
+        .class-itm {
+            display:inline-block;
+            width:28%;
+            height:70rpx;
+            line-height:70rpx;
+            text-align:center;
+            background:rgb(244,244,244);
+            border-radius:20rpx;
+            color:rgb(20,20,20);
+            margin:5rpx 10rpx;
+        }
+    }
+    .user-says{
+        width:100%;
+        height:auto;
+        padding:20rpx;
+        box-sizing:border-box;
+    }
+    .active {
+        color:red!important;
+    }
+</style>
+
+<template>
+   	<view class="wet-container">
+        <view class="wet-grade">网友点评</view>
+        <view class="sys-class">
+            <repeat for="{{classData}}">
+                <view class="class-itm {{deftInd === index ? 'active' : ''}}" @tap="changeView({{index}})">{{item.name}}</view>
+            </repeat>
+        </view>
+        <view class="user-says">
+            <repeat for="{{usersData}}">
+                <UserSays :datas.sync="item" />
+            </repeat>
+        </view>
+    </view>
+</template>
+
+<script>
+    
+    import wepy from 'wepy';
+    import {
+        connect
+    } from 'wepy-redux';
+    import UserSays from '../components/usersays';
+
+    @connect({
+        usersData(store) {
+            return store.user.userSays
+        }
+    },{
+    })
+
+    export default class Example extends wepy.page {
+        
+        config = {
+            navigationBarTitleText:'商品评论列表'
+        };
+
+        data = {
+           	classData:[{
+                name:'全部',
+                type:'all',
+            },{
+                name:'好评',
+                type:'good'
+            },{
+                name:'中评',
+                type:'center'
+            },{
+                name:'差评',
+                type:'differ'
+            }],
+            deftInd:0
+        };
+
+        components = {
+            UserSays
+        };
+
+        methods = {
+            changeView:(ind)=>{
+                this.deftInd = ind;
+                this.$apply();
+            }
+        };
+
+		events = {
+
+		};
+
+		watch = {
+
+		};
+
+		computed = {
+
+		};
+
+        onLoad() {
+            
+        };
+
+        onShow() {
+
+        };
+
+    }
+
+</script>

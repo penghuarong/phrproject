@@ -1,0 +1,64 @@
+{
+	"success": true,
+	"mechat": [{
+		"id": 998,
+		"name": "m9豪华邮轮车站啊啊军事打击和设计asdasdasda",
+		"user_says": [{
+			"username": "白描",
+			"is_vip": 1,
+			"grade": "⭐⭐⭐⭐",
+			"saycontent_best": "双十一抢购的团购,非常超值！",
+			"main_content": "哇还是感到骄傲告诉大家啊是多久啊华盛顿按时的噶技术的国家阿三爱上巨大哈吉斯",
+			"says_img": [
+				"../assets/img1.jpg",
+				"../assets/img3.jpg",
+				"../assets/img2.jpg"
+			],
+			"says_time": "12月12日",
+			"types": "good",
+			"id": 123
+		}, {
+			"username": "朵郜",
+			"is_vip": 1,
+			"grade": "⭐⭐⭐⭐",
+			"saycontent_best": "双十一抢购的团购,非常超值！",
+			"main_content": "哇还是感到骄傲告诉大家啊是多久啊华盛顿按时的噶技术的国家阿三爱上巨大哈吉斯",
+			"says_img": [
+				"../assets/img5.jpg",
+				"../assets/img3.jpg",
+				"../assets/img2.jpg"
+			],
+			"says_time": "12月12日",
+			"types": "center",
+			"id": 1812
+		}, {
+			"username": "魑魅",
+			"is_vip": 0,
+			"grade": "⭐⭐⭐⭐",
+			"saycontent_best": "双十一抢购的团购,非常超值！",
+			"main_content": "哇还是感到骄傲告诉大家啊是多久啊华盛顿按时的噶技术的国家阿三爱上巨大哈吉斯",
+			"says_img": [
+				"../assets/img3.jpg",
+				"../assets/img5.jpg",
+				"../assets/img2.jpg"
+			],
+			"says_time": "12月12日",
+			"types": "good",
+			"id": 112
+		}, {
+			"username": "魍魉",
+			"is_vip": 1,
+			"grade": "⭐⭐⭐⭐",
+			"saycontent_best": "双十一抢购的团购,非常超值！",
+			"main_content": "哇还是感到骄傲告诉大家啊是多久啊华盛顿按时的噶技术的国家阿三爱上巨大哈吉斯",
+			"says_img": [
+				"../assets/img2.jpg",
+				"../assets/img3.jpg",
+				"../assets/img5.jpg"
+			],
+			"says_time": "12月12日",
+			"types": "differ",
+			"id": 12
+		}]
+	}]
+}

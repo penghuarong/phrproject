@@ -1,0 +1,165 @@
+<template>
+    <view class="choosecarBox">
+        <view class="header">选车</view>
+        <view class="carBody">
+            <scroll-view scroll-y style="height: 450px;" @scroll="scrollBlock" scroll-into-view="{{toView}}" scroll-with-animation="true">
+                <!-- 空盒子topContent -->
+                <view class="topContent"></view>
+                <repeat for="{{letter}}" item="val">
+                   <view class="li" >
+                       <view class="h2" id="{{val}}" data-item="{{val}}">{{val}}</view>
+                       <repeat for="{{choosedata}}">
+                           <view class="liBox" @tap="detailCar" wx:if="{{val === item.prefix}}">
+                               <image src="{{item.icon}}" style="width:30px;height:30px"/>
+                               <view class="p">{{item.name}}</view>
+                           </view>
+                        </repeat>
+                   </view>
+               </repeat>
+            </scroll-view>
+           <view class="fixed" wx:if="{{scrollTop > topHeight}}">
+               <repeat for="{{letter}}">
+                   <view class="li">
+                       <view class="h3" @tap="goBlock({{item}})">{{item}}</view>
+                   </view>
+               </repeat>
+           </view>
+           <view class="mark" wx:if="{{flag}}">
+               <view class="markList" @tap="backList">
+                   dqfdew
+               </view>
+           </view>
+        </view>
+    </view>
+</template>
+<script>
+    import wepy from "wepy";
+    import Head from "../components/head";
+    import {connect} from "wepy-redux";
+    import {CHOOSE_DATA} from "../store/types";
+    import {getCarChooseData} from "../store/actions";
+    @connect({
+        choosedata(state){
+            return state.car.choosecar
+        }
+    },{
+        getCarChooseData:CHOOSE_DATA
+    })
+    export default class Choosecar extends wepy.page{
+        data={
+            toView:"",
+            topHeight:null,
+            scrollTop:null,
+            flag:0,
+            letter:null
+        }
+        onReady(){
+            console.log(this)
+            const query = wx.createSelectorQuery();
+            query.select('.topContent').boundingClientRect((res)=>{
+                this.topHeight = res.height
+            }).exec()
+            wx.request({
+                url:"https://www.easy-mock.com/mock/5bed2e440dfee6695b4bc6af/list/getcardata",
+                success:(res)=>{
+                    console.log(res,"数据")
+                    let arr = [];
+                    res.data.result.brands.forEach((item)=>{
+                        if(arr.indexOf(item.prefix) === -1){
+                            arr.push(item.prefix)
+                        }
+                    })
+                    this.letter = arr;
+                    this.methods.getCarChooseData(res.data.result.brands)
+                }
+            })
+        }
+        methods={
+            goBlock(name){
+                this.toView = name
+            },
+            scrollBlock(e){
+                this.scrollTop = e.detail.scrollTop
+            },
+            detailCar(){
+                this.flag = true
+            },
+            backList(){
+                this.flag = false
+            }
+        }
+    }
+</script>
+<style>
+page,.choosecarBox{
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+}
+.header{
+    width:100%;
+    height: 66px;
+    text-align: center;
+    line-height: 76px;
+    position: fixed;
+    top:0;
+    background: #fff;
+}
+.carBody{
+    margin-top:66px;
+}
+.fixed{
+    width:20px;
+    text-align: center;
+    position: fixed;
+    right:2px;
+    top:20%;
+    z-index:11;
+}
+.fixed .h3{
+    font-size: 12px;
+    color:rgba(0,0,0,.7);
+}
+.li{
+    width:100%;
+}
+.li .h2{
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 30px;
+    color:rgba(0,0,0,.7);
+    line-height: 30px;
+    background: #f7f7f7;
+}
+.liBox{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-bottom:1px solid #ddd;
+}
+.liBox image{
+    width:40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.li .p{
+    flex:1;
+}
+.mark{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,.5);
+    top:66px;
+    z-index:9889898989
+}
+.mark .markList{
+    width:80%;
+    height: 100%;
+    margin-left: 20%;
+    background: #ccc;
+}
+</style>

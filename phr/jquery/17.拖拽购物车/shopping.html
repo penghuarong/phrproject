@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽至购物车效果</title>
+    <link rel="stylesheet" href="css/shopping.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="product">
+            <div>
+                <figure>
+                    <figcaption><img src="img/img/shirt1.gif"></figcaption>
+                    <h3>111</h3>
+                    <p>价格：$<b>23</b></p>
+                </figure>
+            </div>
+            <div>
+                <figure>
+                    <figcaption><img src="img/img/shirt2.gif"></figcaption>
+                    <h3>222</h3>
+                    <p>价格：$<b>20</b></p>
+                </figure>
+            </div>
+            <div>
+                <figure>
+                <figcaption><img src="img/img/shirt3.gif"></figcaption>
+                <h3>333</h3>
+                <p>价格：$<b>22</b></p>
+                </figure>
+            </div>
+            <div>
+                <figure>
+                <figcaption><img src="img/img/shirt4.gif"></figcaption>
+                <h3>444</h3>
+                <p>价格：$<b>10</b></p>
+            </figure>
+            </div>
+            <div>
+                <figure>
+                <figcaption><img src="img/img/shirt5.gif"></figcaption>
+                <h3>55555</h3>
+                <p>价格：$<b>12</b></p>
+            </figure>
+            </div>
+            <div>
+                <figure>
+                <figcaption><img src="img/img/shirt6.gif"></figcaption>
+                <h3>666</h3>
+                <p>价格：$<b>11</b></p>
+            </figure>
+            </div>
+        </div>
+        <div class="car">
+            <h1>购物车</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>产品名</th>
+                        <th>数量</th>
+                        <th>单价</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <p>合计：<span id="sum"></span></p>
+        </div>
+    </div>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+
+            var down={};
+            var move={};
+            var add=[];
+             $(".product>div").on("mousedown","figure",function(e){
+                e.preventDefault();
+                down.x=e.pageX;
+                down.y=e.pageY;
+                var clones=$(this).clone(true);
+                $(this).after(clones);
+                clones.addClass("clone");
+                if($(".clone").length>1){
+                   $(".clone").remove();
+                }
+
+                $(document).on("mousemove",function(e){
+                    move.x=e.pageX-down.x;
+                    move.y=e.pageY-down.y;
+                    clones.css({"left":move.x,"top":move.y});
+                }).on("mouseup",function(){
+                    $(this).off("mousemove");
+                    var carLeft=$(".car").offset().left;
+                    var cloneL=clones.offset().left+(clones.width()/2);
+                    if(cloneL>carLeft){
+                            
+                        var title=clones.children("h3").text();
+                        var price=clones.find("b").text();
+
+                        if($.inArray(title,add)==-1){
+                            var rows="<tr><td>"+title+"</td><td>1</td><td>"+price+"</td></tr>";
+                            $("tbody").append(rows);
+                            add.push(title);
+                        }else{
+                            var ind=$.inArray(title,add);
+                            var num=$("tbody>tr").eq(ind).children("td").eq(1).text()*1;
+                            $("tbody>tr").eq(ind).children("td").eq(1).text(num+1);
+                        }
+                        sumPrice();
+                        clones.remove();
+                    }else{
+                        clones.stop().animate({"left":10,"top":10},500,function(){
+                            $(this).remove();
+                        });
+                    }
+                })
+             })
+
+             function sumPrice(){
+               var sum=0;
+               $("tbody tr").each(function(){
+                var n=$(this).children("td").eq(1).text();
+                var p=$(this).children("td").eq(2).text();
+                sum+=n*p;
+               });
+               $("#sum").text(sum);
+             }
+             sumPrice();
+        })  
+
+    </script>
+</body>
+</html>

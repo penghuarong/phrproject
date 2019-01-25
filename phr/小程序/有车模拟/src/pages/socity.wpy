@@ -1,0 +1,44 @@
+<template>
+    <view class="socity">
+        <view class="header">社区</view>
+        
+        <view class="socity_body">
+            <view @tap="downFile">aa</view>
+            <image src="{{imgUrl}}"/>
+        </view>
+    </view>
+</template>
+<script>
+    import wepy from "wepy";
+    export default class downFile extends wepy.page{
+        data={
+            imgUrl:null
+        }
+        methods={
+            downFile(){
+                wx.downloadFile({
+                    url:"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4036412488,4092768788&fm=27&gp=0.jpg",
+                    success:(res)=>{
+                        console.log(res.tempFilePath,111);
+                        this.imgUrl = res.tempFilePath
+                        this.$apply()
+                    }
+                })
+            }
+        }
+    }     
+</script>
+<style>
+.header{
+    width:100%;
+    height: 66px;
+    text-align: center;
+    line-height: 76px;
+    position: fixed;
+    top:0;
+    background: #fff;
+}
+.socity_body{
+    margin-top:66px;
+}
+</style>

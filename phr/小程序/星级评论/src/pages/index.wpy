@@ -1,0 +1,208 @@
+<style lang="less">
+    .user-container {
+        width:100%;
+        height:100%;
+        .wet-friend {
+            width:100%;
+            height:100rpx;
+            line-height:115rpx;
+            font-weight:bolder;
+            font-size:34rpx;
+            padding-left:20rpx;
+            box-sizing:border-box;
+            position:relative;
+            .say-num,
+            .rightGo {
+                color:rgb(213,213,213);
+                font-size:29rpx;
+                font-weight:normal;
+            }
+            .rightGo {
+                width:40rpx;
+                height:40rpx;
+                line-height:40rpx;
+                position:absolute;
+                right:20rpx;
+                top:50%;
+                transform:translateY(-50%);
+            }
+        }
+    }
+    .say-class {
+        width:100%;
+        height:auto;
+        padding:20rpx;
+        box-sizing:border-box;
+        .class-itm {
+            display:inline-block;
+            width:28%;
+            height:70rpx;
+            line-height:70rpx;
+            text-align:center;
+            background:rgb(244,244,244);
+            border-radius:20rpx;
+            color:rgb(20,20,20);
+            margin:5rpx 10rpx;
+        }
+    }
+    .otherCon {
+        width:100%;
+        height:auto;
+        padding-bottom:120rpx;
+        box-sizing:border-box;
+    }
+    .user-says{
+        width:100%;
+        height:auto;
+        padding:20rpx;
+        box-sizing:border-box;
+    }
+    .bottom {
+        position:fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        background:rgb(255,255,255);
+        z-index:99;
+        width:100%;
+        height:120rpx;
+        display:flex;
+        box-sizing:border-box;
+        .bot-item {
+            flex:1;
+            .iconImg {
+                width:80rpx;
+                height:80rpx;
+                display:block;
+                margin:auto;
+            }
+            .write {
+                width:100%;
+                height:40rpx;
+                line-height:40rpx;
+                text-align:center;
+            }
+        }
+    }
+</style>
+
+<template>
+    <view class="user-container">
+        <view class="otherCon">
+            <view class="wet-friend">网友点评<text class="say-num">({{usersysNum}})</text><text class="rightGo" @tap="goWetFriend">></text></view>
+            <view class="say-class">
+                <view class="class-itm">菜品不错(24)</view>
+                <view class="class-itm">回头客(24)</view>
+                <view class="class-itm">海鲜棒(24)</view>
+                <view class="class-itm">停车方便(24)</view>
+                <view class="class-itm">干净卫生(24)</view>
+            </view>
+            <view class="user-says">
+                <repeat for="{{usersData}}">
+                    <UserSays :datas.sync="item" />
+                </repeat>
+            </view>
+        </view>
+        <view class="bottom">
+            <view class="bot-item" @tap="hrefWrite">
+                <image class="iconImg" src="../assets/weite.png" />
+                <view class="write">写点评</view>
+            </view>
+            <view class="bot-item" @tap="collect">
+                <image class="iconImg" src="../assets/stared.png" wx:if="{{collect}}" />
+                <image class="iconImg" wx:else src="../assets/star.png"  />
+                <view class="write">收藏</view>
+            </view>
+            <view class="bot-item" @tap="hrefShare">
+                <image class="iconImg" src="../assets/weite.png" />
+                <view class="write">分享</view>
+            </view>
+        </view>
+    </view>
+</template>
+
+<script>
+    
+    import wepy from 'wepy';
+    import {
+        connect
+    } from 'wepy-redux';
+    import {
+        getUserSay
+    } from '../store/actions/user.js';
+    import UserSays from '../components/usersays';
+
+    @connect({
+        usersData(store) {
+            return store.user.userSays
+        },
+        usersysNum(store) {
+            return store.user.userSayNum
+        }
+    },{
+        getUserSay
+    })
+
+    export default class Example extends wepy.page {
+        
+        config = {
+            navigationBarTitleText:'大众点评'
+        };
+
+        data = {
+            collect:false
+        };
+
+        components = {
+            UserSays
+        };
+
+        methods = {
+            goWetFriend:()=>{
+                wepy.navigateTo({
+                    url:'/pages/wetfriend'
+                })
+            },
+            hrefWrite:()=>{
+                wepy.navigateTo({
+                    url:'/pages/writesay'
+                })
+            },
+            hrefShare:()=>{
+                wepy.navigateTo({
+                    url:'/pages/share'
+                })
+            },
+            collect:()=>{
+                this.collect = !this.collect;
+                this.$apply();
+                if(this.collect) {
+                    wepy.showToast({
+                        title:"收藏店铺成功",
+                        icon:'none'
+                    })
+                } else {
+                    wepy.showToast({
+                        title:'取消收藏',
+                        icon:'none'
+                    })
+                }
+            }
+        };
+
+        computed = {
+
+        };
+
+        onLoad() {
+            this.methods.getUserSay('http://169.254.188.98:8080/mock/data.json');
+            console.log('this-indx',this);
+        };
+
+        onShow() {
+
+        };
+
+    }
+
+</script>

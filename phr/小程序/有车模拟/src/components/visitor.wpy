@@ -1,0 +1,11 @@
+<template>
+    <view>
+        导购
+    </view>
+</template>
+<script>
+    import wepy from "wepy";
+    export default class Visitor extends wepy.component{
+        
+    }
+</script>

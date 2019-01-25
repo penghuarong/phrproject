@@ -1,0 +1,340 @@
+<style lang="less">
+    .write-container {
+        width:100%;
+        height:100%;
+        .hr {
+            width:100%;
+            height:25rpx;
+            background:rgba(213,213,213,.8);
+        }
+        .status {
+            width:100%;
+            height:100rpx;
+            padding:0 20rpx;
+            border-bottom:4rpx solid rgb(213,213,213);
+            box-sizing:border-box;
+            vertical-align:middle;
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            .name-title {
+                wdith:85%;
+                height:100rpx;
+                line-height:100rpx;
+                text-indent:40rpx;
+                text-overflow:ellipsis;
+                overflow:hidden;
+                white-space:nowrap;
+            }
+            .issueBtn {
+                width:100rpx;
+                height:75rpx;
+                line-height:75rpx;
+                background:rgb(255,0,0);
+                color:rgb(255,255,255);
+                text-align:center;
+                border-radius:20rpx;
+            }
+        }
+    }
+    .topGrade {
+        width:100%;
+        height:100rpx;
+        padding:0 20rpx;
+        box-sizing:border-box;
+        display:flex;
+        align-items:center;
+        position:relative;
+    }
+    .gradePar {
+        display:flex;
+        align-item:center;
+    }
+    .gradeText {
+        position:absolute;
+        right:20rpx;
+        top:0
+        width:100rpx;
+        height:100rpx;
+        line-height:100rpx;
+        text-align:center;
+    }
+    .textarea {
+        width:100%;
+        padding:0 20rpx;
+        box-sizing:border-box;
+    }
+</style>
+
+<template>
+   	<view class="write-container">
+        <view class="hr"></view>
+        <view class="status">
+            <view class="name-title">{{statusName}}</view>
+            <view class="issueBtn" @tap="suerIssue">发布</view>
+        </view>
+        <view class="topGrade">
+            <view class="nameg">总体评价：</view>
+            <view class="gradePar">
+                <repeat for="{{grade}}">
+                    <TopGrade :datas.sync="item" :ind.sync="index" @selectGrade.user="selectGrade" />
+                </repeat>
+            </view>
+            <view class="gradeText">{{gradeText}}</view>
+        </view>
+        <view class="topGrade" wx:if="{{topCheck}}">
+            <view class="nameg">设备：</view>
+            <view class="gradePar">
+                <repeat for="{{Creengrade}}">
+                    <CreenGrade :datas.sync="item" :ind.sync="index" @selectGrade.user="selectGradeC" />
+                </repeat>
+            </view>
+            <view class="gradeText">{{CreenGradeText}}</view>
+        </view>
+        <view class="topGrade" wx:if="{{topCheck}}">
+            <view class="nameg">房间：</view>
+            <view class="gradePar">
+                <repeat for="{{Roomgrade}}">
+                    <RoomGarde :datas.sync="item" :ind.sync="index" @selectGrade.user="selectGradeR" />
+                </repeat>
+            </view>
+            <view class="gradeText">{{RoomGradeText}}</view>
+        </view>
+        <view class="topGrade" wx:if="{{topCheck}}">
+            <view class="nameg">服务：</view>
+            <view class="gradePar">
+                <repeat for="{{Pergrade}}">
+                    <PerGarde :datas.sync="item" :ind.sync="index" @selectGrade.user="selectGradeP" />
+                </repeat>
+            </view>
+            <view class="gradeText">{{PerGradeText}}</view>
+        </view>
+        <view class="textarea">
+            <textarea value="{{textareaVal}}" @input="getAreaVal" placeholder="亲，设施如何，房间怎么样，服务满意么？" style="height:300rpx;width:100%;" />
+        </view>
+    </view>
+</template>
+
+<script>
+    
+    import wepy from 'wepy'
+    import {
+        connect
+    } from 'wepy-redux';
+    import {
+        pushUserSay
+    } from '../store/actions/user.js'
+    import TopGrade from '../components/topgrade';
+
+    @connect({
+        statusName(store) {
+            return store.user.stausName
+        }
+    },{
+        pushUserSay
+    })
+    export default class Example extends wepy.page {
+        
+        config = {
+            navigationBarTitleText:'写点评',
+        };
+
+        data = {
+            topCheck:false,
+            grade:[{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            }],
+            Creengrade:[{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            }],
+            Roomgrade:[{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            }],
+            Pergrade:[{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            },{
+                src:'../assets/star.png',
+                checksrc:'../assets/stared.png',
+                check:false
+            }],
+            noAll:[],
+            checkInd:null,
+            gradeObj:{
+                "0":"很差",
+                "1":"一般",
+                "2":"优秀",
+                "3":"很好",
+                "4":"完美"
+            },
+            bestInd:null,
+            textareaVal:'',
+            gradeText:'',
+            CreenGradeText:'',
+            RoomGradeText:'',
+            PerGradeText:''
+        };
+
+        components = {
+            TopGrade,
+            CreenGrade:TopGrade,
+            RoomGarde:TopGrade,
+            PerGarde:TopGrade,
+        };
+
+        methods = {
+            selectGrade:(ind)=>{
+                console.log('index----id',ind);
+                this.bestInd = ind;
+                this.topCheck = true;
+                this.gradeText = this.gradeObj[ind];
+                for(let i=0;i<=ind;i++) {
+                    this.grade[i].check = true;
+                    for(let j = ind+1;j<=this.grade.length-1;j++) {
+                        this.grade[j].check = false;
+                    }
+                }
+                this.$apply();
+            },
+            selectGradeC:(ind)=>{
+                this.CreenGradeText = this.gradeObj[ind];
+                for(let i=0;i<=ind;i++) {
+                    this.Creengrade[i].check = true;
+                    for(let j = ind+1;j<=this.Creengrade.length-1;j++) {
+                        this.Creengrade[j].check = false;
+                    }
+                }
+                this.$apply();
+            },
+            selectGradeR:(ind)=>{
+                this.RoomGradeText = this.gradeObj[ind];
+                for(let i=0;i<=ind;i++) {
+                    this.Roomgrade[i].check = true;
+                    for(let j = ind+1;j<=this.Roomgrade.length-1;j++) {
+                        this.Roomgrade[j].check = false;
+                    }
+                }
+                this.$apply();
+            },
+            selectGradeP:(ind)=>{
+                this.PerGradeText = this.gradeObj[ind];
+                for(let i=0;i<=ind;i++) {
+                    this.Pergrade[i].check = true;
+                    for(let j = ind+1;j<=this.Pergrade.length-1;j++) {
+                        this.Pergrade[j].check = false;
+                    }
+                }
+                this.$apply();
+            },
+            getAreaVal:(e)=>{
+                this.textareaVal = e.detail.value;
+                this.$apply()
+            },
+            suerIssue:()=>{
+                if(this.textareaVal.length < 15) {
+                    wepy.showToast({
+                        title:'您的点评至少需要15字',
+                        icon:'none'
+                    })
+                } else {
+                    let obj = {};
+                    let str = '';
+                    obj.id = new Date() *1;
+                    obj.username = ''+new Date() *1;
+                    obj.is_vip = Math.ceil(Math.random(0,3)*1);
+                    obj.saycontent_best = '欢迎欢迎，热烈欢迎！！！',
+                    obj.main_content = this.textareaVal;
+                    for(let i = 0;i<=this.bestInd;i++) {
+                        str+='⭐';
+                    }
+                    obj.grade = str;
+                    this.methods.pushUserSay(obj);
+                    wepy.navigateBack({
+                        delta:1
+                    })
+                }
+            }
+        };
+
+		computed = {
+
+		};
+
+        onLoad() {
+            console.log('写点评也买你---',this);
+        };
+
+        onShow() {
+
+        };
+
+    }
+
+</script>

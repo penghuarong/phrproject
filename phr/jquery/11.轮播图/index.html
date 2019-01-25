@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+			list-style: none;
+		}
+		#box{
+			width: 1000px;
+			height: 409px;
+			margin:50px auto;
+			overflow: hidden;
+			position: relative;
+		}
+		#imgs{
+			width: 6000px;
+			height: 409px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#imgs li{
+			width: 1000px;
+			height: 409px;
+			float: left;
+		}
+		#dots{
+			height: 30px;
+			position: absolute;
+			right: 50px;
+			bottom:30px;
+			overflow: hidden;
+		}
+		#dots li{
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			color:#fff;
+			background: red;
+			float: left;
+			margin-right: 10px;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		#dots li.active{
+			background: blue;
+		}
+		#left{
+			position: absolute;
+			left: 10px;
+			top:50%;
+			margin-top:-22.5px;
+			z-index: 10;
+			cursor: pointer;
+		}
+		#right{
+			position: absolute;
+			right:10px;
+			top:50%;
+			margin-top: -22.5px;
+			z-index: 10;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="left">
+			<img src="img/l.png" alt="">
+		</div>
+		<div id="right">
+			<img src="img/r.png" alt="">
+		</div>
+		<ul id="imgs">
+			<li><img src="img/1.jpg" alt=""></li>
+			<li><img src="img/2.jpg" alt=""></li>
+			<li><img src="img/3.jpg" alt=""></li>
+			<li><img src="img/4.jpg" alt=""></li>
+			<li><img src="img/5.jpg" alt=""></li>
+			<li><img src="img/6.jpg" alt=""></li>
+		</ul>
+		<ul id="dots">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+	<script src="../jquery-1.8.3.min.js"></script>
+	<script>
+		$(function(){
+			var n = 0;
+			var timer;
+//			$("#imgs").append($("#imgs").children().eq(0).clone(true)).css("width",1000*$("#imgs").children().length+"px");
+
+			autoPlay();
+			function autoPlay(){
+				timer = setInterval(function(){
+					if(n==$("#imgs").children().length-1){
+						n = 0;
+						$("#imgs").css("left",0);
+					}
+					n++;
+					change();
+				},1000);
+			}
+				
+			$("#box").hover(function(){
+				clearInterval(timer);
+			},function(){
+				autoPlay();
+			});
+			$("#right").on("click",function(){
+				if(n==$("#imgs").children().length-1){
+					n = 0;
+					$("#imgs").css("left",0);
+				}
+				n++;
+				change();	
+			});	
+			$("#left").on("click",function(){
+				if(n==0){
+		            $("#imgs").css("left",-($("#imgs li").length-1)*1000);
+		            n=$("#imgs li").length-1;
+		        }
+				n--;
+				change();
+			});
+			$("#dots li").on("click",function(){
+				n = $(this).index();
+				change();
+			});
+
+			function change(){
+				$("#dots").children().removeClass("active").eq(n%6).addClass("active");
+				$("#imgs").animate({left:-1000*n+"px"});
+			}
+		});
+	</script>
+	
+</body>
+</html>

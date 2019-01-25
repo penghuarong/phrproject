@@ -1,0 +1,138 @@
+<template>
+    <view class="searchview">
+        <view class="searchTitle">搜索</view>
+        <view class="sear">
+            <input placeholder="搜索全部" type="text" class="inputsearch"/>
+            <text>取消</text>
+       </view>
+       <view class="searchicon">
+           <view>
+               <image src="../icons/activity.png"/>
+               <text>全部</text>
+           </view>
+           <view>
+               <image src="../icons/activity_fill.png"/>
+               <text>资讯</text>
+           </view>
+           <view>
+               <image src="../icons/add.png"/>
+               <text>社区</text>
+           </view>
+           <view>
+               <image src="../icons/addpeople.png"/>
+               <text>车型</text>
+           </view>
+       </view>
+       <view class="typebox">
+           <view class="hot">热门搜索</view>
+           <view class="type">
+                <repeat for="{{searchitem}}">
+                    <view class="li">{{item.name}}</view>
+                </repeat>
+           </view>
+       </view>
+    </view>
+</template>
+<script>
+    import wepy from "wepy";
+    export default class Search extends wepy.page{
+        data={
+            searchitem:[]
+        }
+        onLoad(){
+            wx.setNavigationBarTitle({
+                title:"搜索"
+            })
+            wx.request({
+                url:"https://api.s.suv666.com/iyourcar_es/hotwords",
+                data:{
+                    ctype: 4,
+                    cname: 'WXAPP_YCYH',
+                    c_ver: 316001
+                },
+                header:{
+                    "Content-Type":"application-x-www-form-urlencoded"
+                },
+                success:(res)=>{
+                    console.log(res.data.result.hotWords)
+                    this.searchitem = res.data.result.hotWords
+                    this.$apply()
+                }
+            })
+        }
+    }
+</script>
+<style>
+page,.searchview{
+    background: #f8f8f8;
+    width:100%;
+    height: 100%;
+}
+.searchTitle{
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    margin-top:20px;
+}
+.sear{
+    padding:10px;
+    display: flex;
+    box-sizing: border-box;
+    background: #fff;
+}
+.inputsearch{
+    border:1px solid #ccc;
+    border-radius: 20px;
+    padding-left:10px;
+    flex:1;
+    background: #f8f8f8;
+    margin-right:10px;
+}
+.searchicon{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: #fff;
+}
+.searchicon>view{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+.searchicon view image{
+    width:20px;
+    height: 20px;
+}
+.searchicon view text{
+    font-size: 12px;
+}
+.typebox{
+    margin-top:10px;
+    background: #fff;
+}
+.typebox .hot{
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    padding-left:10px;
+}
+.typebox .type{
+    display: flex;
+    flex-wrap:wrap;
+}
+.typebox .li{
+    padding: 2px 5px;
+    border-radius: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin:0 5px;
+    font-size: 12px;
+    margin:5px;
+    background: #fff1f1;
+    color:#952926;
+}
+</style>
